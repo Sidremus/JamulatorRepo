@@ -16,6 +16,7 @@ public class SubmarineState : MonoBehaviour
   private static SubmarineState _instance;
   public static SubmarineState Instance { get { return _instance; } }
 
+
   // These state values represent the movement state of the sub
   private Direction _zMoveState;
   public Direction zMoveState { get { return _zMoveState; } }
@@ -27,7 +28,7 @@ public class SubmarineState : MonoBehaviour
   public Direction strafeState { get { return _strafeState; } }
 
 
-  private void Awake() 
+  private void Awake()
   {
     if (_instance != null && _instance != this) 
     {

@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class SubmarineController : MonoBehaviour
 {
-    // TODO - hook into input actions and call relevant functions in SubmarineState.cs
     private SubmarineInputAsset controls;
 
     private void Awake()
