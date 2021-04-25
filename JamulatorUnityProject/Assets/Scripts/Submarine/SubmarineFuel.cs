@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SubmarineFuel : MonoBehaviour
 {
-    private float fuel = 100f;
+    private float maxFuel = 100f;
     private float lowPowerMultiplier = 0.5f;
     private float highPowerMultiplier = 1f;
     public float fuelConsumptionTickRate = 0.02f;
 
     private void Start() 
     {
-        SubmarineState.Instance.fuel = fuel;
+        SubmarineState.Instance.fuel = maxFuel;
     }
 
     private void FixedUpdate() 
