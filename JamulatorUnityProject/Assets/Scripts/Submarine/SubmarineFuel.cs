@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class SubmarineFuel : MonoBehaviour
 {
+    public float moveFuelCost = 0.02f;
+
     private float maxFuel = 100f;
     private float lowPowerMultiplier = 0.5f;
     private float highPowerMultiplier = 1f;
-    public float fuelConsumptionTickRate = 0.02f;
-
+    
     private void Start() 
     {
         SubmarineState.Instance.fuel = maxFuel;
@@ -33,7 +34,7 @@ public class SubmarineFuel : MonoBehaviour
             : highPowerMultiplier;
 
         // Consume fuel for moving
-        SubmarineState.Instance.fuel -= profileMultiplier * fuelConsumptionTickRate;
+        SubmarineState.Instance.fuel -= profileMultiplier * moveFuelCost;
     }
 }
 
