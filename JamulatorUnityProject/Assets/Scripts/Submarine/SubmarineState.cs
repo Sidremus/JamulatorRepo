@@ -11,6 +11,12 @@ public enum Direction
   DOWN
 }
 
+public enum PowerProfile
+{
+  LOW,
+  HIGH
+}
+
 public class SubmarineState : MonoBehaviour 
 {
   private static SubmarineState _instance;
@@ -18,6 +24,12 @@ public class SubmarineState : MonoBehaviour
 
 
   // These state values represent the movement state of the sub
+  private bool _isMoving;
+  public bool isMoving { get { return _isMoving; } }
+
+  private PowerProfile _movePowerProfile;
+  public PowerProfile movePowerProfile { get { return _movePowerProfile; } }
+
   private Direction _zMoveState;
   public Direction zMoveState { get { return _zMoveState; } }
 
@@ -27,6 +39,7 @@ public class SubmarineState : MonoBehaviour
   private Direction _strafeState;
   public Direction strafeState { get { return _strafeState; } }
 
+  // Subsystem values
 
   private void Awake()
   {
@@ -39,6 +52,23 @@ public class SubmarineState : MonoBehaviour
     _instance = this;
     DontDestroyOnLoad(this.gameObject);
   }
+
+
+  private void FixedUpdate() 
+  {
+    CheckIsMoving();
+  }
+
+  private void CheckIsMoving()
+  {
+    _isMoving = 
+      !(
+        _zMoveState == Direction.NONE &&
+        _yMoveState == Direction.NONE && 
+        _strafeState == Direction.NONE
+      );
+  }
+
 
   /**
    * Called directly from the controller class which reacts to button presses.
@@ -81,7 +111,6 @@ public class SubmarineState : MonoBehaviour
       _zMoveState = Direction.NONE;
     }
   }
-
 
   public void SetYMoveState(Direction dir) 
   {
