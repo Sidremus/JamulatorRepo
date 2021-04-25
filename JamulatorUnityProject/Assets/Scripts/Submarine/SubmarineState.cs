@@ -40,6 +40,7 @@ public class SubmarineState : MonoBehaviour
   public Direction strafeState { get { return _strafeState; } }
 
   // Subsystem values
+  public float fuel { get; set; }
 
   private void Awake()
   {
