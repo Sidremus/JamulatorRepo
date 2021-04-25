@@ -2,8 +2,16 @@ fileFormatVersion: 2
 guid: 360863ba9eaa173458c50b543c2856a7
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects: {}
+  internalIDToNameTable:
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: zebra danio
+    second: {fileID: 2100000, guid: 70a02624536a19e4b82f9fd1b3676bbb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
