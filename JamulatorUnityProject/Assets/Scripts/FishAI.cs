@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 // Behaviour affects speed at which fish moves
 enum Behaviour
@@ -12,8 +10,7 @@ enum Behaviour
 
 public class FishAI : MonoBehaviour
 {
-    public float passiveMoveSpeed = 2.5f;
-
+    private float passiveMoveSpeed = 2.5f;
     private Vector3 targetDirection;
     private float lastTurned = 0f;
     private float turnTimeout = 8f;
@@ -88,12 +85,11 @@ public class FishAI : MonoBehaviour
         }
 
         // Get a target point to travel to
-        // More likely to keep going forward
-        float dir = Random.Range(0, 1) > 0.7 ? 1 : -1;
+        float dir = Random.Range(0, 1) > 0.5 ? 1 : -1;
         Vector3 targetPoint = transform.position + (dir * transform.forward);
 
         // Lower the y by a random range amount (leaning towards downward direction)
-        float Ymin = 0.25f;
+        float Ymin = -0.25f;
         float Ymax = 1f;
         targetPoint.y -= Random.Range(Ymin, Ymax);
 
@@ -111,6 +107,4 @@ public class FishAI : MonoBehaviour
         // Reset turn timeout
         lastTurned = 0f;
     }
-
-
 }
