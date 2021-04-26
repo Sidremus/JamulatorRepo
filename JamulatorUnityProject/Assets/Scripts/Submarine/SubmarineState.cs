@@ -47,6 +47,7 @@ public class SubmarineState : MonoBehaviour
 
     // Subsystem values
     public float fuel { get; set; }
+    public bool lightsOn { get; private set; }
 
     private void Awake()
     {
@@ -184,5 +185,18 @@ public class SubmarineState : MonoBehaviour
     public void SwitchInterfaceMode(ControlMode mode)
     {
         _interfaceMode = mode;
+    }
+
+    public void ToggleLights()
+    {
+      lightsOn = !lightsOn;
+      
+      if (lightsOn) 
+      {
+        EventManager.Instance.NotifyOfLightsOn();
+      } else 
+      {
+        EventManager.Instance.NotifyOfLightsOff();
+      }
     }
 }

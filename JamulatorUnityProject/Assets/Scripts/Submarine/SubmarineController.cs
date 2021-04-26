@@ -43,6 +43,8 @@ public class SubmarineController : MonoBehaviour
 
         controls.Submarine.LeftClickInteract.performed += (InputAction.CallbackContext ctx) => LeftClickEnter();
         controls.Submarine.LeftClickInteract.canceled += (InputAction.CallbackContext ctx) => LeftClickExit();
+
+        controls.Submarine.ToggleLight.performed += (InputAction.CallbackContext ctx) => SubmarineState.Instance.ToggleLights();
     }
 
     private void OnEnable()
@@ -124,6 +126,7 @@ public class SubmarineController : MonoBehaviour
     {
         mouseDelta = vec;
     }
+    
     private void MouseMoveStop()
     {
         mouseDelta = Vector2.zero;
