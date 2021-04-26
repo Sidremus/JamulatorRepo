@@ -65,6 +65,38 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""c0ad373e-022b-4751-a472-b9af2e101c19"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MouseDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""df38a865-66f3-47df-b07f-697e59ca46d7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchInterfaceMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""33e31cb8-2587-4776-b9f3-7ff910589f9a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LeftClickInteract"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cad4648-5795-40f8-b70e-0d95abcc9c67"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -131,6 +163,50 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""StrafeRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1fc1aad-c243-4835-a9a5-c0bb65db5519"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f323f344-260e-447e-8522-c85155d1cc02"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MouseDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8536a345-ea50-4190-933f-b649a6c49a27"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SwitchInterfaceMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73278567-0008-4b48-a8e8-84ea8e5f511c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""LeftClickInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -208,6 +284,10 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         m_Submarine_MoveDown = m_Submarine.FindAction("MoveDown", throwIfNotFound: true);
         m_Submarine_StrafeLeft = m_Submarine.FindAction("StrafeLeft", throwIfNotFound: true);
         m_Submarine_StrafeRight = m_Submarine.FindAction("StrafeRight", throwIfNotFound: true);
+        m_Submarine_MousePosition = m_Submarine.FindAction("MousePosition", throwIfNotFound: true);
+        m_Submarine_MouseDelta = m_Submarine.FindAction("MouseDelta", throwIfNotFound: true);
+        m_Submarine_SwitchInterfaceMode = m_Submarine.FindAction("SwitchInterfaceMode", throwIfNotFound: true);
+        m_Submarine_LeftClickInteract = m_Submarine.FindAction("LeftClickInteract", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -263,6 +343,10 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
     private readonly InputAction m_Submarine_MoveDown;
     private readonly InputAction m_Submarine_StrafeLeft;
     private readonly InputAction m_Submarine_StrafeRight;
+    private readonly InputAction m_Submarine_MousePosition;
+    private readonly InputAction m_Submarine_MouseDelta;
+    private readonly InputAction m_Submarine_SwitchInterfaceMode;
+    private readonly InputAction m_Submarine_LeftClickInteract;
     public struct SubmarineActions
     {
         private @SubmarineInputAsset m_Wrapper;
@@ -273,6 +357,10 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         public InputAction @MoveDown => m_Wrapper.m_Submarine_MoveDown;
         public InputAction @StrafeLeft => m_Wrapper.m_Submarine_StrafeLeft;
         public InputAction @StrafeRight => m_Wrapper.m_Submarine_StrafeRight;
+        public InputAction @MousePosition => m_Wrapper.m_Submarine_MousePosition;
+        public InputAction @MouseDelta => m_Wrapper.m_Submarine_MouseDelta;
+        public InputAction @SwitchInterfaceMode => m_Wrapper.m_Submarine_SwitchInterfaceMode;
+        public InputAction @LeftClickInteract => m_Wrapper.m_Submarine_LeftClickInteract;
         public InputActionMap Get() { return m_Wrapper.m_Submarine; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -300,6 +388,18 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                 @StrafeRight.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnStrafeRight;
                 @StrafeRight.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnStrafeRight;
                 @StrafeRight.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnStrafeRight;
+                @MousePosition.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnMousePosition;
+                @MouseDelta.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnMouseDelta;
+                @SwitchInterfaceMode.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnSwitchInterfaceMode;
+                @SwitchInterfaceMode.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnSwitchInterfaceMode;
+                @SwitchInterfaceMode.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnSwitchInterfaceMode;
+                @LeftClickInteract.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnLeftClickInteract;
+                @LeftClickInteract.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnLeftClickInteract;
+                @LeftClickInteract.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnLeftClickInteract;
             }
             m_Wrapper.m_SubmarineActionsCallbackInterface = instance;
             if (instance != null)
@@ -322,6 +422,18 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                 @StrafeRight.started += instance.OnStrafeRight;
                 @StrafeRight.performed += instance.OnStrafeRight;
                 @StrafeRight.canceled += instance.OnStrafeRight;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
+                @MouseDelta.started += instance.OnMouseDelta;
+                @MouseDelta.performed += instance.OnMouseDelta;
+                @MouseDelta.canceled += instance.OnMouseDelta;
+                @SwitchInterfaceMode.started += instance.OnSwitchInterfaceMode;
+                @SwitchInterfaceMode.performed += instance.OnSwitchInterfaceMode;
+                @SwitchInterfaceMode.canceled += instance.OnSwitchInterfaceMode;
+                @LeftClickInteract.started += instance.OnLeftClickInteract;
+                @LeftClickInteract.performed += instance.OnLeftClickInteract;
+                @LeftClickInteract.canceled += instance.OnLeftClickInteract;
             }
         }
     }
@@ -379,5 +491,9 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         void OnMoveDown(InputAction.CallbackContext context);
         void OnStrafeLeft(InputAction.CallbackContext context);
         void OnStrafeRight(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
+        void OnMouseDelta(InputAction.CallbackContext context);
+        void OnSwitchInterfaceMode(InputAction.CallbackContext context);
+        void OnLeftClickInteract(InputAction.CallbackContext context);
     }
 }
