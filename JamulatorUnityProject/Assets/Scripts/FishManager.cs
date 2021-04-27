@@ -20,7 +20,7 @@ public class FishManager : MonoBehaviour
         if (scanTimer > scanDelay)
         {
             DeactivateFishAI();
-            ActivateNearbyFish();  
+            ActivateNearbyFishAI();  
             scanTimer = 0f;
         }
     }
@@ -33,7 +33,7 @@ public class FishManager : MonoBehaviour
         }
     }
 
-    private void ActivateNearbyFish() 
+    private void ActivateNearbyFishAI() 
     {
         // Spherecast around submarine
         int radius = 200;
