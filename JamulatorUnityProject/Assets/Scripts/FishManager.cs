@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FishManager : MonoBehaviour
@@ -38,10 +36,10 @@ public class FishManager : MonoBehaviour
     private void ActivateNearbyFish() 
     {
         // Spherecast around submarine
+        int radius = 200;
         int layerMask = 1 << 6;
         Vector3 origin = SubmarineState.Instance.submarine.transform.position;
-
-        Collider[] colliders = Physics.OverlapSphere(origin, 10, layerMask);
+        Collider[] colliders = Physics.OverlapSphere(origin, radius, layerMask);
         foreach(Collider col in colliders) 
         {
             col.gameObject.GetComponent<FishAI>().enabled = true;

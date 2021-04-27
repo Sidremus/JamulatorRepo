@@ -1,13 +1,6 @@
 using UnityEngine;
 
 
-// Behaviour affects speed at which fish moves
-enum Behaviour
-{
-    PASSIVE,
-    FLEEING
-}
-
 public class FishAI : MonoBehaviour
 {
     private float passiveMoveSpeed = 2.5f;
@@ -43,15 +36,13 @@ public class FishAI : MonoBehaviour
     private void FaceTarget(Vector3 targetDir)
     {
         // Stop here if already facing target direction
-        if (targetDir.normalized == transform.forward.normalized) {
-            return;
-        }
-
+        if (targetDir.normalized == transform.forward.normalized) return;
+        
         // Turn speed relative to current speed
         float turnSpeed = Mathf.Ceil(passiveMoveSpeed * 0.5f);
         float step = turnSpeed * Time.deltaTime;
 
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.1f);
 
         transform.rotation = Quaternion.LookRotation(newDir);
     }
@@ -66,10 +57,8 @@ public class FishAI : MonoBehaviour
     {
         // Only raycast every other frame
         canCheckCols = !canCheckCols;
-        if (!canCheckCols)
-        {
-            return;
-        }
+        if (!canCheckCols) return;
+        
 
         // TODO use a layer mask
         float rayCastLength = 1f;
@@ -78,9 +67,7 @@ public class FishAI : MonoBehaviour
         {            
             Vector3 reflect = Vector3.Reflect(hit.point - transform.position, hit.normal);
 
-            targetDirection = reflect;
-
-            lastTurned = 0f;
+            Turn(reflect);
         }
     }
 
@@ -110,10 +97,21 @@ public class FishAI : MonoBehaviour
         // Get the direction towards the new target
         Vector3 targetDir = targetPoint - transform.position;
 
-        // Set the new direction
-        targetDirection = targetDir;
+        Turn(targetDir);
+    }
 
-        // Reset turn timeout
+    private void Turn(Vector3 turnDir)
+    {
+        // Set new target facing direction
+        targetDirection = turnDir;
+
+        // Reset turn timer
         lastTurned = 0f;
+
+        // Assign new speed til next turn
+        passiveMoveSpeed *= Random.Range(0.8f, 1.2f);
+
+        // How long til fish gets bored?
+        turnTimeout = Random.Range(3f, 8f);
     }
 }
