@@ -10,37 +10,25 @@ public class AudioSourcePlayer : MonoBehaviour
     [SerializeField] float intervalBetweenPlays;
 
     private AudioSource source;
-    private float clipLength;
+    private float clipDuration;
 
     private void Start()
     {
         source = GetComponent<AudioSource>();
 
         if (clips != null)
-            clipLength = source.clip.length;
-
+            clipDuration = source.clip.length;
 
         if (loop)
-            StartCoroutine(WaitNewThenPlayClip(intervalBetweenPlays));
+            LoopClip();
+
     }
 
-
-    public IEnumerator WaitNewThenPlayClip(float interval)
+    void LoopClip()
     {
-        while (true)
-        {
-            interval += clipLength;
-            yield return new WaitForSeconds(interval);
-
-            source.PlayOneShot(ChooseNewAudioClip(clips.Length));
-            yield return null;
-        }
+        StartCoroutine(AudioUtility.WaitIntervalThenPlay(source, AudioUtility.RandomClipFromArray(clips), intervalBetweenPlays));
     }
 
-    private AudioClip ChooseNewAudioClip(int numClips)
-    {        
-        return clips[Random.Range(0, numClips - 1)];
-    }
 
 
 }

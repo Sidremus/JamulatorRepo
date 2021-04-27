@@ -25,15 +25,24 @@ public static class AudioUtility
         return Mathf.Pow(10, db / 20);
     }
 
-    
 
-    public static AudioMixerGroup GetMixerGroup(string groupName)
+
+    public static AudioClip RandomClipFromArray(AudioClip[] cliplist)
     {
-        // buggy. returns first audiomixergroup of string groupName in a master mixer.
+        return cliplist[Random.Range(0, cliplist.Length - 1)];
+    }
 
-        AudioMixer masterMixer = Resources.Load("Master") as AudioMixer;
-        AudioMixerGroup mixerGroup = masterMixer.FindMatchingGroups(groupName)[0];
-        return mixerGroup;
+
+    public static IEnumerator WaitIntervalThenPlay(AudioSource source, AudioClip clip, float interval)
+    {
+        while (true)
+        {
+            interval += source.clip.length;
+            yield return new WaitForSeconds(interval);
+            source.clip = clip;
+            source.Play();
+            yield return null;
+        }
     }
 
 

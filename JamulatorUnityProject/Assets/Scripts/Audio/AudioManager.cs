@@ -59,19 +59,6 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    private IEnumerator WaitIntervalThenPlay(AudioSource source, float interval)
-    {
-        while (true)
-        {
-            float clipLength = source.clip.length;
-            interval += clipLength;
-            yield return new WaitForSeconds(interval);
-            source.Play();
-            yield return null;
-        }      
-
-
-    }
 
 
 
