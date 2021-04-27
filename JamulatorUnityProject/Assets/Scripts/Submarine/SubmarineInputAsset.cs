@@ -97,6 +97,14 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleLight"",
+                    ""type"": ""Button"",
+                    ""id"": ""6108bf33-46f7-437c-9a2c-a1db708e2630"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -209,6 +217,17 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                     ""action"": ""LeftClickInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72ddb897-0fb1-46bf-ae2e-d7004b757916"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ToggleLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -288,6 +307,7 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         m_Submarine_MouseDelta = m_Submarine.FindAction("MouseDelta", throwIfNotFound: true);
         m_Submarine_SwitchInterfaceMode = m_Submarine.FindAction("SwitchInterfaceMode", throwIfNotFound: true);
         m_Submarine_LeftClickInteract = m_Submarine.FindAction("LeftClickInteract", throwIfNotFound: true);
+        m_Submarine_ToggleLight = m_Submarine.FindAction("ToggleLight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -347,6 +367,7 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
     private readonly InputAction m_Submarine_MouseDelta;
     private readonly InputAction m_Submarine_SwitchInterfaceMode;
     private readonly InputAction m_Submarine_LeftClickInteract;
+    private readonly InputAction m_Submarine_ToggleLight;
     public struct SubmarineActions
     {
         private @SubmarineInputAsset m_Wrapper;
@@ -361,6 +382,7 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         public InputAction @MouseDelta => m_Wrapper.m_Submarine_MouseDelta;
         public InputAction @SwitchInterfaceMode => m_Wrapper.m_Submarine_SwitchInterfaceMode;
         public InputAction @LeftClickInteract => m_Wrapper.m_Submarine_LeftClickInteract;
+        public InputAction @ToggleLight => m_Wrapper.m_Submarine_ToggleLight;
         public InputActionMap Get() { return m_Wrapper.m_Submarine; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -400,6 +422,9 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                 @LeftClickInteract.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnLeftClickInteract;
                 @LeftClickInteract.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnLeftClickInteract;
                 @LeftClickInteract.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnLeftClickInteract;
+                @ToggleLight.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnToggleLight;
+                @ToggleLight.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnToggleLight;
+                @ToggleLight.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnToggleLight;
             }
             m_Wrapper.m_SubmarineActionsCallbackInterface = instance;
             if (instance != null)
@@ -434,6 +459,9 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                 @LeftClickInteract.started += instance.OnLeftClickInteract;
                 @LeftClickInteract.performed += instance.OnLeftClickInteract;
                 @LeftClickInteract.canceled += instance.OnLeftClickInteract;
+                @ToggleLight.started += instance.OnToggleLight;
+                @ToggleLight.performed += instance.OnToggleLight;
+                @ToggleLight.canceled += instance.OnToggleLight;
             }
         }
     }
@@ -495,5 +523,6 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         void OnMouseDelta(InputAction.CallbackContext context);
         void OnSwitchInterfaceMode(InputAction.CallbackContext context);
         void OnLeftClickInteract(InputAction.CallbackContext context);
+        void OnToggleLight(InputAction.CallbackContext context);
     }
 }

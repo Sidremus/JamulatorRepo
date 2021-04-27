@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class SubmarineFuel : MonoBehaviour
 {
-    public float moveFuelCost = 0.02f;
+    public float driveFuelCost = 0.02f;
 
     private float maxFuel = 100f;
-    private float lowPowerMultiplier = 0.5f;
-    private float highPowerMultiplier = 1f;
     
     private void Start() 
     {
@@ -16,10 +14,10 @@ public class SubmarineFuel : MonoBehaviour
     private void FixedUpdate() 
     {
         // Check for causes of fuel consumption
-        CheckMoving();
+        CheckDriving();
     }
 
-    private void CheckMoving()
+    private void CheckDriving()
     {
         // No need to continue if we aren't moving
         if (!SubmarineState.Instance.isMoving)
@@ -27,14 +25,9 @@ public class SubmarineFuel : MonoBehaviour
             return;
         }
 
-        // We're moving; with which power profile?
-        float profileMultiplier = 
-            SubmarineState.Instance.movePowerProfile == PowerProfile.LOW
-            ? lowPowerMultiplier
-            : highPowerMultiplier;
 
-        // Consume fuel for moving
-        SubmarineState.Instance.fuel -= profileMultiplier * moveFuelCost;
+        // Consume fuel for moving - multiply by the current power applied to drive systems
+        SubmarineState.Instance.fuel -= SubmarineState.Instance.driveEnergyLerp * driveFuelCost;
     }
 }
 

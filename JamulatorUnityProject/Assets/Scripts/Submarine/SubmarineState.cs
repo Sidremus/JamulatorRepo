@@ -11,12 +11,6 @@ public enum Direction
     DOWN
 }
 
-public enum PowerProfile
-{
-    LOW,
-    HIGH
-}
-
 public enum ControlMode
 {
     INTERFACE,
@@ -32,9 +26,6 @@ public class SubmarineState : MonoBehaviour
     // These state values represent the movement state of the sub
     private bool _isMoving;
     public bool isMoving { get { return _isMoving; } }
-
-    private PowerProfile _movePowerProfile;
-    public PowerProfile movePowerProfile { get { return _movePowerProfile; } }
 
     private Direction _zMoveState;
     public Direction zMoveState { get { return _zMoveState; } }
@@ -56,6 +47,7 @@ public class SubmarineState : MonoBehaviour
 
     // Subsystem values
     public float fuel { get; set; }
+    public bool lightsOn { get; private set; }
 
     private void Awake()
     {
@@ -193,5 +185,18 @@ public class SubmarineState : MonoBehaviour
     public void SwitchInterfaceMode(ControlMode mode)
     {
         _interfaceMode = mode;
+    }
+
+    public void ToggleLights()
+    {
+      lightsOn = !lightsOn;
+      
+      if (lightsOn) 
+      {
+        EventManager.Instance.NotifyOfLightsOn();
+      } else 
+      {
+        EventManager.Instance.NotifyOfLightsOff();
+      }
     }
 }
