@@ -44,7 +44,7 @@ public class DepthToCreakAudio : MonoBehaviour
 
         if (depth < slightDepthMin)
         {
-            slightCreak.GetComponent<Gain>().inputGain = AudioUtility.ConvertRange(0, slightDepthMin, gainMin, gainMax, depth);
+            slightCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, 0, slightDepthMin, gainMin, gainMax);
             mediumCreak.GetComponent<Gain>().inputGain = gainMin;
             heavyCreek.GetComponent<Gain>().inputGain = gainMin;
         }
@@ -52,23 +52,23 @@ public class DepthToCreakAudio : MonoBehaviour
         {
             //Slight
             slightCreak.GetComponent<Gain>().inputGain = gainMax;
-            mediumCreak.GetComponent<Gain>().inputGain = AudioUtility.ConvertRange(slightDepthMin, mediumDepthMin, gainMin, gainMax, depth);
+            mediumCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, slightDepthMin, mediumDepthMin, gainMin, gainMax);
             heavyCreek.GetComponent<Gain>().inputGain = gainMin;
 
         }
         else if (depth > mediumDepthMin && depth < deepDepthMin)
         {
             //Medium
-            slightCreak.GetComponent<Gain>().inputGain = AudioUtility.ConvertRange(mediumDepthMin, deepDepthMin, gainMax, gainMin, depth);
+            slightCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMax, gainMin);
             mediumCreak.GetComponent<Gain>().inputGain = gainMax;
-            heavyCreek.GetComponent<Gain>().inputGain = AudioUtility.ConvertRange(mediumDepthMin, deepDepthMin, gainMin, gainMax, depth);
+            heavyCreek.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMin, gainMax);
 
         }
         else if ( depth > deepDepthMin)
         {
             //Deep
             slightCreak.GetComponent<Gain>().inputGain = gainMin;
-            mediumCreak.GetComponent<Gain>().inputGain = AudioUtility.ConvertRange(deepDepthMin, 1f, gainMax, gainMin, depth);
+            mediumCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, deepDepthMin, 1f, gainMax, gainMin);
             heavyCreek.GetComponent<Gain>().inputGain = gainMax;
 
         }

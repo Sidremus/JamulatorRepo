@@ -38,12 +38,9 @@ public static class AudioUtility
 
 
 
-    public static float ConvertRange(
-        float originalStart, float originalEnd, // original range
-        float newStart, float newEnd, // desired range
-        float value) // value to convert
+    public static float ScaleValue(float value, float originalStart, float originalEnd, float newStart, float newEnd)
     {
-        // credit to Wim Coenen @https://stackoverflow.com/questions/4229662/convert-numbers-within-a-range-to-numbers-within-another-range //
+        // credit to Wim Coenen, https://stackoverflow.com/questions/4229662/convert-numbers-within-a-range-to-numbers-within-another-range //
         double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
         return (float)(newStart + ((value - originalStart) * scale));
     }
