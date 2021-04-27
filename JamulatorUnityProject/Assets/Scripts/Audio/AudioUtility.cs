@@ -37,28 +37,18 @@ public static class AudioUtility
     }
 
 
-    public static IEnumerator WaitIntervalThenPlay(AudioSource source, AudioClip clip, float interval)
+
+    public static float ConvertRange(
+        float originalStart, float originalEnd, // original range
+        float newStart, float newEnd, // desired range
+        float value) // value to convert
     {
-        while (true)
-        {
-            interval += source.clip.length;
-            yield return new WaitForSeconds(interval);
-            source.clip = clip;
-            source.Play();
-            yield return null;
-        }
+        // credit to Wim Coenen @https://stackoverflow.com/questions/4229662/convert-numbers-within-a-range-to-numbers-within-another-range //
+        double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
+        return (float)(newStart + ((value - originalStart) * scale));
     }
 
-    public static IEnumerator WaitIntervalThenPlayOneShot(AudioSource source, AudioClip clip, float interval)
-    {
-        while (true)
-        {
-            interval += source.clip.length;
-            yield return new WaitForSeconds(interval);
-            source.PlayOneShot(clip);
-            yield return null;
-        }
-    }
+
 
 
 }

@@ -31,15 +31,25 @@ public class AudioManager : MonoBehaviour
 
 
     [Header("External Submarine Sounds")]
-    [SerializeField] [Range(-80, 0)] float extSubSoundsVol;
+    [SerializeField] [Range(-80, 0)] public float extSubSoundsVol;
 
     [SerializeField] GameObject[] subResonance;
     GameObject subReson_reson;
     GameObject subReson_tuned;
     GameObject subReson_creak;
 
-    [SerializeField] GameObject subCreaker;
+    [SerializeField] GameObject[] subCreaker;
+    GameObject subCreaker_slight;
+    GameObject subCreaker_medium;
+    GameObject subCreaker_heavy;
+    AudioSource as_subCreaker_slight;
+    AudioSource as_subCreaker_medium;
+    AudioSource as_subCreaker_deep;
+    AudioSourcePlayer asp_subCreaker_slight;
+    AudioSourcePlayer asp_subCreaker_medium;
+    AudioSourcePlayer asp_subCreaker_deep;
     
+
     [SerializeField] [Range(-100, 0)] private float subDepth;
     [SerializeField] [Range(0, 100)] private float subDamage;
 
@@ -63,10 +73,16 @@ public class AudioManager : MonoBehaviour
         ASFfin = finWhale.GetComponent<AudioSourceFader>();
         ASFclicker = clicker.GetComponent<AudioSourceFader>();
 
+
+        // SubReson
         subReson_reson = subResonance[0];
         subReson_tuned = subResonance[1];
         subReson_creak = subResonance[2];
 
+        // SubCreak
+        subCreaker_slight = subCreaker[0];
+        subCreaker_medium = subCreaker[1];
+        subCreaker_heavy = subCreaker[2];
 
 
         // Bubbils
@@ -110,49 +126,12 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         SetFromDamage();
-        //DepthControl();
-    }
-
-    void SetFromDepth()
-    {
-        //subDepth = SubState.
-
-        float subDepthRange = 100;
-        float _subDepth = Mathf.Abs(subDepth) / subDepthRange;
-
-
-        if (_subDepth < 1f/3f)
-        {
-            //Surface
-
-
-        }        
-        else if (_subDepth > 2f/3f)
-        {
-            //Deep
-            
-        }
-        else
-        {
-            //Middle
-            
-        }
-        
-
-
-        
-        /*foreach (GameObject obj in bubblemaker_surface.GetComponent<DistributeAudioObjects>().createdAudioObjects)
-        {
-            
-        }*/
-
     }
 
     void SetFromDamage()
     {
         float subDamageRange = 100;
         float _subDamage = subDamage / subDamageRange;
-
 
         if (_subDamage > 0.3f && _subDamage < 0.8f)
         {
@@ -167,32 +146,6 @@ public class AudioManager : MonoBehaviour
             subReson_creak.GetComponent<AudioSourcePlayer>().PlayLoopWithInterval();
             subReson_creak.GetComponent<AudioSourceFader>().FadeUp(2);
         }
-
-
-
-
-
-
-
-
-        /*if (_subDamage == 0.0f)
-        {
-            Debug.Log("No damage");
-        }
-        else if (_subDamage > 0.0f && _subDamage < 1f/ 3f)
-        {
-            Debug.Log("Light damage: " + _subDamage);
-        }
-        else if (_subDamage > 1f/ 3f && _subDamage < 2f/3f)
-        {
-            Debug.Log("Medium damage: " + _subDamage);
-        }
-        else if (_subDamage > 2f/3f && _subDamage < 4f/5f)
-        {
-            Debug.Log("Heavy damage");
-        }
-*/
-
     }
 
 

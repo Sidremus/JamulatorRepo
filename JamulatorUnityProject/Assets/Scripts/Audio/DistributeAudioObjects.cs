@@ -14,7 +14,7 @@ public class DistributeAudioObjects : MonoBehaviour
     [SerializeField] GameObject dropArea;
     Vector3 areaSize;
 
-    [SerializeField] float pitchOffset;
+    [SerializeField] [Range(-4f, 4f)] float pitchOffset;
     [SerializeField] float randomPitchRange;
 
     [SerializeField] bool PlayOnAwake = false;
