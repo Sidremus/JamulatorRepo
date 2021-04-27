@@ -75,10 +75,7 @@ public class FishAI : MonoBehaviour
     private void SetWanderDirection()
     {
         // Only wander if fish hasn't turned in a while
-        if (lastTurned < turnTimeout) 
-        {
-            return;
-        }
+        if (lastTurned < turnTimeout) return;
 
         // Get a target point to travel to
         float dir = Random.Range(0, 1) > 0.5 ? 1 : -1;
