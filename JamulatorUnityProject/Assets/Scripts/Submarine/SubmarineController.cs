@@ -4,9 +4,16 @@ using UnityEngine.InputSystem;
 public class SubmarineController : MonoBehaviour
 {
     private SubmarineInputAsset controls;
+    private Camera mainCamera;
+    private Transform currentUIElement;
+    public static Vector2 mousePos { get; private set; }
+    public static Vector2 mouseDelta { get; private set; }
 
     private void Awake()
     {
+        mainCamera = Camera.main;
+        Cursor.lockState = CursorLockMode.Confined;
+
         controls = new SubmarineInputAsset();
 
         controls.Submarine.MoveForward.performed += (InputAction.CallbackContext ctx) => MoveForwardStart();
@@ -26,6 +33,18 @@ public class SubmarineController : MonoBehaviour
 
         controls.Submarine.StrafeRight.performed += (InputAction.CallbackContext ctx) => StrafeRightStart();
         controls.Submarine.StrafeRight.canceled += (InputAction.CallbackContext ctx) => StrafeRightStop();
+
+        controls.Submarine.MousePosition.performed += (InputAction.CallbackContext ctx) => SetMousePosition(ctx.ReadValue<Vector2>());
+
+        controls.Submarine.MouseDelta.performed += (InputAction.CallbackContext ctx) => MouseMoveStart(ctx.ReadValue<Vector2>());
+        controls.Submarine.MouseDelta.canceled += (InputAction.CallbackContext ctx) => MouseMoveStop();
+
+        controls.Submarine.SwitchInterfaceMode.performed += (InputAction.CallbackContext ctx) => SwitchInterfaceMode();
+
+        controls.Submarine.LeftClickInteract.performed += (InputAction.CallbackContext ctx) => LeftClickEnter();
+        controls.Submarine.LeftClickInteract.canceled += (InputAction.CallbackContext ctx) => LeftClickExit();
+
+        controls.Submarine.ToggleLight.performed += (InputAction.CallbackContext ctx) => SubmarineState.Instance.ToggleLights();
     }
 
     private void OnEnable()
@@ -33,12 +52,12 @@ public class SubmarineController : MonoBehaviour
         controls.Submarine.Enable();
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         controls.Submarine.Disable();
     }
 
-    private void MoveForwardStart() 
+    private void MoveForwardStart()
     {
         SubmarineState.Instance.SetZMoveState(Direction.FORWARDS);
     }
@@ -65,10 +84,10 @@ public class SubmarineController : MonoBehaviour
 
     private void MoveUpStop()
     {
-         SubmarineState.Instance.StopYMoveState(Direction.UP);
+        SubmarineState.Instance.StopYMoveState(Direction.UP);
     }
 
-    private void MoveDownStart() 
+    private void MoveDownStart()
     {
         SubmarineState.Instance.SetYMoveState(Direction.DOWN);
     }
@@ -83,7 +102,7 @@ public class SubmarineController : MonoBehaviour
         SubmarineState.Instance.SetStrafeState(Direction.LEFT);
     }
 
-    private void StrafeLeftStop() 
+    private void StrafeLeftStop()
     {
         SubmarineState.Instance.StopStrafeState(Direction.LEFT);
     }
@@ -93,9 +112,61 @@ public class SubmarineController : MonoBehaviour
         SubmarineState.Instance.SetStrafeState(Direction.RIGHT);
     }
 
-    private void StrafeRightStop() 
+    private void StrafeRightStop()
     {
         SubmarineState.Instance.StopStrafeState(Direction.RIGHT);
     }
 
+    private void SetMousePosition(Vector2 vec)
+    {
+        mousePos = mainCamera.ScreenToViewportPoint(vec);
+    }
+
+    private void MouseMoveStart(Vector2 vec)
+    {
+        mouseDelta = vec;
+    }
+    
+    private void MouseMoveStop()
+    {
+        mouseDelta = Vector2.zero;
+    }
+
+    private void SwitchInterfaceMode()
+    {
+        if (SubmarineState.Instance.interfaceMode == ControlMode.INTERFACE)
+        {
+            SubmarineState.Instance.SwitchInterfaceMode(ControlMode.STEERING);
+            // TODO: Currently there appears to be an error when triggering SendMessage() through input events. More research required.
+            // if (currentUIElement != null)
+            // {
+            //     currentUIElement.SendMessage("OnMouseExit", SendMessageOptions.DontRequireReceiver);
+            //     currentUIElement = null;
+            // }
+        }
+        else SubmarineState.Instance.SwitchInterfaceMode(ControlMode.INTERFACE);
+    }
+
+    private void LeftClickEnter()
+    {
+        if (SubmarineState.Instance.interfaceMode == ControlMode.INTERFACE)
+        {
+            // TODO: Currently there appears to be an error when triggering SendMessage() through input events. More research required.
+            // if (Physics.Raycast(mainCamera.ViewportPointToRay(mousePos), out RaycastHit hit, 2000f, LayerMask.GetMask("UI")))
+            // {
+            //     currentUIElement = hit.transform;
+            //     currentUIElement.SendMessage("LeftClickEnter", SendMessageOptions.DontRequireReceiver);
+            // }
+        }
+    }
+
+    private void LeftClickExit()
+    {
+        // TODO: Currently there appears to be an error when triggering SendMessage() through input events. More research required.
+        // if (currentUIElement != null)
+        // {
+        //     currentUIElement.SendMessage("LeftClickExit", SendMessageOptions.DontRequireReceiver);
+        //     currentUIElement = null;
+        // }
+    }
 }
