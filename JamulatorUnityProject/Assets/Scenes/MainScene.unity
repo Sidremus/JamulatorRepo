@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: fbc4de069dc518f46a166dcd52555476, type: 3}
-  numberOfSoundsToDistribute: 10
+  numberOfSoundsToDistribute: 30
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1104802369}
   createdObjectGain: 0
@@ -1098,7 +1098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &725537925
 Transform:
   m_ObjectHideFlags: 0
@@ -1148,7 +1148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &773358847
 Transform:
   m_ObjectHideFlags: 0
@@ -1213,7 +1213,7 @@ MonoBehaviour:
   numberOfSoundsToDistribute: 10
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1025304221}
-  createdObjectGain: 0
+  createdObjectGain: -14.5
   pitchOffset: 0
   randomPitchRange: 0.1
   PlayOnAwake: 1
@@ -1851,22 +1851,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f817fc34c89c1d64383ef93b3e5d52e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subDepth: 0
+  subDamage: 0
+  subEngineStrength: 0
+  subThrusterStrength: 0
+  subEnergyLevel: 0
+  isInCave: 0
   environmentalStartVol: -6
   environmentalFadeUpTime: 6
   bubbleMakers:
   - {fileID: 2087223227}
   - {fileID: 887002112}
   - {fileID: 187684587}
-  bubbleStartVol: -12.4
+  bubbleVol: 0
   rumble: {fileID: 1803114641}
-  rumbleStartVol: -9.6
+  rumbleStartVol: -1.6
   finWhale: {fileID: 1892861725}
-  finWhaleStartVol: -17.6
+  finWhaleStartVol: -8.4
   clicker: {fileID: 920972784}
-  clickerStartVol: -31.2
+  clickerStartVol: -16.8
   extSubSoundsVol: 0
-  subDepth: 0
-  subDamage: 0
 --- !u!1 &1393595624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1425836235
 Transform:
   m_ObjectHideFlags: 0
@@ -2087,6 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d22e51bc9f2344ea98e48d2c36c8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1378934021}
   isInCave: 0
   oceanMakers:
   - {fileID: 2087223227}
@@ -2096,8 +2101,6 @@ MonoBehaviour:
   - {fileID: 202069420}
   - {fileID: 325027314}
   - {fileID: 1294882}
-  isSwitchingToOcean: 0
-  isSwitchingToCave: 0
 --- !u!1 &1548709149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,7 +2446,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 0.25
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2976,7 +2979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2022614740
 Transform:
   m_ObjectHideFlags: 0
@@ -3058,7 +3061,7 @@ MonoBehaviour:
   numberOfSoundsToDistribute: 10
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1548709149}
-  createdObjectGain: 0
+  createdObjectGain: -41.1
   pitchOffset: 0
   randomPitchRange: 0.1
   PlayOnAwake: 1

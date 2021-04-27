@@ -30,11 +30,10 @@ public class DistributeAudioObjects : MonoBehaviour
 
         for (int i = 0; i < numberOfSoundsToDistribute; ++i)
         {
-            Vector3 randPos =  dropAreaSize/2 + new Vector3(Random.Range(-dropAreaSize.x / 2, dropAreaSize.x / 2),
-                                            Random.Range(-dropAreaSize.y / 2, dropAreaSize.y / 2),
-                                            Random.Range(-dropAreaSize.z / 2, dropAreaSize.z / 2));
-
-            randPos += dropArea.transform.position;
+            Vector3 randPos = dropArea.transform.position + 
+                new Vector3(Random.Range(-dropAreaSize.x / 2, dropAreaSize.x / 2),
+                            Random.Range(-dropAreaSize.y / 2, dropAreaSize.y / 2),
+                            Random.Range(-dropAreaSize.z / 2, dropAreaSize.z / 2));
 
             var go = Instantiate<GameObject>(audioObject, this.transform, true);
             go.transform.position = randPos;

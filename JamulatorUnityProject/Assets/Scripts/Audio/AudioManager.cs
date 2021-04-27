@@ -6,13 +6,22 @@ public class AudioManager : MonoBehaviour
 {
     private SubmarineState SubState;
 
+    [Header("Global Messages")]
+    [SerializeField] [Range(-100, 0)] public float subDepth;
+    [SerializeField] [Range(0, 100)] public float subDamage;
+    [SerializeField] [Range(0, 100)] public float subEngineStrength;
+    [SerializeField] [Range(0, 100)] public float subThrusterStrength;
+    [SerializeField] [Range(0, 100)] public float subEnergyLevel;
+
+    [SerializeField] public bool isInCave;
+
 
     [Header("Environmental Sounds Initialisation")]
     [SerializeField] [Range(-80, 0)] float environmentalStartVol;
     [SerializeField] [Range(0, 15)] float environmentalFadeUpTime;
 
     [SerializeField] GameObject[] bubbleMakers;
-    [SerializeField] [Range(-80, 0)] float bubbleStartVol;
+    [SerializeField] [Range(-100, 0)] public float bubbleVol;
     GameObject bubblemaker_surface;
     GameObject bubblemaker_regular;
     GameObject bubblemaker_deep;
@@ -33,10 +42,7 @@ public class AudioManager : MonoBehaviour
     [Header("External Submarine Sounds")]
     [SerializeField] [Range(-80, 0)] public float extSubSoundsVol;
 
-    
 
-    [SerializeField] [Range(-100, 0)] public float subDepth;
-    [SerializeField] [Range(0, 100)] public float subDamage;
 
 
 
@@ -73,7 +79,7 @@ public class AudioManager : MonoBehaviour
     {
         // Sends params from inspector to relevant gameobjects.
 
-        bubbleStartVol += environmentalStartVol;
+        bubbleVol += environmentalStartVol;
         rumbleStartVol += environmentalStartVol;
         finWhaleStartVol += environmentalStartVol;
         clickerStartVol += environmentalStartVol;
