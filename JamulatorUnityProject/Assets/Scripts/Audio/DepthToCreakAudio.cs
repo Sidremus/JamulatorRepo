@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class DepthToCreakAudio : MonoBehaviour
 {
-    private SubmarineState SubState;
     [SerializeField] AudioManager manager;
 
     [SerializeField] GameObject slightCreak;
+    Gain lightGain;
     [SerializeField] GameObject mediumCreak;
+    Gain mediumGain;
     [SerializeField] GameObject heavyCreek;
+    Gain heavyGain;
 
     [SerializeField] [Range(-100, 0)] float subDepth;
 
     float extGain;
     float subDepthRange = 100;
-    float gainMin = -24f;
-    float gainMax = 0f;
+    float _gainMin = -48f;
+    float _gainMax = 0f;
 
     float slightDepthMin = 0.2f;
     float mediumDepthMin = 0.5f;
@@ -24,13 +26,21 @@ public class DepthToCreakAudio : MonoBehaviour
 
     private void Start()
     {
-        SubState = SubmarineState.Instance;
-        extGain = manager.extSubSoundsVol;
+        lightGain = slightCreak.GetComponent<Gain>();
+        mediumGain = mediumCreak.GetComponent<Gain>();
+        heavyGain = heavyCreek.GetComponent<Gain>();
+
     }
 
     private void Update()
     {
+
+        subDepth = manager.subDepth;
         float depth = Mathf.Abs(subDepth) / subDepthRange;
+
+        extGain = manager.extSubSoundsVol;
+        float gainMin = _gainMin + extGain;
+        float gainMax = _gainMax + extGain;
 
         if (depth < slightDepthMin)
         {

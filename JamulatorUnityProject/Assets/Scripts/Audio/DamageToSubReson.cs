@@ -5,7 +5,6 @@ using UnityEngine;
 public class DamageToSubReson : MonoBehaviour
 {
 
-    private SubmarineState SubState;
     [SerializeField] AudioManager manager;
 
     [SerializeField] GameObject resonLight;
@@ -20,8 +19,8 @@ public class DamageToSubReson : MonoBehaviour
     float subDamageRange = 100f;
 
     float extGain;
-    float gainMin = -36f;
-    float gainMax = 0f;
+    float _gainMin = -48f;
+    float _gainMax = 0f;
 
     float lightDamageMin = 0.1f;
     float mediumDamageMin = 0.3f;
@@ -29,10 +28,7 @@ public class DamageToSubReson : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        SubState = SubmarineState.Instance;
-        extGain = manager.extSubSoundsVol;
-
+    {        
         lightGain = resonLight.GetComponent<Gain>();
         mediumGain = resonMedium.GetComponent<Gain>();
         heavyGain = resonHeavy.GetComponent<Gain>();
@@ -42,7 +38,14 @@ public class DamageToSubReson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        subDamage = manager.subDamage;
+
         float damage = Mathf.Abs(subDamage) / subDamageRange;
+
+        extGain = manager.extSubSoundsVol;
+        float gainMin = _gainMin + extGain;
+        float gainMax = _gainMax + extGain;
 
         if (damage < lightDamageMin)
         {

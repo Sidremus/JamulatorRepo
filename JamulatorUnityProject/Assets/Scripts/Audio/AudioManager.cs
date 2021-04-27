@@ -33,25 +33,10 @@ public class AudioManager : MonoBehaviour
     [Header("External Submarine Sounds")]
     [SerializeField] [Range(-80, 0)] public float extSubSoundsVol;
 
-    [SerializeField] GameObject[] subResonance;
-    GameObject subReson_reson;
-    GameObject subReson_tuned;
-    GameObject subReson_creak;
-
-    [SerializeField] GameObject[] subCreaker;
-    GameObject subCreaker_slight;
-    GameObject subCreaker_medium;
-    GameObject subCreaker_heavy;
-    AudioSource as_subCreaker_slight;
-    AudioSource as_subCreaker_medium;
-    AudioSource as_subCreaker_deep;
-    AudioSourcePlayer asp_subCreaker_slight;
-    AudioSourcePlayer asp_subCreaker_medium;
-    AudioSourcePlayer asp_subCreaker_deep;
     
 
-    [SerializeField] [Range(-100, 0)] private float subDepth;
-    [SerializeField] [Range(0, 100)] private float subDamage;
+    [SerializeField] [Range(-100, 0)] public float subDepth;
+    [SerializeField] [Range(0, 100)] public float subDamage;
 
 
 
@@ -74,16 +59,6 @@ public class AudioManager : MonoBehaviour
         ASFclicker = clicker.GetComponent<AudioSourceFader>();
 
 
-        // SubReson
-        subReson_reson = subResonance[0];
-        subReson_tuned = subResonance[1];
-        subReson_creak = subResonance[2];
-
-        // SubCreak
-        subCreaker_slight = subCreaker[0];
-        subCreaker_medium = subCreaker[1];
-        subCreaker_heavy = subCreaker[2];
-
 
         // Bubbils
         bubblemaker_surface = bubbleMakers[0];
@@ -103,13 +78,13 @@ public class AudioManager : MonoBehaviour
         finWhaleStartVol += environmentalStartVol;
         clickerStartVol += environmentalStartVol;
 
-        for (int i = 0; i < bubbleMakers.Length; ++i)
+       /* for (int i = 0; i < bubbleMakers.Length; ++i)
         {
             foreach (GameObject obj in bubbleMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
             {
                 obj.GetComponent<AudioSourceFader>().FadeTo(bubbleStartVol, environmentalFadeUpTime, 0.5f);
             }
-        }
+        }*/
 
         ASFrumble.outputGain = rumbleStartVol;
         ASFrumble.UpdateAudioSourceAmplitude();
@@ -122,33 +97,6 @@ public class AudioManager : MonoBehaviour
 
 
     }
-
-    private void Update()
-    {
-        SetFromDamage();
-    }
-
-    void SetFromDamage()
-    {
-        float subDamageRange = 100;
-        float _subDamage = subDamage / subDamageRange;
-
-        if (_subDamage > 0.3f && _subDamage < 0.8f)
-        {
-            if (subReson_tuned.GetComponent<AudioSource>().isPlaying) return;
-            subReson_tuned.GetComponent<AudioSource>().Play();
-            subReson_tuned.GetComponent<AudioSourceFader>().FadeUp(2);
-        }
-
-        if (_subDamage > 0.8f)
-        {
-            if (subReson_creak.GetComponent<AudioSource>().isPlaying) return;
-            subReson_creak.GetComponent<AudioSourcePlayer>().PlayLoopWithInterval();
-            subReson_creak.GetComponent<AudioSourceFader>().FadeUp(2);
-        }
-    }
-
-
 
 
 

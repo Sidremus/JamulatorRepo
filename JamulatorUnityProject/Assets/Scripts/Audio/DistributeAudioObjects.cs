@@ -12,8 +12,9 @@ public class DistributeAudioObjects : MonoBehaviour
     [SerializeField] int numberOfSoundsToDistribute;
     [SerializeField] GameObject audioObject;
     [SerializeField] GameObject dropArea;
-    Vector3 areaSize;
+    Vector3 dropAreaSize;
 
+    [SerializeField] [Range(-100, 0)] float createdObjectGain;
     [SerializeField] [Range(-4f, 4f)] float pitchOffset;
     [SerializeField] float randomPitchRange;
 
@@ -24,14 +25,14 @@ public class DistributeAudioObjects : MonoBehaviour
 
     private void Start()
     {
-        areaSize = dropArea.transform.localScale;
+        dropAreaSize = dropArea.transform.localScale;
         
 
         for (int i = 0; i < numberOfSoundsToDistribute; ++i)
         {
-            Vector3 randPos =  areaSize/2 + new Vector3(Random.Range(-areaSize.x / 2, areaSize.x / 2),
-                                            Random.Range(-areaSize.y / 2, areaSize.y / 2),
-                                            Random.Range(-areaSize.z / 2, areaSize.z / 2));
+            Vector3 randPos =  dropAreaSize/2 + new Vector3(Random.Range(-dropAreaSize.x / 2, dropAreaSize.x / 2),
+                                            Random.Range(-dropAreaSize.y / 2, dropAreaSize.y / 2),
+                                            Random.Range(-dropAreaSize.z / 2, dropAreaSize.z / 2));
 
             randPos += dropArea.transform.position;
 
@@ -45,6 +46,14 @@ public class DistributeAudioObjects : MonoBehaviour
             audiosource.clip = clipToDistribute;
             audiosource.pitch += pitchOffset + Random.Range(-randomPitchRange, randomPitchRange);                       
             audiosource.time = audiosource.clip.length * Random.Range(0, 1);
+
+            //vol
+            if (audiosource.GetComponent<AudioSourceFader>())            
+                audiosource.GetComponent<AudioSourceFader>().outputGain = createdObjectGain;            
+            else
+                audiosource.volume = AudioUtility.ConvertDbtoA(createdObjectGain);
+
+           
 
             if (PlayOnAwake)
                 audiosource.Play();

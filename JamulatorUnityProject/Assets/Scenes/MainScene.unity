@@ -167,12 +167,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: f409c79926c5ef64080b50c36000bfe7, type: 3}
-  numberOfSoundsToDistribute: 3
+  numberOfSoundsToDistribute: 15
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1104802369}
+  createdObjectGain: -12
   pitchOffset: 0.33
   randomPitchRange: 0.1
-  PlayOnAwake: 0
+  PlayOnAwake: 1
   createdAudioObjects: []
 --- !u!1 &42930260 stripped
 GameObject:
@@ -191,7 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 0
+  outputGain: 0
+  inputGain: 0
   audioSource: {fileID: 0}
 --- !u!1 &187684587
 GameObject:
@@ -237,9 +239,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: fbc4de069dc518f46a166dcd52555476, type: 3}
-  numberOfSoundsToDistribute: 15
+  numberOfSoundsToDistribute: 10
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1104802369}
+  createdObjectGain: 0
   pitchOffset: 0
   randomPitchRange: 0.1
   PlayOnAwake: 1
@@ -288,12 +291,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: f81f0d1ba3deeaf4291c4a5b75b48afe, type: 3}
-  numberOfSoundsToDistribute: 3
+  numberOfSoundsToDistribute: 15
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1548709149}
+  createdObjectGain: -12
   pitchOffset: 0
   randomPitchRange: 0.1
-  PlayOnAwake: 0
+  PlayOnAwake: 1
   createdAudioObjects: []
 --- !u!1001 &273210899
 PrefabInstance:
@@ -484,7 +488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 0
+  outputGain: 0
+  inputGain: 0
   audioSource: {fileID: 274741238}
 --- !u!1001 &278692468
 PrefabInstance:
@@ -780,12 +785,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: f409c79926c5ef64080b50c36000bfe7, type: 3}
-  numberOfSoundsToDistribute: 3
+  numberOfSoundsToDistribute: 15
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1025304221}
+  createdObjectGain: -12
   pitchOffset: 0
   randomPitchRange: 0.1
-  PlayOnAwake: 0
+  PlayOnAwake: 1
   createdAudioObjects: []
 --- !u!1 &483064533
 GameObject:
@@ -1142,7 +1148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &773358847
 Transform:
   m_ObjectHideFlags: 0
@@ -1204,9 +1210,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: e5fc462e87fede3498beeaa0168517dd, type: 3}
-  numberOfSoundsToDistribute: 15
+  numberOfSoundsToDistribute: 10
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1025304221}
+  createdObjectGain: 0
   pitchOffset: 0
   randomPitchRange: 0.1
   PlayOnAwake: 1
@@ -1548,7 +1555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 0
+  outputGain: 0
+  inputGain: 0
   audioSource: {fileID: 0}
 --- !u!114 &1047150214
 MonoBehaviour:
@@ -1569,7 +1577,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ec8b014fc3740d84eaf7a3dc8ea6fb6c, type: 3}
   - {fileID: 8300000, guid: 58b423f419427cc4aa35602ceb4c19b7, type: 3}
   - {fileID: 8300000, guid: cd89a28db9643a84993cdd47d1b239ac, type: 3}
-  loop: 0
+  loop: 1
   clipPlaying: 0
   intervalBetweenPlays: 0
   pitch: 1
@@ -1655,7 +1663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 0
+  outputGain: 0
+  inputGain: 0
   audioSource: {fileID: 0}
 --- !u!1 &1104802369
 GameObject:
@@ -1856,8 +1865,6 @@ MonoBehaviour:
   clicker: {fileID: 920972784}
   clickerStartVol: -31.2
   extSubSoundsVol: 0
-  subResonance: []
-  subCreaker: []
   subDepth: 0
   subDamage: 0
 --- !u!1 &1393595624
@@ -1999,7 +2006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 0
+  outputGain: 0
+  inputGain: 0
   audioSource: {fileID: 1416302247}
 --- !u!1 &1425836234
 GameObject:
@@ -2016,7 +2024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1425836235
 Transform:
   m_ObjectHideFlags: 0
@@ -2043,6 +2051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1519508112}
+  - component: {fileID: 1519508113}
   m_Layer: 0
   m_Name: BubbleMakers
   m_TagString: Untagged
@@ -2066,6 +2075,29 @@ Transform:
   m_Father: {fileID: 1205548730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519508113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519508111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d22e51bc9f2344ea98e48d2c36c8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInCave: 0
+  oceanMakers:
+  - {fileID: 2087223227}
+  - {fileID: 887002112}
+  - {fileID: 187684587}
+  caveMakers:
+  - {fileID: 202069420}
+  - {fileID: 325027314}
+  - {fileID: 1294882}
+  isSwitchingToOcean: 0
+  isSwitchingToCave: 0
 --- !u!1 &1548709149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1793114428
 Transform:
   m_ObjectHideFlags: 0
@@ -2925,8 +2957,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 0
+  outputGain: 0
+  inputGain: 0
   audioSource: {fileID: 1898870636}
+--- !u!1 &1972543184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972543186}
+  - component: {fileID: 1972543185}
+  m_Layer: 0
+  m_Name: BubblesCaveSurface (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1972543185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972543184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fcacc16bc787a848b8f22c68adf729d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipToDistribute: {fileID: 8300000, guid: fbc4de069dc518f46a166dcd52555476, type: 3}
+  numberOfSoundsToDistribute: 50
+  audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
+  dropArea: {fileID: 1548709149}
+  createdObjectGain: 0
+  pitchOffset: 0
+  randomPitchRange: 0.1
+  PlayOnAwake: 0
+  createdAudioObjects: []
+--- !u!4 &1972543186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972543184}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2022614739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,7 +3028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2022614740
 Transform:
   m_ObjectHideFlags: 0
@@ -3022,9 +3107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: c954fd0ab07076e48b0e7c89669f9435, type: 3}
-  numberOfSoundsToDistribute: 15
+  numberOfSoundsToDistribute: 10
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 1548709149}
+  createdObjectGain: 0
   pitchOffset: 0
   randomPitchRange: 0.1
   PlayOnAwake: 1
