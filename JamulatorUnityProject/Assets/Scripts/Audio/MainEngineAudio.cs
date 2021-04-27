@@ -5,7 +5,9 @@ using UnityEngine;
 public class MainEngineAudio : MonoBehaviour
 {
     [SerializeField] AudioManager manager;
-    [SerializeField] RigidbodyVelocityToAudio rvta;
+    [SerializeField] RigidbodyVelocityToMovementAudio rvta;
+
+    [SerializeField] bool UseInternalSpeedControl;
 
     [Header("Controlled Objects")]
 
@@ -50,9 +52,18 @@ public class MainEngineAudio : MonoBehaviour
     void Update()
     {
 
-        // grab enginespeed from velocity eg  float speed = rvta.velocityZ; //
+        float speed;
 
-        float speed = engineSpeed;
+        
+        if (UseInternalSpeedControl)
+            speed = engineSpeed;
+        else
+        {
+            speed = Mathf.Clamp(AudioUtility.ScaleValue(Mathf.Abs(rvta.velocityZ), 0f, rvta.maxVelocity, engineMin, engineHighPowerSpeedMax), engineMin, engineHighPowerSpeedMax);
+        }
+        
+
+        
 
         Debug.Log(speed);
 
