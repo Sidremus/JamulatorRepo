@@ -14,10 +14,12 @@ public class FishAI : MonoBehaviour
     private Vector3 targetDirection;
     private float lastTurned = 0f;
     private float turnTimeout = 8f;
+    private bool canCheckCols = false;
  
     private void Start() 
     {
-        targetDirection = transform.forward;    
+        targetDirection = transform.forward;
+        canCheckCols = Random.Range(0, 1) > 0.5;    
     }
 
     private void FixedUpdate() 
@@ -62,6 +64,13 @@ public class FishAI : MonoBehaviour
     // Will only set a new target direction if about to collide with something
     private void SetCollisionDirection()
     {
+        // Only raycast every other frame
+        canCheckCols = !canCheckCols;
+        if (!canCheckCols)
+        {
+            return;
+        }
+
         // TODO use a layer mask
         float rayCastLength = 1f;
         RaycastHit hit;
