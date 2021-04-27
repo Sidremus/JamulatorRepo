@@ -25,16 +25,30 @@ public static class AudioUtility
         return Mathf.Pow(10, db / 20);
     }
 
-    
 
-    public static AudioMixerGroup GetMixerGroup(string groupName)
+
+    public static AudioClip RandomClipFromArray(AudioClip[] cliplist)
     {
-        // buggy. returns first audiomixergroup of string groupName in a master mixer.
-
-        AudioMixer masterMixer = Resources.Load("Master") as AudioMixer;
-        AudioMixerGroup mixerGroup = masterMixer.FindMatchingGroups(groupName)[0];
-        return mixerGroup;
+        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Length - 1), cliplist.Length)];
     }
+    public static AudioClip RandomClipFromList(List<AudioClip> cliplist)
+    {
+        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Count - 1), cliplist.Count)];
+    }
+
+
+
+    public static float ConvertRange(
+        float originalStart, float originalEnd, // original range
+        float newStart, float newEnd, // desired range
+        float value) // value to convert
+    {
+        // credit to Wim Coenen @https://stackoverflow.com/questions/4229662/convert-numbers-within-a-range-to-numbers-within-another-range //
+        double scale = (double)(newEnd - newStart) / (originalEnd - originalStart);
+        return (float)(newStart + ((value - originalStart) * scale));
+    }
+
+
 
 
 }
