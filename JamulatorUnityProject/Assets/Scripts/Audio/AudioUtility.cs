@@ -29,7 +29,11 @@ public static class AudioUtility
 
     public static AudioClip RandomClipFromArray(AudioClip[] cliplist)
     {
-        return cliplist[Random.Range(0, cliplist.Length - 1)];
+        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Length - 1), cliplist.Length)];
+    }
+    public static AudioClip RandomClipFromList(List<AudioClip> cliplist)
+    {
+        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Count - 1), cliplist.Count)];
     }
 
 
@@ -41,6 +45,17 @@ public static class AudioUtility
             yield return new WaitForSeconds(interval);
             source.clip = clip;
             source.Play();
+            yield return null;
+        }
+    }
+
+    public static IEnumerator WaitIntervalThenPlayOneShot(AudioSource source, AudioClip clip, float interval)
+    {
+        while (true)
+        {
+            interval += source.clip.length;
+            yield return new WaitForSeconds(interval);
+            source.PlayOneShot(clip);
             yield return null;
         }
     }

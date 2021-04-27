@@ -216,6 +216,7 @@ public class AudioSourceFader : MonoBehaviour
 
     public void UpdateAudioSourceAmplitude() // End of process chain, adjusted values sent to and received by Audio Source component.
     {
+        CheckAudioSource();
         // Updates volume on audiosource with adjusted fade volume, minus output gain reduction.
         audioSource.volume = adjustedAmplitude * AudioUtility.ConvertDbtoA(outputGain);
 
