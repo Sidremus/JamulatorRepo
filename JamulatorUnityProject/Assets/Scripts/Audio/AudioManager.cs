@@ -13,7 +13,6 @@ public class AudioManager : MonoBehaviour
     [Range(0, 100)] public float subDamage;
     [Range(0, 100)] public float subDriveEnergy;
     [Range(0, 100)] public float subEnergyLevel;
-
     public bool isInCave;
 
     [Header("Environmental Sounds Initialisation")]
@@ -43,7 +42,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] [Range(-80, 0)] public float extSubSoundsVol;
 
 
+    [Header("Submarine Actions: Sonar")]
+    [SerializeField] [Range(-80, 0)] float sonarVol;
+    [SerializeField] GameObject sonarOneShotObject;
+    [SerializeField] AudioClip pingSound;
+    [SerializeField] AudioClip findSound;
+    [SerializeField] GameObject sonarLoop;
 
+    [SerializeField] float sonarHumPreWait;
+    [SerializeField] float sonarHumFadeTime;
+    [SerializeField] float sonarFindPitchRandRange;
 
     private void Update()
     {
@@ -53,12 +61,10 @@ public class AudioManager : MonoBehaviour
             // subDamage =
             subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
         }
-        
-        
 
+        PingBoolCtrl();
 
     }
-
 
     private void Start()
     {
@@ -66,7 +72,6 @@ public class AudioManager : MonoBehaviour
         FindScriptsAndGameObjects();
         SetParams();
     }
-
     private void FindScriptsAndGameObjects()
     {
 
@@ -85,8 +90,6 @@ public class AudioManager : MonoBehaviour
 
 
     }
-
-
     private void SetParams()
     {
         // Sends params from inspector to relevant gameobjects.
@@ -115,6 +118,96 @@ public class AudioManager : MonoBehaviour
 
 
     }
+
+
+    /// **** EVENTS **** ///
+
+    private void OnEnable()
+    {
+        //EventManager.Instance.onSonarPing += SonarPingStart;
+    }
+
+    [SerializeField] bool pingStart;
+    [SerializeField] bool pingFind;
+    void PingBoolCtrl()
+    {
+        if (pingStart)
+        {
+            pingStart = false;
+            SonarPingStart();
+        }
+
+        if (pingFind)
+        {
+            pingFind = false;
+            SonarPingFind();
+        }
+    }
+
+    void SonarPingStart()
+    {
+        StartCoroutine(PlaySonarPing());
+    }
+
+
+    IEnumerator PlaySonarPing()
+    {
+        // Play ping sound
+        sonarOneShotObject.GetComponent<Gain>().inputGain = sonarVol;
+        sonarOneShotObject.GetComponent<AudioSource>().PlayOneShot(pingSound);
+        
+        var loopSource = sonarLoop.GetComponent<AudioSource>();
+        var loopASF = sonarLoop.GetComponent<AudioSourceFader>();
+
+        // Fade it down if it's already playing
+        if (loopSource.isPlaying)
+        {
+            loopASF.FadeTo(-80f, 0.1f, 0.9f);
+            yield return new WaitForSeconds(0.02f);
+            loopSource.Stop();
+        }
+
+        // Play & fade up sonar hum loop
+        loopSource.Play();
+        loopASF.FadeTo(sonarVol, sonarHumPreWait, 0.8f);
+
+        // Wait, then fade down and stop sonar hum loop
+        yield return new WaitForSeconds(sonarHumPreWait);
+        loopASF.FadeTo(-80f, sonarHumFadeTime, 0.1f);
+        yield return new WaitForSeconds(sonarHumFadeTime);
+        loopSource.Stop();
+
+        yield break;
+
+
+    }
+
+    void SonarPingFind()
+    {
+        sonarOneShotObject.GetComponent<Gain>().inputGain = sonarVol;
+        sonarOneShotObject.GetComponent<AudioSource>().pitch = 1 + Random.Range(-sonarFindPitchRandRange, sonarFindPitchRandRange);
+        sonarOneShotObject.GetComponent<AudioSource>().PlayOneShot(findSound);
+    }
+
+
+    IEnumerator StopPingAfter(float waitTime, float fadeDownTime)
+    {
+
+        yield return new WaitForSeconds(waitTime);
+        sonarLoop.GetComponent<AudioSourceFader>().FadeTo(-80f, fadeDownTime, 0.1f);
+
+        yield return new WaitForSeconds(fadeDownTime);
+        sonarLoop.GetComponent<AudioSource>().Stop();
+
+        yield break;
+    }
+
+
+    private void OnDisable()
+    {
+        EventManager.Instance.onSonarPing += SonarPingStart;
+    }
+
 
 
 

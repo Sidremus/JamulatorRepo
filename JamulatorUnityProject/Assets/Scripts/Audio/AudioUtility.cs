@@ -16,7 +16,7 @@ public static class AudioUtility
 
     public static float ConvertAtoDb(float amp)
     {
-        amp = Mathf.Clamp(amp, ConvertDbtoA(-70f), 1f);
+        amp = Mathf.Clamp(amp, ConvertDbtoA(-80f), 1f);
         return 20 * Mathf.Log(amp) / Mathf.Log(10);
     }
 

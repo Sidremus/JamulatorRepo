@@ -31,7 +31,6 @@ public class bubbleController : MonoBehaviour
 
         if (isInCave && !isSwitchingToCave)
         {
-            Debug.Log("1");
             isSwitchingToCave = true;
             isSwitchingToOcean = false;
 
@@ -55,7 +54,6 @@ public class bubbleController : MonoBehaviour
 
         if (!isInCave && !isSwitchingToOcean)
         {
-            Debug.Log("2");
             isSwitchingToOcean = true;
             isSwitchingToCave = false;
 

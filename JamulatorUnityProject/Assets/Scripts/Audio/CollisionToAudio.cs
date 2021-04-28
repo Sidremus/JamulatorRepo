@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class CollisionToAudio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    Collision collision;
+
+    private void OnEnable()
     {
-        
+        EventManager.Instance.onSubCollision += ProcessCollision;
     }
 
-    // Update is called once per frame
-    void Update()
+    void ProcessCollision()
     {
-        
+
+
+
+
     }
+
+
+
+    private void OnDisable()
+    {
+        EventManager.Instance.onSubCollision -= ProcessCollision;
+    }
+    
+
+
+
+
+
 }
