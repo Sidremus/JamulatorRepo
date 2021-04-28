@@ -22,6 +22,7 @@ public class SubmarineState : MonoBehaviour
     private static SubmarineState _instance;
     public static SubmarineState Instance { get { return _instance; } }
 
+    public GameObject submarine;
 
     // These state values represent the movement state of the sub
     private bool _isMoving;
