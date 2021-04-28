@@ -45,6 +45,7 @@ public static class AudioUtility
         return (float)(newStart + ((value - originalStart) * scale));
     }
 
+    
 
 
 

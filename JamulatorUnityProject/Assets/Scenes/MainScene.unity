@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputGain: -16
   inputGain: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 565910656}
 --- !u!82 &565910656
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1319,8 +1319,151 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fd6fd85940fa00b41974036205b407a4, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &579342273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 579342274}
+  - component: {fileID: 579342276}
+  - component: {fileID: 579342275}
+  m_Layer: 0
+  m_Name: Thruster_Front
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &579342274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579342273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 940620292}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &579342275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579342273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputGain: -16
+  inputGain: 0
+  audioSource: {fileID: 579342276}
+--- !u!82 &579342276
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579342273}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fd6fd85940fa00b41974036205b407a4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1503,13 +1646,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1378934021}
-  rvta: {fileID: 1322770536}
   UseInternalSpeedControl: 0
   engineWhirr: {fileID: 998434085}
   engineHumStatic: {fileID: 1660514405}
   engineHumRising: {fileID: 1403933123}
   engineRoar: {fileID: 118380265}
-  engineSpeed: 0
+  driveOn: 0
+  speed: 0
   engineMin: 0
   engineOnSpeed: 5
   engineLowPowerSpeedMax: 50
@@ -1883,7 +2026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &940620292
 Transform:
   m_ObjectHideFlags: 0
@@ -1899,6 +2042,7 @@ Transform:
   - {fileID: 2099071786}
   - {fileID: 565910654}
   - {fileID: 1020312093}
+  - {fileID: 579342274}
   m_Father: {fileID: 17553027}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1915,20 +2059,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1378934021}
-  rvta: {fileID: 1322770536}
   thrusters:
   - {fileID: 1271716610}
   - {fileID: 2099071785}
   - {fileID: 565910653}
   - {fileID: 1020312092}
-  thrusterLeft: {fileID: 1271716610}
-  thrusterRight: {fileID: 2099071785}
-  thrusterTop: {fileID: 565910653}
-  thrusterBottom: {fileID: 1020312092}
-  leftOn: 0
-  rightOn: 0
-  topOn: 0
-  bottomOn: 0
+  - {fileID: 579342273}
+  thrusterVols:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UseInternalControl: 0
+  DirectionLeft: 0
+  DirectionRight: 0
+  DirectionUp: 0
+  DirectionDown: 0
+  DirectionBackwards: 0
 --- !u!1001 &983898372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2175,7 +2323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputGain: -16
   inputGain: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1020312095}
 --- !u!82 &1020312095
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2187,8 +2335,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fd6fd85940fa00b41974036205b407a4, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2632,7 +2780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputGain: -16
   inputGain: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1271716613}
 --- !u!82 &1271716613
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2644,8 +2792,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fd6fd85940fa00b41974036205b407a4, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2778,11 +2926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1378934021}
-  submarine: {fileID: 1322770534}
-  maxVelocity: 10
-  velocityX: 0
-  velocityY: 0
-  velocityZ: 0
+  velocityVector: {x: 0, y: 0, z: 0}
   UseInternalControl: 0
 --- !u!114 &1322770537
 MonoBehaviour:
@@ -2920,6 +3064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f817fc34c89c1d64383ef93b3e5d52e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  submarine: {fileID: 1322770534}
   subDepth: 0
   subDamage: 0
   subEngineStrength: 0
@@ -3240,7 +3385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1425836235
 Transform:
   m_ObjectHideFlags: 0
@@ -4469,7 +4614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputGain: -16
   inputGain: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 2099071788}
 --- !u!82 &2099071788
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4481,8 +4626,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fd6fd85940fa00b41974036205b407a4, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0

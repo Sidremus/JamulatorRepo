@@ -5,9 +5,7 @@ using UnityEngine;
 public class MainEngineAudio : MonoBehaviour
 {
     [SerializeField] AudioManager manager;
-    [SerializeField] RigidbodyVelocityToMovementAudio rvta;
 
-    [SerializeField] bool UseInternalSpeedControl;
 
     [Header("Controlled Objects")]
 
@@ -20,15 +18,12 @@ public class MainEngineAudio : MonoBehaviour
     [SerializeField] GameObject engineHumRising;
     Gain humRisingGain;
 
+
     [SerializeField] GameObject engineRoar;
     Gain roarGain;
 
 
     [Header("Variables")]
-    [SerializeField] [Range(0f, 100f)] float engineSpeed;
-
-    // todo: connect these values to game values //
-
     [SerializeField] float engineMin = 0f;
     [SerializeField] float engineOnSpeed = 5f;
     [SerializeField] float engineLowPowerSpeedMax = 50f;
@@ -39,33 +34,30 @@ public class MainEngineAudio : MonoBehaviour
     [SerializeField] float gainHighPowerMin = -12f;
     [SerializeField] float gainMax = 0f;
 
+    // todo: connect these values to game values //
+
+    [Header("Internal Controls")]
+    [SerializeField] bool UseInternalControl;
+    [SerializeField] [Range(0f, 100f)] float speed;
+
+
+
+
     private void Start()
     {
         roarGain = engineRoar.GetComponent<Gain>();
         humStaticGain = engineHumStatic.GetComponent<Gain>();
         humRisingGain = engineHumRising.GetComponent<Gain>();
         whirrGain = engineWhirr.GetComponent<Gain>();
-
-        
     }
 
     void Update()
     {
-
-        float speed;
-
         
-        if (UseInternalSpeedControl)
-            speed = engineSpeed;
-        else
-        {
-            speed = Mathf.Clamp(AudioUtility.ScaleValue(Mathf.Abs(rvta.velocityZ), 0f, rvta.maxVelocity, engineMin, engineHighPowerSpeedMax), engineMin, engineHighPowerSpeedMax);
-        }
+        if (!UseInternalControl)                   
+            speed = 100f * SubmarineState.Instance.driveEnergyLerp;
         
-
         
-
-        Debug.Log(speed);
 
         if (speed <= engineOnSpeed)
         {

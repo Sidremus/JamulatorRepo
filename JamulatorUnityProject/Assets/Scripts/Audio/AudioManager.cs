@@ -5,16 +5,16 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     private SubmarineState SubState;
+    public GameObject submarine;
 
     [Header("Global Messages")]
-    [SerializeField] [Range(-100, 0)] public float subDepth;
-    [SerializeField] [Range(0, 100)] public float subDamage;
-    [SerializeField] [Range(0, 100)] public float subEngineStrength;
-    [SerializeField] [Range(0, 100)] public float subThrusterStrength;
-    [SerializeField] [Range(0, 100)] public float subEnergyLevel;
+    [SerializeField] bool UseInternalControl;
+    [Range(-100, 0)] public float subDepth;
+    [Range(0, 100)] public float subDamage;
+    [Range(0, 100)] public float subDriveEnergy;
+    [Range(0, 100)] public float subEnergyLevel;
 
-    [SerializeField] public bool isInCave;
-
+    public bool isInCave;
 
     [Header("Environmental Sounds Initialisation")]
     [SerializeField] [Range(-80, 0)] float environmentalStartVol;
@@ -45,7 +45,19 @@ public class AudioManager : MonoBehaviour
 
 
 
+    private void Update()
+    {
+        if (!UseInternalControl)
+        {
+            subDepth = submarine.transform.position.y;
+            // subDamage =
+            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
+        }
+        
+        
 
+
+    }
 
 
     private void Start()
