@@ -120,7 +120,6 @@ public class AudioManager : MonoBehaviour
             subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;            
         }
 
-        PingBoolCtrl();
 
     }
 
@@ -138,25 +137,12 @@ public class AudioManager : MonoBehaviour
     }
 
     #region Sonar Ping Control
-    void PingBoolCtrl()
-    {
-        if (pingStart)
-        {
-            pingStart = false;
-            SonarPingStart();
-        }
-
-        if (pingFind)
-        {
-            pingFind = false;
-            SonarPingFind();
-        }
-    }
+    // TODO: something in the fade control isn't cancelling right and there's pops/jumps in volume sometimes, especially when sonar pings are triggered at quick intervals.
+    
     void SonarPingStart()
     {
         if (isPinging)
-        {
-            Debug.Log("isPingin = true; stopping coroutine");
+        {            
             StartCoroutine(FadeAndStop(sonarLoop));
             StopCoroutine(PlaySonarPing());
         }
@@ -189,7 +175,6 @@ public class AudioManager : MonoBehaviour
         // Fade it down if it's already playing
         if (loopSource.isPlaying)
         {
-            Debug.Log("loopsource.isplaying; stopping..");
             loopASF.FadeTo(-80f, 0.1f, 0.9f);
             yield return new WaitForSeconds(0.1f);
             loopSource.Stop();

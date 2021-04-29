@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class bubbleController : MonoBehaviour
+public class BubbleController : MonoBehaviour
 {
     [SerializeField] bool isInCave;
 
