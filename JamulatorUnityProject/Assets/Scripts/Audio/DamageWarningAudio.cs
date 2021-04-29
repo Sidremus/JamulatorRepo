@@ -13,8 +13,7 @@ public class DamageWarningAudio : MonoBehaviour
     [SerializeField] GameObject alarm;
     Gain alarmGain;
 
-    [SerializeField] [Range(0f, 100f)] float subDamage;
-    float subDamageRange = 100f;
+    [SerializeField] [Range(0f, 100f)] float damage;
 
     float extGain;
 
@@ -30,7 +29,6 @@ public class DamageWarningAudio : MonoBehaviour
     [SerializeField] float _highGain = 0f;
     float highGain;
 
-    [SerializeField] float[] gains;
 
     void Start()
     {
@@ -40,10 +38,9 @@ public class DamageWarningAudio : MonoBehaviour
         alarmGain = alarm.GetComponent<Gain>();
     }
 
-    float v;
     void Update()
     {
-        float damage = AudioManager.Instance.subDamage;
+        damage = AudioManager.Instance.subDamage;
         extGain = AudioManager.Instance.UIVol;
 
         minGain = _minGain + extGain;
@@ -52,8 +49,6 @@ public class DamageWarningAudio : MonoBehaviour
 
         if (damage < lightBeepingThreshold)
         {
-            
-
             lightGain.inputGain = minGain;
             mediumGain.inputGain = minGain;
             heavyGain.inputGain = minGain;
@@ -108,9 +103,6 @@ public class DamageWarningAudio : MonoBehaviour
            
 
         }
-
-        gains = new float[4] { lightGain.inputGain, mediumGain.inputGain, heavyGain.inputGain, alarmGain.inputGain } ;
-
 
     }
 

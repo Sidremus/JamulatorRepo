@@ -44,7 +44,8 @@ public class FishAudio : MonoBehaviour
         newAudio.spatialize = true;
         newAudio.spatialBlend = 1f;
         newAudio.maxDistance = 15f;
-        newAudio.minDistance = 3f;        
+        newAudio.minDistance = 3f;
+        newAudio.dopplerLevel = 3f;
 
         newAudio.Play();
 
