@@ -14,12 +14,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] bool UseInternalControl;
     [Range(-100, 0)] public float subDepth;
     [Range(0, 100)] public float subDamage;
-    [Range(0, 100)] public float subDriveEnergy;
-    [Range(0, 100)] public float subEnergyLevel;
+    [Range(0, 1)] public float subDriveEnergy;
+    [Range(0, 1)] public float subSensorEnergy;
     
 
     [Header("Environmental Sounds Initialisation")]
-    [SerializeField] [Range(-80, 0)] float environmentalStartVol;
+    [SerializeField] [Range(-90, 12)] float environmentalStartVol;
     [SerializeField] [Range(0, 15)] float environmentalFadeUpTime;
 
     [SerializeField] GameObject[] bubbleMakers;
@@ -27,30 +27,34 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] GameObject rumble;
     AudioSourceFader ASFrumble;
-    [SerializeField] [Range(-80, 0)] float rumbleStartVol;
+    [SerializeField] [Range(-90, 12)] float rumbleStartVol;
 
     [SerializeField] GameObject finWhale;
     AudioSourceFader ASFfin;
-    [SerializeField] [Range(-80, 0)] float finWhaleStartVol;
+    [SerializeField] [Range(-90, 12)] float finWhaleStartVol;
 
     [SerializeField] GameObject clicker;
     AudioSourceFader ASFclicker;
-    [SerializeField] [Range(-80, 0)] float clickerStartVol;
-
+    [SerializeField] [Range(-90, 12)] float clickerStartVol;
 
     [Header("External Submarine Sounds")]
     [Range(-80, 0)] public float extSubSoundsVol;
 
-
     [Header("Submarine Actions: Sonar")]
-    [SerializeField] [Range(-80, 0)] float sonarVol;
+    [SerializeField] [Range(-90, 12)] float sonarVol;
     [SerializeField] GameObject sonarOneShotObject;
     [SerializeField] AudioClip pingSound;
     [SerializeField] AudioClip findSound;
     [SerializeField] GameObject sonarLoop;
-    bool pingStart;
-    bool pingFind;
     bool isPinging;
+
+    [Header("Submarine Actions: Lights")]
+    [SerializeField] [Range(-90, 12)] float lightsVol;
+    [SerializeField] GameObject lightObject;
+    [SerializeField] AudioClip[] lightSounds; // 0: lights low on; 1: lights low off; 2 lights high on; 3 lights high off
+
+    float highPowerThreshold = 0.6f;
+    bool highPower;
 
     [Header("Cockpit UI")]
     [Range(-80, 0)] public float UIVol;
@@ -120,7 +124,7 @@ public class AudioManager : MonoBehaviour
         if (!UseInternalControl)
         {
             subDepth = submarine.transform.position.y;
-            // subDamage =
+            subSensorEnergy = SubmarineState.Instance.sensorEnergyLerp;
             subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;            
         }
 
@@ -133,11 +137,15 @@ public class AudioManager : MonoBehaviour
     private void SubscribeToEvents()
     {
         EventManager.Instance.onSonarPing += SonarPingStart;
+        EventManager.Instance.onLightsOn += LightsOn;
+        EventManager.Instance.onLightsOff += LightsOff;
 
     }
     private void OnDisable()
     {
-        EventManager.Instance.onSonarPing += SonarPingStart;
+        EventManager.Instance.onSonarPing -= SonarPingStart;
+        EventManager.Instance.onLightsOn -= LightsOn;
+        EventManager.Instance.onLightsOff -= LightsOff;
     }
 
     #region Sonar Ping Control
@@ -207,10 +215,55 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-   
+    #region Lights Control
+    private void LightsOn()
+    {
+        if (subSensorEnergy >= highPowerThreshold)
+            highPower = true;
+        else highPower = false;
+       
+        var source = lightObject.GetComponent<AudioSource>();
+        var gain = lightObject.GetComponent<Gain>();
+        
+        if (highPower)
+        {
+            gain.inputGain = lightsVol +  AudioUtility.ScaleValue(subSensorEnergy, highPowerThreshold, 1f, -24f, 0f);
+            source.PlayOneShot(lightSounds[2]);
+        }
+             
+        else
+        {
+            gain.inputGain = lightsVol + AudioUtility.ScaleValue(subSensorEnergy, 0, highPowerThreshold, -24f, 0f);
+            source.PlayOneShot(lightSounds[0]);
+        }
 
+    }
 
+    private void LightsOff()
+    {
+        if (subSensorEnergy >= highPowerThreshold)
+            highPower = true;
+        else highPower = false;
 
+        var source = lightObject.GetComponent<AudioSource>();
+        var gain = lightObject.GetComponent<Gain>();
+        gain.inputGain = lightsVol;
+
+        if (highPower)
+        {
+            gain.inputGain = lightsVol + AudioUtility.ScaleValue(subSensorEnergy, highPowerThreshold, 1f, -24f, 0f);
+            source.PlayOneShot(lightSounds[3]);
+        }
+           
+        else
+        {
+            gain.inputGain = lightsVol + AudioUtility.ScaleValue(subSensorEnergy, 0, highPowerThreshold, -24f, 0f);
+            source.PlayOneShot(lightSounds[1]);
+        }
+           
+
+    }
+    #endregion Lights
 
 
 

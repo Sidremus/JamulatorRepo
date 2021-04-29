@@ -4,44 +4,29 @@ using UnityEngine;
 
 public class MainEngineAudio : MonoBehaviour
 {
-    [SerializeField] AudioManager manager;
-
-
     [Header("Controlled Objects")]
 
     [SerializeField] GameObject engineWhirr;
-    Gain whirrGain;
-        
+    Gain whirrGain;        
     [SerializeField] GameObject engineHumStatic;
     Gain humStaticGain;
-
     [SerializeField] GameObject engineHumRising;
     Gain humRisingGain;
-
-
     [SerializeField] GameObject engineRoar;
     Gain roarGain;
 
-
     [Header("Variables")]
     [SerializeField] float engineMin = 0f;
-    [SerializeField] float engineOnSpeed = 5f;
-    [SerializeField] float engineLowPowerSpeedMax = 50f;
-    [SerializeField] float engineHighPowerSpeedMax = 100f;
+    [SerializeField] float engineOnThreshold = 5f;
+    [SerializeField] float engineLowPowerMax = 50f;
+    [SerializeField] float engineHighPowerMax = 100f;
 
     [SerializeField] float gainMin = -60f;
     [SerializeField] float gainLowPowerMin = -24f;
     [SerializeField] float gainHighPowerMin = -12f;
     [SerializeField] float gainMax = 0f;
 
-    // todo: connect these values to game values //
-
-    [Header("Internal Controls")]
-    [SerializeField] bool UseInternalControl;
-    [SerializeField] [Range(0f, 100f)] float speed;
-
-
-
+    float speed;
 
     private void Start()
     {
@@ -53,22 +38,18 @@ public class MainEngineAudio : MonoBehaviour
 
     void Update()
     {
-        
-        if (!UseInternalControl)                   
-            speed = 100f * SubmarineState.Instance.driveEnergyLerp;
-        
-        
+        speed = 100f * AudioManager.Instance.subDriveEnergy;
 
-        if (speed <= engineOnSpeed)
+        if (speed <= engineOnThreshold)
         {
             // from zero to a very low speed (idling)
-            whirrGain.inputGain = AudioUtility.ScaleValue(speed, engineMin, engineOnSpeed, gainMin, gainLowPowerMin);
+            whirrGain.inputGain = AudioUtility.ScaleValue(speed, engineMin, engineOnThreshold, gainMin, gainLowPowerMin);
             engineWhirr.GetComponent<AudioSource>().pitch = 1f;
 
-            humStaticGain.inputGain = AudioUtility.ScaleValue(speed, engineMin, engineOnSpeed, gainMin, gainLowPowerMin);
+            humStaticGain.inputGain = AudioUtility.ScaleValue(speed, engineMin, engineOnThreshold, gainMin, gainLowPowerMin);
             engineHumStatic.GetComponent<AudioSource>().pitch = 1f;
 
-            humRisingGain.inputGain = AudioUtility.ScaleValue(speed, engineMin, engineOnSpeed, gainMin, gainLowPowerMin);
+            humRisingGain.inputGain = AudioUtility.ScaleValue(speed, engineMin, engineOnThreshold, gainMin, gainLowPowerMin);
             engineHumRising.GetComponent<AudioSource>().pitch = 1f;
 
             roarGain.inputGain = gainMin;
@@ -78,15 +59,15 @@ public class MainEngineAudio : MonoBehaviour
         {
             // anything above engineOnSpeed            
 
-            if (speed < engineLowPowerSpeedMax)
+            if (speed < engineLowPowerMax)
             {
                 // lower power
-                whirrGain.inputGain = AudioUtility.ScaleValue(speed, engineOnSpeed, engineLowPowerSpeedMax, gainLowPowerMin, gainHighPowerMin);
+                whirrGain.inputGain = AudioUtility.ScaleValue(speed, engineOnThreshold, engineLowPowerMax, gainLowPowerMin, gainHighPowerMin);
                 engineWhirr.GetComponent<AudioSource>().pitch = 1 + speed / 100;
 
-                humStaticGain.inputGain = AudioUtility.ScaleValue(speed, engineOnSpeed, engineLowPowerSpeedMax, gainLowPowerMin, gainHighPowerMin);
+                humStaticGain.inputGain = AudioUtility.ScaleValue(speed, engineOnThreshold, engineLowPowerMax, gainLowPowerMin, gainHighPowerMin);
 
-                humRisingGain.inputGain = AudioUtility.ScaleValue(speed, engineOnSpeed, engineLowPowerSpeedMax, gainLowPowerMin, gainHighPowerMin);
+                humRisingGain.inputGain = AudioUtility.ScaleValue(speed, engineOnThreshold, engineLowPowerMax, gainLowPowerMin, gainHighPowerMin);
                 engineHumRising.GetComponent<AudioSource>().pitch = 1 + speed / 100;
 
                 roarGain.inputGain = gainMin;
@@ -96,15 +77,15 @@ public class MainEngineAudio : MonoBehaviour
             else
             {
                 // high power
-                whirrGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerSpeedMax, engineHighPowerSpeedMax, gainHighPowerMin, gainMax);
+                whirrGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerMax, engineHighPowerMax, gainHighPowerMin, gainMax);
                 engineWhirr.GetComponent<AudioSource>().pitch = 1 + speed / 100;
 
-                humStaticGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerSpeedMax, engineHighPowerSpeedMax, gainHighPowerMin, gainMax);
+                humStaticGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerMax, engineHighPowerMax, gainHighPowerMin, gainMax);
 
-                humRisingGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerSpeedMax, engineHighPowerSpeedMax, gainHighPowerMin, gainMax);
+                humRisingGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerMax, engineHighPowerMax, gainHighPowerMin, gainMax);
                 engineHumRising.GetComponent<AudioSource>().pitch = 1 + speed / 100;
 
-                roarGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerSpeedMax, engineHighPowerSpeedMax, gainMin, gainMax);
+                roarGain.inputGain = AudioUtility.ScaleValue(speed, engineLowPowerMax, engineHighPowerMax, gainMin, gainMax);
                 engineRoar.GetComponent<AudioSource>().pitch = 1 - speed / 300;
 
             }
