@@ -64,14 +64,14 @@ public class DamageToSubReson : MonoBehaviour
         else if (damage >= mediumDamageMin && damage <= heavyDamageMin)
         {
             //Medium Damage
-            lightGain.inputGain = AudioUtility.ScaleValue(damage, mediumDamageMin, heavyDamageMin, gainMax, gainMin);
+            lightGain.inputGain = gainMax;
             mediumGain.inputGain = gainMax;
             heavyGain.inputGain = gainMin;
         }
 
         else if (damage <= heavyDamageMin)
         {
-            lightGain.inputGain = gainMin;
+            lightGain.inputGain = AudioUtility.ScaleValue(damage, mediumDamageMin, heavyDamageMin, gainMax, gainMin);
             mediumGain.inputGain = gainMax;
             heavyGain.inputGain = AudioUtility.ScaleValue(damage, heavyDamageMin, 1f, gainMin, gainMax);
         }

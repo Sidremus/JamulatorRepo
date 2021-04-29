@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] [Range(0, 15)] float environmentalFadeUpTime;
 
     [SerializeField] GameObject[] bubbleMakers;
-    [SerializeField] [Range(-100, 0)] public float bubbleVol;
+    [Range(-100, 0)] public float bubbleVol;
 
     [SerializeField] GameObject rumble;
     AudioSourceFader ASFrumble;
@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
 
     [Header("External Submarine Sounds")]
-    [SerializeField] [Range(-80, 0)] public float extSubSoundsVol;
+    [Range(-80, 0)] public float extSubSoundsVol;
 
 
     [Header("Submarine Actions: Sonar")]
@@ -51,6 +51,10 @@ public class AudioManager : MonoBehaviour
     bool pingStart;
     bool pingFind;
     bool isPinging;
+
+    [Header("Cockpit UI")]
+    [Range(-80, 0)] public float UIVol;
+
 
     // Sonar ping duration controls //
     float sonarHumPreWait = 0.8f;
