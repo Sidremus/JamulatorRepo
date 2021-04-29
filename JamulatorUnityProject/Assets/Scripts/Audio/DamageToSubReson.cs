@@ -18,7 +18,7 @@ public class DamageToSubReson : MonoBehaviour
     float subDamageRange = 100f;
 
     float extGain;
-    float _gainMin = -48f;
+    float _gainMin = -39f;
     float _gainMax = 0f;
 
     float lightDamageMin = 0.1f;
@@ -53,7 +53,7 @@ public class DamageToSubReson : MonoBehaviour
             heavyGain.inputGain = gainMin;
         }
 
-        else if (damage >= lightDamageMin && damage <= mediumDamageMin)
+        else if (damage >= lightDamageMin && damage < mediumDamageMin)
         {
             //Light Damage
             lightGain.inputGain = gainMax;
@@ -61,7 +61,7 @@ public class DamageToSubReson : MonoBehaviour
             heavyGain.inputGain = gainMin;
         }
 
-        else if (damage >= mediumDamageMin && damage <= heavyDamageMin)
+        else if (damage >= mediumDamageMin && damage < heavyDamageMin)
         {
             //Medium Damage
             lightGain.inputGain = gainMax;
@@ -69,7 +69,7 @@ public class DamageToSubReson : MonoBehaviour
             heavyGain.inputGain = gainMin;
         }
 
-        else if (damage <= heavyDamageMin)
+        else if (damage >= heavyDamageMin)
         {
             lightGain.inputGain = AudioUtility.ScaleValue(damage, mediumDamageMin, heavyDamageMin, gainMax, gainMin);
             mediumGain.inputGain = gainMax;

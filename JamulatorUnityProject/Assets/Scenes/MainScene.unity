@@ -206,7 +206,7 @@ Transform:
   - {fileID: 940620292}
   - {fileID: 46911405}
   m_Father: {fileID: 838564170}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &42930260 stripped
 GameObject:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -6
+  outputGain: 6
   inputGain: 0
   audioSource: {fileID: 0}
 --- !u!1 &46911404
@@ -592,13 +592,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
+      propertyPath: m_Pitch
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 757ce0abdb5b154419a1e962c987a8a6, type: 3}
+      objectReference: {fileID: 8300000, guid: 57f8d6f37f979b64eade59bb13394dad, type: 3}
     - target: {fileID: 8999103348986745267, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1078,7 +1082,7 @@ Transform:
   m_Children:
   - {fileID: 1382439121}
   m_Father: {fileID: 838564170}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &483064533
 GameObject:
@@ -2011,7 +2015,7 @@ GameObject:
   - component: {fileID: 838564170}
   - component: {fileID: 838564171}
   m_Layer: 0
-  m_Name: PlayerSub
+  m_Name: Submarine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2028,12 +2032,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1322770535}
   - {fileID: 17553027}
   - {fileID: 448840063}
-  - {fileID: 927486090}
   m_Father: {fileID: 1378934020}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &838564171
 MonoBehaviour:
@@ -2328,6 +2330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927486090}
+  - component: {fileID: 927486091}
   m_Layer: 0
   m_Name: Cockpit (UI)
   m_TagString: Untagged
@@ -2342,16 +2345,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927486089}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 129736239}
   - {fileID: 1728106542}
   - {fileID: 581656780}
-  m_Father: {fileID: 838564170}
-  m_RootOrder: 3
+  m_Father: {fileID: 1378934020}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927486091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927486089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79581b6ffb9f6d4390487e245b52ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameobjectToFollow: {fileID: 822459271}
 --- !u!1 &940620291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,7 +3126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: 0
+  outputGain: 12
   inputGain: 0
   audioSource: {fileID: 0}
 --- !u!114 &1047150214
@@ -3361,7 +3377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -24
+  outputGain: 0
   inputGain: 0
   audioSource: {fileID: 0}
 --- !u!1 &1104802369
@@ -3646,6 +3662,7 @@ Transform:
   m_Children:
   - {fileID: 1519508112}
   - {fileID: 773358847}
+  - {fileID: 1393595625}
   m_Father: {fileID: 1880927092}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3806,7 +3823,6 @@ GameObject:
   - component: {fileID: 1322770539}
   - component: {fileID: 1322770538}
   - component: {fileID: 1322770537}
-  - component: {fileID: 1322770536}
   m_Layer: 0
   m_Name: dummysub (audio)
   m_TagString: Untagged
@@ -3822,24 +3838,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322770534}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 838564170}
-  m_RootOrder: 0
+  m_Father: {fileID: 1378934020}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1322770536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322770534}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7639424c884d314d96dbbbb009c3824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1322770537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3961,8 +3965,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1880927092}
-  - {fileID: 1393595625}
   - {fileID: 838564170}
+  - {fileID: 927486090}
+  - {fileID: 1322770535}
   m_Father: {fileID: 1425836235}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4026,8 +4031,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1881794047}
-  m_Father: {fileID: 1378934020}
-  m_RootOrder: 1
+  m_Father: {fileID: 1205548730}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1403933123
 GameObject:
@@ -4347,13 +4352,13 @@ MonoBehaviour:
   finWhaleStartVol: -8.4
   clicker: {fileID: 920972784}
   clickerStartVol: -16.8
-  extSubSoundsVol: 0
+  extSubSoundsVol: -6
   sonarVol: -18.9
   sonarOneShotObject: {fileID: 1008440200}
   pingSound: {fileID: 8300000, guid: 2f16939cca6942d4fb60eeeab78bf083, type: 3}
   findSound: {fileID: 8300000, guid: e23494ae91b2a07499319910171cd5fe, type: 3}
   sonarLoop: {fileID: 1695233834}
-  UIVol: -12
+  UIVol: -18
 --- !u!1 &1519508111
 GameObject:
   m_ObjectHideFlags: 0
