@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     [Range(0, 100)] public float subDamage;
     [Range(0, 100)] public float subDriveEnergy;
     [Range(0, 100)] public float subEnergyLevel;
-    public bool isInCave;
+    
 
     [Header("Environmental Sounds Initialisation")]
     [SerializeField] [Range(-80, 0)] float environmentalStartVol;
@@ -24,9 +24,6 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] GameObject[] bubbleMakers;
     [SerializeField] [Range(-100, 0)] public float bubbleVol;
-    GameObject bubblemaker_surface;
-    GameObject bubblemaker_regular;
-    GameObject bubblemaker_deep;
 
     [SerializeField] GameObject rumble;
     AudioSourceFader ASFrumble;
@@ -51,10 +48,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip pingSound;
     [SerializeField] AudioClip findSound;
     [SerializeField] GameObject sonarLoop;
+    bool pingStart;
+    bool pingFind;
+    bool isPinging;
 
-    [SerializeField] float sonarHumPreWait;
-    [SerializeField] float sonarHumFadeTime;
-    [SerializeField] float sonarFindPitchRandRange;
+    // Sonar ping duration controls //
+    float sonarHumPreWait = 0.8f;
+    float sonarHumFadeTime = 16f;
+    float sonarFindPitchRandRange = 0.01f;
 
     void Awake()
     {
@@ -73,6 +74,9 @@ public class AudioManager : MonoBehaviour
     {
         FindScriptsAndGameObjects();
         SetParams();
+
+        SubscribeToEvents();
+
     }
     private void FindScriptsAndGameObjects()
     {
@@ -84,13 +88,6 @@ public class AudioManager : MonoBehaviour
         ASFclicker = clicker.GetComponent<AudioSourceFader>();
 
 
-
-        // Bubbils
-        bubblemaker_surface = bubbleMakers[0];
-        bubblemaker_regular = bubbleMakers[1];
-        bubblemaker_deep = bubbleMakers[2];
-
-
     }
     private void SetParams()
     {
@@ -100,14 +97,6 @@ public class AudioManager : MonoBehaviour
         rumbleStartVol += environmentalStartVol;
         finWhaleStartVol += environmentalStartVol;
         clickerStartVol += environmentalStartVol;
-
-       /* for (int i = 0; i < bubbleMakers.Length; ++i)
-        {
-            foreach (GameObject obj in bubbleMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
-            {
-                obj.GetComponent<AudioSourceFader>().FadeTo(bubbleStartVol, environmentalFadeUpTime, 0.5f);
-            }
-        }*/
 
         ASFrumble.outputGain = rumbleStartVol;
         ASFrumble.UpdateAudioSourceAmplitude();
@@ -128,7 +117,7 @@ public class AudioManager : MonoBehaviour
         {
             subDepth = submarine.transform.position.y;
             // subDamage =
-            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
+            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;            
         }
 
         PingBoolCtrl();
@@ -136,15 +125,19 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    /// **** EVENTS **** ///
+    /// ******* EVENTS ******* ///
 
-    private void OnEnable()
+    private void SubscribeToEvents()
     {
-        //EventManager.Instance.onSonarPing += SonarPingStart;
+        EventManager.Instance.onSonarPing += SonarPingStart;
+
+    }
+    private void OnDisable()
+    {
+        EventManager.Instance.onSonarPing += SonarPingStart;
     }
 
-    [SerializeField] bool pingStart;
-    [SerializeField] bool pingFind;
+    #region Sonar Ping Control
     void PingBoolCtrl()
     {
         if (pingStart)
@@ -159,15 +152,33 @@ public class AudioManager : MonoBehaviour
             SonarPingFind();
         }
     }
-
     void SonarPingStart()
     {
+        if (isPinging)
+        {
+            Debug.Log("isPingin = true; stopping coroutine");
+            StartCoroutine(FadeAndStop(sonarLoop));
+            StopCoroutine(PlaySonarPing());
+        }
+            
+        
         StartCoroutine(PlaySonarPing());
+
     }
 
+    IEnumerator FadeAndStop(GameObject audioObject)
+    {
+        var loopASF = audioObject.GetComponent<AudioSourceFader>();
+        var loopSource = audioObject.GetComponent<AudioSource>();
+
+        loopASF.FadeTo(-80f, 0.1f, 0.9f);
+        yield return new WaitForSeconds(0.1f);
+        loopSource.Stop();
+    }
 
     IEnumerator PlaySonarPing()
     {
+        isPinging = true;
         // Play ping sound
         sonarOneShotObject.GetComponent<Gain>().inputGain = sonarVol;
         sonarOneShotObject.GetComponent<AudioSource>().PlayOneShot(pingSound);
@@ -178,8 +189,9 @@ public class AudioManager : MonoBehaviour
         // Fade it down if it's already playing
         if (loopSource.isPlaying)
         {
+            Debug.Log("loopsource.isplaying; stopping..");
             loopASF.FadeTo(-80f, 0.1f, 0.9f);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.1f);
             loopSource.Stop();
         }
 
@@ -193,36 +205,22 @@ public class AudioManager : MonoBehaviour
         yield return new WaitForSeconds(sonarHumFadeTime);
         loopSource.Stop();
 
+        isPinging = false;
         yield break;
 
 
     }
-
     void SonarPingFind()
     {
         sonarOneShotObject.GetComponent<Gain>().inputGain = sonarVol;
         sonarOneShotObject.GetComponent<AudioSource>().pitch = 1 + Random.Range(-sonarFindPitchRandRange, sonarFindPitchRandRange);
         sonarOneShotObject.GetComponent<AudioSource>().PlayOneShot(findSound);
     }
+    #endregion
+
+   
 
 
-    IEnumerator StopPingAfter(float waitTime, float fadeDownTime)
-    {
-
-        yield return new WaitForSeconds(waitTime);
-        sonarLoop.GetComponent<AudioSourceFader>().FadeTo(-80f, fadeDownTime, 0.1f);
-
-        yield return new WaitForSeconds(fadeDownTime);
-        sonarLoop.GetComponent<AudioSource>().Stop();
-
-        yield break;
-    }
-
-
-    private void OnDisable()
-    {
-        EventManager.Instance.onSonarPing += SonarPingStart;
-    }
 
 
 

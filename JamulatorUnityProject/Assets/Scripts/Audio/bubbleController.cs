@@ -15,17 +15,21 @@ public class bubbleController : MonoBehaviour
     bool isSwitchingToOcean = false;
     bool isSwitchingToCave = false;
 
-    float extGain;
-
     float fadeDownLevel = -36f;
     float fadeUpLevel = 0f;
 
 
-    void Update()
+    void CaveEntered()
     {
+        isInCave = true;
+    }
+    void CaveExited()
+    {
+        isInCave = false;
+    }
 
-        isInCave = AudioManager.Instance.isInCave;
-        extGain = AudioManager.Instance.bubbleVol;
+    void Update() 
+    {
 
         if (isInCave && !isSwitchingToCave)
         {
@@ -37,7 +41,7 @@ public class bubbleController : MonoBehaviour
             {
                 foreach (GameObject obj in oceanMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
                 {
-                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeDownLevel + extGain, 5, 0.3f);
+                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeDownLevel + AudioManager.Instance.bubbleVol, 5, 0.3f);
                 }
             }
 
@@ -45,7 +49,7 @@ public class bubbleController : MonoBehaviour
             {
                 foreach (GameObject obj in caveMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
                 {
-                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeUpLevel + extGain, 5, 0.8f);
+                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeUpLevel + AudioManager.Instance.bubbleVol, 5, 0.8f);
                 }
             }
         }
@@ -59,7 +63,7 @@ public class bubbleController : MonoBehaviour
             {
                 foreach (GameObject obj in oceanMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
                 {
-                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeUpLevel + extGain, 2 , 0.8f);
+                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeUpLevel + AudioManager.Instance.bubbleVol, 2 , 0.8f);
                 }
             }
 
@@ -67,7 +71,7 @@ public class bubbleController : MonoBehaviour
             {
                 foreach (GameObject obj in caveMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
                 {
-                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeDownLevel + extGain, 5, 0.3f);
+                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeDownLevel + AudioManager.Instance.bubbleVol, 5, 0.3f);
                 }
             }
 
@@ -82,7 +86,23 @@ public class bubbleController : MonoBehaviour
         yield return new WaitForSeconds(t);
         b = !b;
         yield break;
-
-
+        
     }
+
+
+
+    // Receives Cave events //
+    void Start()
+    {
+        EventManager.Instance.onCaveEntered += CaveEntered;
+        EventManager.Instance.onCaveExited += CaveExited;
+    }
+    void onDisable()
+    {
+        EventManager.Instance.onCaveEntered -= CaveEntered;
+        EventManager.Instance.onCaveExited -= CaveExited;
+    }
+
+
 }
+

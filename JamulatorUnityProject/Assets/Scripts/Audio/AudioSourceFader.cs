@@ -145,15 +145,7 @@ public class AudioSourceFader : MonoBehaviour
 
     public void FadeTo(float targetDb, float fadetime, float curveShape)      // Dynamic fade function. Curveshape argument modifies curviness of curve (more info in code).
     {
-        // Experimental addition, potentially buggy: infers values over 0.0 as amplitude, and converts to dB. note: 0.0 amplitude will be read as 0db (ie. 1.0 amplitude).         
-        if (targetDb > 0.0f)
-        {
-            targetDb = AudioUtility.ConvertAtoDb(targetDb);
-            Debug.Log("!!WARNING!!: AudioSourceFader on " + this.gameObject.name + ": " +
-                "targetDb value was over 0 - FadeTo assumes a loudness (-inf to 0) value in decibels, but this looks like an amplitude (0 to 1) value; converting to " + targetDb + "db for now, but it's advised to use a decibel value in future.");
-        }
-
-
+        
         // curveShape handler: creates a new Animation Curve with values from curveShape. At curveShape = 0.0, it's flat (linear: good for most audio); at 0.5, it's an S-Curve (starts and ends slowly, good for fade-outs); at 1.0, it's exponential (starts quickly, then slows down, good for crossfades).       
         Keyframe[] keys = new Keyframe[2];
         keys[0] = new Keyframe(0, 0, 0, 1f - curveShape, 0, 1f - curveShape);
