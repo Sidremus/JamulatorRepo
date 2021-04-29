@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class bubbleController : MonoBehaviour
 {
-    [SerializeField]  AudioManager manager;
-
     [SerializeField] bool isInCave;
 
     [SerializeField] GameObject[] oceanMakers;
@@ -26,8 +24,8 @@ public class bubbleController : MonoBehaviour
     void Update()
     {
 
-        isInCave = manager.isInCave;
-        extGain = manager.bubbleVol;
+        isInCave = AudioManager.Instance.isInCave;
+        extGain = AudioManager.Instance.bubbleVol;
 
         if (isInCave && !isSwitchingToCave)
         {

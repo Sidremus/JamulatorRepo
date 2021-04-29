@@ -5,7 +5,6 @@ using UnityEngine;
 public class DamageToSubReson : MonoBehaviour
 {
 
-    [SerializeField] AudioManager manager;
 
     [SerializeField] GameObject resonLight;
     Gain lightGain;
@@ -39,11 +38,11 @@ public class DamageToSubReson : MonoBehaviour
     void Update()
     {
 
-        subDamage = manager.subDamage;
+        subDamage = AudioManager.Instance.subDamage;
 
         float damage = Mathf.Abs(subDamage) / subDamageRange;
 
-        extGain = manager.extSubSoundsVol;
+        extGain = AudioManager.Instance.extSubSoundsVol;
         float gainMin = _gainMin + extGain;
         float gainMax = _gainMax + extGain;
 

@@ -22,7 +22,7 @@ public class ThrusterAudio : MonoBehaviour
 
     private void Update()
     {
-        subDriveEnergy = manager.subDriveEnergy;
+        subDriveEnergy = AudioManager.Instance.subDriveEnergy;
 
         if (!UseInternalControl)
         {           

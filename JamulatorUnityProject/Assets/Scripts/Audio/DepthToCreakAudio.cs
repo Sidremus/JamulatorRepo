@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DepthToCreakAudio : MonoBehaviour
 {
-    [SerializeField] AudioManager manager;
-
     [SerializeField] GameObject slightCreak;
     Gain lightGain;
     [SerializeField] GameObject mediumCreak;
@@ -35,33 +33,33 @@ public class DepthToCreakAudio : MonoBehaviour
     private void Update()
     {
 
-        subDepth = manager.subDepth;
+        subDepth = AudioManager.Instance.subDepth;
         float depth = Mathf.Abs(subDepth) / subDepthRange;
 
-        extGain = manager.extSubSoundsVol;
+        extGain = AudioManager.Instance.extSubSoundsVol;
         float gainMin = _gainMin + extGain;
         float gainMax = _gainMax + extGain;
 
         if (depth < slightDepthMin)
         {
-            slightCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, 0, slightDepthMin, gainMin, gainMax);
-            mediumCreak.GetComponent<Gain>().inputGain = gainMin;
-            heavyCreek.GetComponent<Gain>().inputGain = gainMin;
+            lightGain.inputGain = AudioUtility.ScaleValue(depth, 0, slightDepthMin, gainMin, gainMax);
+            mediumGain.inputGain = gainMin;
+            heavyGain.inputGain = gainMin;
         }
         else if (depth > slightDepthMin && depth < mediumDepthMin)
         {
             //Slight
-            slightCreak.GetComponent<Gain>().inputGain = gainMax;
-            mediumCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, slightDepthMin, mediumDepthMin, gainMin, gainMax);
-            heavyCreek.GetComponent<Gain>().inputGain = gainMin;
+            lightGain.inputGain = gainMax;
+            mediumGain.inputGain = AudioUtility.ScaleValue(depth, slightDepthMin, mediumDepthMin, gainMin, gainMax);
+            heavyGain.inputGain = gainMin;
 
         }
         else if (depth > mediumDepthMin && depth < deepDepthMin)
         {
             //Medium
-            slightCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMax, gainMin);
-            mediumCreak.GetComponent<Gain>().inputGain = gainMax;
-            heavyCreek.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMin, gainMax);
+            lightGain.inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMax, gainMin);
+            mediumGain.inputGain = gainMax;
+            heavyGain.inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMin, gainMax);
 
         }
         else if ( depth > deepDepthMin)

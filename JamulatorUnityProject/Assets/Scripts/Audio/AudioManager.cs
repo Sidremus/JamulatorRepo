@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private SubmarineState SubState;
+    private static AudioManager _instance;
+    public static AudioManager Instance { get { return _instance; } }
+
+
     public GameObject submarine;
 
     [Header("Global Messages")]
@@ -53,22 +56,21 @@ public class AudioManager : MonoBehaviour
     [SerializeField] float sonarHumFadeTime;
     [SerializeField] float sonarFindPitchRandRange;
 
-    private void Update()
+    void Awake()
     {
-        if (!UseInternalControl)
+        if (_instance != null && _instance != this)
         {
-            subDepth = submarine.transform.position.y;
-            // subDamage =
-            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
+            Destroy(this.gameObject);
+            return;
         }
 
-        PingBoolCtrl();
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject);
 
     }
 
     private void Start()
     {
-        SubState = SubmarineState.Instance;
         FindScriptsAndGameObjects();
         SetParams();
     }
@@ -116,6 +118,20 @@ public class AudioManager : MonoBehaviour
         ASFclicker.outputGain = clickerStartVol;
         ASFclicker.UpdateAudioSourceAmplitude();
 
+
+    }
+
+
+    private void Update()
+    {
+        if (!UseInternalControl)
+        {
+            subDepth = submarine.transform.position.y;
+            // subDamage =
+            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
+        }
+
+        PingBoolCtrl();
 
     }
 
