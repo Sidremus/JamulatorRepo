@@ -3176,6 +3176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  submarine: {fileID: 0}
+  rb: {fileID: 0}
   velocityVector: {x: 0, y: 0, z: 0}
   UseInternalControl: 0
 --- !u!114 &1322770537
@@ -3672,7 +3674,6 @@ MonoBehaviour:
   subDamage: 0
   subDriveEnergy: 0
   subEnergyLevel: 0
-  isInCave: 0
   environmentalStartVol: -6
   environmentalFadeUpTime: 6
   bubbleMakers:
@@ -3687,16 +3688,11 @@ MonoBehaviour:
   clicker: {fileID: 920972784}
   clickerStartVol: -16.8
   extSubSoundsVol: 0
-  sonarVol: -9.2
+  sonarVol: -18.9
   sonarOneShotObject: {fileID: 1008440200}
   pingSound: {fileID: 8300000, guid: 2f16939cca6942d4fb60eeeab78bf083, type: 3}
   findSound: {fileID: 8300000, guid: e23494ae91b2a07499319910171cd5fe, type: 3}
   sonarLoop: {fileID: 1695233834}
-  sonarHumPreWait: 0.8
-  sonarHumFadeTime: 16
-  sonarFindPitchRandRange: 0.01
-  pingStart: 0
-  pingFind: 0
 --- !u!1 &1519508111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4538,6 +4534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840204390}
   - component: {fileID: 1840204389}
+  - component: {fileID: 1840204391}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -4571,6 +4568,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1840204391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840204388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d1b1bb344bae14eafacef26dc00ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSubCollision: 0
+  onSonarPing: 0
+  onLightsOn: 0
+  onLightsOff: 0
+  onCaveEntered: 0
+  onCaveExited: 0
 --- !u!1 &1880927091
 GameObject:
   m_ObjectHideFlags: 0
