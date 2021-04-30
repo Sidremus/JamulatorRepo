@@ -147,6 +147,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d14550bb7c798df43857c669b769bf89, type: 3}
   - {fileID: 8300000, guid: b672e7b3297712049bf538b8c4ae8f90, type: 3}
   - {fileID: 8300000, guid: 241662dc73febbd458b1c416fea87fed, type: 3}
+  fishScale: 3.68
 --- !u!1001 &8810731476536588167
 PrefabInstance:
   m_ObjectHideFlags: 0

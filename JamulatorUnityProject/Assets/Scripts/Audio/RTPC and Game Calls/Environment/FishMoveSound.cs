@@ -9,10 +9,12 @@ using UnityEngine;
 public class FishMoveSound : MonoBehaviour
 {
     [SerializeField] AudioClip[] rippleClips;
+    [SerializeField] [Range(0.5f, 10f)] float fishScale = 1f;
+
     bool ripplePlaying;
 
-    float fishPitch = 1.2f;
-    float fishVol = -12f;
+    float fishPitch = 1f;
+    float fishVol = -3f;
 
     float pitchRandScaleFactor = 1.2f;
     float volRandOffset = 3f;
@@ -38,13 +40,14 @@ public class FishMoveSound : MonoBehaviour
         var newAudio = gameObject.AddComponent<AudioSource>();
 
         newAudio.playOnAwake = false;
-        newAudio.volume = AudioUtility.ConvertDbtoA(vol);
+        newAudio.volume = AudioUtility.ConvertDbtoA(vol + (1f * fishScale));
+        pitch -= fishPitch - (fishScale / 12f);
         newAudio.pitch = pitch;
         newAudio.clip = clip;
         newAudio.spatialize = true;
         newAudio.spatialBlend = 1f;
-        newAudio.maxDistance = 25f;
-        newAudio.minDistance = 2f;
+        newAudio.maxDistance = 30f * fishScale;
+        newAudio.minDistance = 5f * fishScale;
         newAudio.dopplerLevel = 3f;
 
         newAudio.Play();
