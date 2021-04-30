@@ -99,6 +99,8 @@ public class FishAI : MonoBehaviour
 
     private void Turn(Vector3 turnDir)
     {
+        GetComponent<FishMoveSound>().TriggerRipple();
+
         // Set new target facing direction
         targetDirection = turnDir;
 
