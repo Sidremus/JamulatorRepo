@@ -23,14 +23,15 @@ public class EventManager : MonoBehaviour
     private static EventManager _instance;
     public static EventManager Instance { get { return _instance; } }
 
-    public event Action onSubCollision;
-    public void NotifyOfSubCollision()
+    public event Action<Collision> onSubCollision;
+    public void NotifyOfSubCollision(Collision collision)
     {
         if (onSubCollision != null)
         {
-            onSubCollision();
+            onSubCollision(collision);
         }
     }
+
 
     public event Action onSonarPing;
     public void NotifyOfSonarPing()
