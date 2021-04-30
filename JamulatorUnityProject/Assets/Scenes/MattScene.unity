@@ -308,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164997721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -700, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1959004986}
@@ -483,26 +483,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8617856501877048174, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     - target: {fileID: -6462797483932530355, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     - target: {fileID: -5800916863964836328, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
+    - target: {fileID: -5134951993400776606, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     - target: {fileID: -4092844578741883967, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     - target: {fileID: -3150512484882906655, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     - target: {fileID: -597716866381619536, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     - target: {fileID: 919132149155446097, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Name
       value: MushroomGardenCave
@@ -510,11 +518,11 @@ PrefabInstance:
     - target: {fileID: 4575679899283673460, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     - target: {fileID: 4606242848573574935, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+      objectReference: {fileID: 2100000, guid: b5a87ad9b2fc3214889ed9072bba2693, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
 --- !u!4 &1959004986 stripped
