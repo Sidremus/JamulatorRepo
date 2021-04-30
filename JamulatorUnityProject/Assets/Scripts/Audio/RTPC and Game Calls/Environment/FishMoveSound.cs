@@ -46,9 +46,9 @@ public class FishMoveSound : MonoBehaviour
         newAudio.clip = clip;
         newAudio.spatialize = true;
         newAudio.spatialBlend = 1f;
-        newAudio.maxDistance = 30f * fishScale;
-        newAudio.minDistance = 5f * fishScale;
-        newAudio.dopplerLevel = 3f;
+        newAudio.maxDistance = 15f * fishScale;
+        newAudio.minDistance = 3f * fishScale;
+        newAudio.dopplerLevel = 1f;
 
         newAudio.Play();
 
