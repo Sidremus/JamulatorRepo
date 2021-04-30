@@ -9,8 +9,6 @@ public class FishManager : MonoBehaviour
     private void Awake() 
     {
         fish = GameObject.FindGameObjectsWithTag("fish");
-
-        DeactivateFishAI();
     }
 
     private void FixedUpdate() 
@@ -29,7 +27,7 @@ public class FishManager : MonoBehaviour
     {
         foreach(GameObject f in fish) 
         {
-            f.GetComponent<FishAI>().enabled = false;
+            f.GetComponent<BaseFishAI>().enabled = false;
         }
     }
 
@@ -42,7 +40,7 @@ public class FishManager : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(origin, radius, layerMask);
         foreach(Collider col in colliders) 
         {
-            col.gameObject.GetComponent<FishAI>().enabled = true;
+            col.gameObject.GetComponent<BaseFishAI>().enabled = true;
         }
     }
 }
