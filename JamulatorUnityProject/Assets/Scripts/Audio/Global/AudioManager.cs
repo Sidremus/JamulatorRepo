@@ -25,17 +25,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject[] bubbleMakers;
     [Range(-100, 0)] public float bubbleVol;
 
-    [SerializeField] GameObject rumble;
-    AudioSourceFader ASFrumble;
-    [SerializeField] [Range(-90, 12)] float rumbleStartVol;
+    [SerializeField] GameObject[] rumble;
+    [Range(-90, 12)] public float rumbleStartVol;
 
-    [SerializeField] GameObject finWhale;
-    AudioSourceFader ASFfin;
-    [SerializeField] [Range(-90, 12)] float finWhaleStartVol;
+    [SerializeField] GameObject[] finWhale;
+    [Range(-90, 12)] public float finWhaleStartVol;
 
-    [SerializeField] GameObject clicker;
-    AudioSourceFader ASFclicker;
-    [SerializeField] [Range(-90, 12)] float clickerStartVol;
+    [SerializeField] GameObject[] clicker;
+    [Range(-90, 12)] public float clickerStartVol;
 
     [Header("External Submarine Sounds")]
     [Range(-80, 0)] public float extSubSoundsVol;
@@ -76,45 +73,38 @@ public class AudioManager : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
 
+        SetParams();
+
     }
 
     private void Start()
-    {
-        FindScriptsAndGameObjects();
-        SetParams();
-
+    {        
         SubscribeToEvents();
-
-    }
-    private void FindScriptsAndGameObjects()
-    {
-
-        // Audiosource Fader scripts
-
-        ASFrumble = rumble.GetComponent<AudioSourceFader>();
-        ASFfin = finWhale.GetComponent<AudioSourceFader>();
-        ASFclicker = clicker.GetComponent<AudioSourceFader>();
-
-
     }
     private void SetParams()
     {
         // Sends params from inspector to relevant gameobjects.
-
         bubbleVol += environmentalStartVol;
+
+
         rumbleStartVol += environmentalStartVol;
         finWhaleStartVol += environmentalStartVol;
         clickerStartVol += environmentalStartVol;
 
-        ASFrumble.outputGain = rumbleStartVol;
-        ASFrumble.UpdateAudioSourceAmplitude();
+        for (int i = 0; i < rumble.Length; ++i)
+        {
+            rumble[i].GetComponent<AudioSourceFader>().outputGain = rumbleStartVol;
+        }
 
-        ASFfin.outputGain = finWhaleStartVol;
-        ASFfin.UpdateAudioSourceAmplitude();
+        for (int i = 0; i < finWhale.Length; ++i)
+        {
+            finWhale[i].GetComponent<AudioSourceFader>().outputGain = finWhaleStartVol;
+        }
 
-        ASFclicker.outputGain = clickerStartVol;
-        ASFclicker.UpdateAudioSourceAmplitude();
-
+        for (int i = 0; i < clicker.Length; ++i)
+        {
+            clicker[i].GetComponent<AudioSourceFader>().outputGain = clickerStartVol;
+        }
 
     }
 

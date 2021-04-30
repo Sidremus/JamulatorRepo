@@ -145,6 +145,7 @@ MonoBehaviour:
   outputGain: -24
   inputGain: 0
   audioSource: {fileID: 1643539635598882892}
+  fadeInOnAwakeTime: 5
 --- !u!82 &1643539635598882883
 AudioSource:
   m_ObjectHideFlags: 0
@@ -274,3 +275,4 @@ MonoBehaviour:
   outputGain: -48
   inputGain: 0
   audioSource: {fileID: 1643539635598882883}
+  fadeInOnAwakeTime: 0

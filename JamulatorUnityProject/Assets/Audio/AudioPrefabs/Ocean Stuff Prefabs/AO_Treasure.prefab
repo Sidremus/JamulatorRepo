@@ -161,3 +161,4 @@ MonoBehaviour:
   outputGain: -40
   inputGain: 0
   audioSource: {fileID: 0}
+  fadeInOnAwakeTime: 5

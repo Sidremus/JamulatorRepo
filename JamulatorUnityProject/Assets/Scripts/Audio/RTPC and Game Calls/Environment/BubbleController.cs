@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-
 public class BubbleController : MonoBehaviour
 {
     [SerializeField] bool isInCave;

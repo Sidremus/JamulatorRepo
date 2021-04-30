@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 /// 
 
-public class FishAudio : MonoBehaviour
+public class FishMoveSound : MonoBehaviour
 {
     [SerializeField] AudioClip[] rippleClips;
     bool ripplePlaying;

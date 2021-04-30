@@ -144,6 +144,7 @@ MonoBehaviour:
   outputGain: -16
   inputGain: 0
   audioSource: {fileID: 0}
+  fadeInOnAwakeTime: 5
 --- !u!114 &987975425327461744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,4 +167,4 @@ MonoBehaviour:
   intervalBetweenPlays: 9
   intervalRand: 4
   pitch: 1
-  pitchRand: 0
+  pitchRand: 0.053
