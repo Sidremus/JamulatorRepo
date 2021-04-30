@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: UnderWaterLitDepfthFadeMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5d4108d39156b1248b9105e8d1a59f4f, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b8cf4071baf0c0940be35769f66b2457, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +19,22 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_0380a3b8255540b796d752507c0df2b0:
+        m_Texture: {fileID: 2800000, guid: 4c2c976ed7575824e8d0fd1b824908e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_3e9cd291b3d34881a9ac45b495a275cb:
+        m_Texture: {fileID: 2800000, guid: bd5df4cec8097924cb0cde46302d0112, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_53760d2017824fc3b10800af8237b6f4:
+        m_Texture: {fileID: 2800000, guid: 4c2c976ed7575824e8d0fd1b824908e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_5c1ae177a6f24783806c197a79ba8ec1:
+        m_Texture: {fileID: 2800000, guid: bd5df4cec8097924cb0cde46302d0112, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -44,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2e8ec093630333f4f9807f87abf01f05, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,6 +79,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_7fa9035555cb4156ba632082cdde8300_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_bbceb2954c1248388eac470d22e029a9_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_c183689049294829bbf6b0075ee71b5c_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_d7e63ca94767472f9c5971706fe1cd77_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -76,8 +108,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_00cfddcddbe149d4bfe80a1af043d935: 50
     - Vector1_02c6dc35556b47379690e1f89c6b01fc: 2000
+    - Vector1_1e9b1a3170fd446e8a054e1e3cdcbb75: 1.2
+    - Vector1_1ed8ca97eb6649c1a4c4dda00901cf8d: 1.2
+    - Vector1_2477f7079a0a4cdb817b04cbbe0197d4: 1
+    - Vector1_2f7237f1c4204349bdb8e4057f1c6e30: 100
     - Vector1_76a835be10884651aff080dcf317a770: 50
+    - Vector1_a68d9abd315043deb052636e573f6ec3: 1
     - Vector1_c880e3ea4c9a4008b1a2e8ab2d734f53: 0
     - Vector1_da0636958f624971b74a494756daa482: 5
     - Vector1_fce0f09cd5cf4565b96856c2d10dd36c: 472.64
