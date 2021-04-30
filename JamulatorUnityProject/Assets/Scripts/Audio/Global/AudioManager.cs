@@ -260,6 +260,7 @@ public class AudioManager : MonoBehaviour
     #endregion Lights
 
     #region Collision SFX
+    // TODO: Connect to event system? //
     public void PlayCollisionSound(Vector3 position, float impactMagnitude)
     {
         // chooses clip, sets gain and pitch based on impactMagnitude, plays at position
