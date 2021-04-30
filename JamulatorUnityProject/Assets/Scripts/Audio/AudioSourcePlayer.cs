@@ -10,7 +10,11 @@ public class AudioSourcePlayer : MonoBehaviour
     [SerializeField] bool loop;
     [SerializeField] bool clipPlaying;
     [SerializeField] float intervalBetweenPlays;
+    [SerializeField] float intervalRand = 0f;
+
+
     [SerializeField] [Range(-4f, 4f)] float pitch = 1f;
+    [SerializeField] [Range(-1f, 1f)] float pitchRand = 0f;
 
 
     private AudioSource source;
@@ -24,10 +28,11 @@ public class AudioSourcePlayer : MonoBehaviour
             clips.Add(source.clip);
         else source.clip = AudioUtility.RandomClipFromList(clips);
 
-
-        if (loop)
+        if (loop && source.playOnAwake)
+        {
+            source.Play();
             PlayLoopWithInterval();
-        
+        }   
 
     }
 
@@ -46,7 +51,6 @@ public class AudioSourcePlayer : MonoBehaviour
 
     void LoopClip(float interval)
     {
-        source.pitch = pitch;
         StartCoroutine(ClipLooper(source, AudioUtility.RandomClipFromList(clips), interval));
     }
 
@@ -57,7 +61,9 @@ public class AudioSourcePlayer : MonoBehaviour
         {    
             if (!clipPlaying)
             {
-                StartCoroutine(WaitIntervalThenPlay(src, clip, interval));
+                interval = Mathf.Clamp(interval + Random.Range(-intervalRand, intervalRand), 0, interval + intervalRand);                
+
+                StartCoroutine(WaitIntervalThenPlayFromList(src, clips, interval));
                 clipPlaying = true;
             }
             yield return null;
@@ -65,24 +71,21 @@ public class AudioSourcePlayer : MonoBehaviour
        
     }
 
-    public IEnumerator WaitIntervalThenPlay(AudioSource src, AudioClip clip, float interval)
-    {      
+    public IEnumerator WaitIntervalThenPlayFromList (AudioSource src, List<AudioClip> cliplist, float interval)
+    {
         interval += src.clip.length;
-        //Debug.Log("playing clip " + clip + "at object " + src.gameObject.name + ".. waiting " + interval + "seconds");
 
         yield return new WaitForSeconds(interval);
         clipPlaying = true;
-        src.clip = clip;
+
+        src.pitch = pitch + Random.Range(-pitchRand, pitchRand);
+        src.clip = AudioUtility.RandomClipFromList(cliplist);
         src.Play();
 
         yield return new WaitForSeconds(src.clip.length);
         clipPlaying = false;
         yield return null;
-        
-        
     }
-
-
 
 
 }

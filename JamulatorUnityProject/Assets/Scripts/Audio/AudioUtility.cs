@@ -29,11 +29,11 @@ public static class AudioUtility
 
     public static AudioClip RandomClipFromArray(AudioClip[] cliplist)
     {
-        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Length - 1), cliplist.Length)];
+        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Length), cliplist.Length)];
     }
     public static AudioClip RandomClipFromList(List<AudioClip> cliplist)
     {
-        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Count - 1), cliplist.Count)];
+        return cliplist[Mathf.Clamp(0, Random.Range(0, cliplist.Count), cliplist.Count)];
     }
 
 
