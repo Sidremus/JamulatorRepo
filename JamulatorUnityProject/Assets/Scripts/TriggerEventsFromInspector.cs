@@ -9,7 +9,6 @@ using UnityEngine;
 
 public class TriggerEventsFromInspector : MonoBehaviour
 {
-    [SerializeField] bool onSubCollision;
     [SerializeField] bool onSonarPing;
     [SerializeField] bool onLightsOn;
     [SerializeField] bool onLightsOff;
@@ -20,12 +19,6 @@ public class TriggerEventsFromInspector : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            if (onSubCollision)
-            {
-                EventManager.Instance.NotifyOfSubCollision();
-                onSubCollision = false;
-            }
-
             if (onSonarPing)
             {
                 EventManager.Instance.NotifyOfSonarPing();

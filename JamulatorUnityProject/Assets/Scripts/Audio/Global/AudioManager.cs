@@ -133,6 +133,7 @@ public class AudioManager : MonoBehaviour
         EventManager.Instance.onSonarPing += SonarPingStart;
         EventManager.Instance.onLightsOn += LightsOn;
         EventManager.Instance.onLightsOff += LightsOff;
+        EventManager.Instance.onSubCollision += ProcessCollision;
 
     }
     private void OnDisable()
@@ -140,6 +141,7 @@ public class AudioManager : MonoBehaviour
         EventManager.Instance.onSonarPing -= SonarPingStart;
         EventManager.Instance.onLightsOn -= LightsOn;
         EventManager.Instance.onLightsOff -= LightsOff;
+        EventManager.Instance.onSubCollision -= ProcessCollision;
     }
 
     #region Sonar Ping Control
@@ -261,6 +263,18 @@ public class AudioManager : MonoBehaviour
 
     #region Collision SFX
     // TODO: Connect to event system? //
+
+    private void ProcessCollision(Collision collision)
+    {
+        float impactMagnitude = collision.relativeVelocity.magnitude;
+        Vector3 position = collision.contacts[0].point;
+        AudioManager.Instance.PlayCollisionSound(position, impactMagnitude);
+
+        Debug.Log("Collision! at position: " + position + " with an impactMagnitude of " + impactMagnitude);
+
+        PlayCollisionSound(position, impactMagnitude);
+    }
+
     public void PlayCollisionSound(Vector3 position, float impactMagnitude)
     {
         // chooses clip, sets gain and pitch based on impactMagnitude, plays at position
