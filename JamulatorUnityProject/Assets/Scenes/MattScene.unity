@@ -483,7 +483,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6462797483932530355, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
     - target: {fileID: -5800916863964836328, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+    - target: {fileID: -4092844578741883967, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+    - target: {fileID: -3150512484882906655, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+    - target: {fileID: -597716866381619536, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
@@ -491,6 +507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomGardenCave
       objectReference: {fileID: 0}
+    - target: {fileID: 4575679899283673460, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
     - target: {fileID: 4606242848573574935, guid: f6e308d34dd06294480ae421d1de855a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
