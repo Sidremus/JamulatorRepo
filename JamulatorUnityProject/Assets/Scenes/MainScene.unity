@@ -5005,6 +5005,16 @@ MonoBehaviour:
   - {fileID: 920972784}
   clickerStartVol: -30.6
   extSubSoundsVol: -3.6
+  collisionFX:
+  - {fileID: 8300000, guid: 6d7a991ed1808b04da1895e08b8670fd, type: 3}
+  - {fileID: 8300000, guid: 0bb9ae63f406b3e48a7c08241194852e, type: 3}
+  - {fileID: 8300000, guid: d2aa9aa8eefa919469a52b4948795550, type: 3}
+  - {fileID: 8300000, guid: a84d21e811e28f54387c59835baf7424, type: 3}
+  - {fileID: 8300000, guid: a84d21e811e28f54387c59835baf7424, type: 3}
+  - {fileID: 8300000, guid: faf648dc633609744a0645c361cd684c, type: 3}
+  - {fileID: 8300000, guid: de689be72bf329e45b621c5da50193a1, type: 3}
+  - {fileID: 8300000, guid: 87c04c68921132649a34775c84eda5d7, type: 3}
+  AOCollisionPrefab: {fileID: 5846133063322831264, guid: 0dd2102f4531cf2458c3ea7d22e4226d, type: 3}
   sonarVol: -18.9
   sonarOneShotObject: {fileID: 1008440200}
   pingSound: {fileID: 8300000, guid: 2f16939cca6942d4fb60eeeab78bf083, type: 3}
