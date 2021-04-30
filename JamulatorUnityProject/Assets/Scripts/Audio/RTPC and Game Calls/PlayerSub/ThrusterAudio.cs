@@ -6,19 +6,17 @@ public class ThrusterAudio : MonoBehaviour
 {
     // decides which audiosource will trigger the thruster sound depending on the direction of movement.
 
-    [SerializeField] AudioManager manager;
-
     [SerializeField] GameObject[] thrusters;
     [SerializeField] float[] thrusterVols = { 0f, 0f, 0f, 0f, 0f };
 
     [Header("Internal Controls")]
     [SerializeField] bool UseInternalControl;
-    [SerializeField] [Range(0, 1)] float subDriveEnergy;
-    [SerializeField] bool DirectionLeft;
-    [SerializeField] bool DirectionRight;
-    [SerializeField] bool DirectionUp;
-    [SerializeField] bool DirectionDown;
-    [SerializeField] bool DirectionBackwards;
+    [Range(0, 1)] float subDriveEnergy;
+    bool DirectionLeft;
+    bool DirectionRight;
+    bool DirectionUp;
+    bool DirectionDown;
+    bool DirectionBackwards;
 
     private void Update()
     {
