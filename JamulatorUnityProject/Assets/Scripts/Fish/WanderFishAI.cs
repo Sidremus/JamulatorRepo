@@ -1,15 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-public class FishAI : MonoBehaviour
+public class WanderFishAI : BaseFishAI
 {
-    private float passiveMoveSpeed = 2.5f;
+    protected float moveSpeed = 2.5f;
+    protected float minMoveSpeed = 2.5f;
     private Vector3 targetDirection;
     private float lastTurned = 0f;
     private float turnTimeout = 8f;
     private bool canCheckCols = false;
  
-    private void Start() 
+    private void OnEnable() 
     {
         targetDirection = transform.forward;
         canCheckCols = Random.Range(0, 1) > 0.5;    
@@ -39,7 +41,7 @@ public class FishAI : MonoBehaviour
         if (targetDir.normalized == transform.forward.normalized) return;
         
         // Turn speed relative to current speed
-        float turnSpeed = Mathf.Ceil(passiveMoveSpeed * 0.5f);
+        float turnSpeed = Mathf.Ceil(moveSpeed * 0.5f);
         float step = turnSpeed * Time.deltaTime;
 
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.1f);
@@ -49,7 +51,7 @@ public class FishAI : MonoBehaviour
 
     private void SwimForwards()
     {
-        transform.Translate(Vector3.forward * passiveMoveSpeed * Time.fixedDeltaTime, Space.Self);
+        transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime, Space.Self);
     }
 
     // Will only set a new target direction if about to collide with something
@@ -108,7 +110,7 @@ public class FishAI : MonoBehaviour
         lastTurned = 0f;
 
         // Assign new speed til next turn
-        passiveMoveSpeed *= Random.Range(0.8f, 1.2f);
+        moveSpeed = minMoveSpeed * Random.Range(0.8f, 1.2f);
 
         // How long til fish gets bored?
         turnTimeout = Random.Range(3f, 8f);
