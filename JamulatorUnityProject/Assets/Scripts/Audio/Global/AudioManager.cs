@@ -37,6 +37,10 @@ public class AudioManager : MonoBehaviour
     [Header("External Submarine Sounds")]
     [Range(-80, 0)] public float extSubSoundsVol;
 
+    [Header("Submarine Collision")]
+    [SerializeField] AudioClip[] collisionFX;
+    [SerializeField] GameObject AOCollisionPrefab;
+
     [Header("Submarine Actions: Sonar")]
     [SerializeField] [Range(-90, 12)] float sonarVol;
     [SerializeField] GameObject sonarOneShotObject;
@@ -255,6 +259,34 @@ public class AudioManager : MonoBehaviour
     }
     #endregion Lights
 
+    #region Collision SFX
+    public void PlayCollisionSound(Vector3 position, float impactMagnitude)
+    {
+        // chooses clip, sets gain and pitch based on impactMagnitude, plays at position
+        impactMagnitude = Mathf.Clamp(impactMagnitude, 0f, 5f) / 5f;
 
+        var newAO = Instantiate(AOCollisionPrefab, position, Quaternion.identity);
+        newAO.transform.parent = transform;
+
+        var source = newAO.GetComponent<AudioSource>();
+        var clip = collisionFX[Mathf.RoundToInt(impactMagnitude * (collisionFX.Length - 1))];
+        source.clip = clip;
+
+        newAO.GetComponent<Gain>().inputGain = 0f - ((1f - impactMagnitude) * 24f);
+        var pitch = Random.Range(0.85f, 1.15f) - (impactMagnitude / 2);
+        source.pitch = pitch;
+
+        source.Play();
+        StartCoroutine(WaitThenDestroy(newAO, clip, pitch));
+    }
+
+
+    IEnumerator WaitThenDestroy(GameObject obj, AudioClip clip, float pitch)
+    {
+        float duration = clip.length / pitch;
+        yield return new WaitForSeconds(duration);
+        Destroy(obj);
+    }
+    #endregion
 
 }

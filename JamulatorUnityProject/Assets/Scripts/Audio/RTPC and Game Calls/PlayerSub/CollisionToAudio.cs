@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CollisionToAudio : MonoBehaviour
 {    
+    // TODO: need to work out how/whether it can be routed throught the event system //
+
+
     private void OnEnable()
     {
         //EventManager.Instance.onSubCollision += ProcessCollision;
@@ -19,7 +22,7 @@ public class CollisionToAudio : MonoBehaviour
     {
         float impactMagnitude = collision.relativeVelocity.magnitude;
         Vector3 position = collision.contacts[0].point;
-        SubCollisionAudio.Instance.PlayCollisionSound(position, impactMagnitude);
+        AudioManager.Instance.PlayCollisionSound(position, impactMagnitude);
 
     }
 
