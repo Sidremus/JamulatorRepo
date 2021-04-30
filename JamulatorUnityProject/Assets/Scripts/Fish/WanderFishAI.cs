@@ -1,10 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-public class FishAI : MonoBehaviour
+public class WanderFishAI : BaseFishAI
 {
-    private float moveSpeed = 2.5f;
-    private float minMoveSpeed = 2.5f;
+    protected float moveSpeed = 2.5f;
+    protected float minMoveSpeed = 2.5f;
     private Vector3 targetDirection;
     private float lastTurned = 0f;
     private float turnTimeout = 8f;
