@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9179405674674216586}
   - component: {fileID: 7656764098765942389}
+  - component: {fileID: -663238210038202030}
   m_Layer: 0
   m_Name: BottomFeeder
   m_TagString: Untagged
@@ -126,6 +127,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440113c7221a447bbba01bc3b4bf63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-663238210038202030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369971239298073648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3037eaf3bc1243a4c9aebb3e492ab546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rippleClips:
+  - {fileID: 8300000, guid: 7a9c95251b75b374d8c441dffab7c58b, type: 3}
+  - {fileID: 8300000, guid: 85e62cea2e09e9f44a0190d8279afc6c, type: 3}
+  - {fileID: 8300000, guid: 9fc2b52b75d03be459ad50a54d607948, type: 3}
+  - {fileID: 8300000, guid: 05851f248b63b564e9cb926f729074a0, type: 3}
+  - {fileID: 8300000, guid: d14550bb7c798df43857c669b769bf89, type: 3}
+  - {fileID: 8300000, guid: b672e7b3297712049bf538b8c4ae8f90, type: 3}
+  - {fileID: 8300000, guid: 241662dc73febbd458b1c416fea87fed, type: 3}
 --- !u!1001 &8810731476536588167
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class FishMoveSound : MonoBehaviour
     bool ripplePlaying;
 
     float fishPitch = 1.2f;
-    float fishVol = -6f;
+    float fishVol = -12f;
 
     float pitchRandScaleFactor = 1.2f;
     float volRandOffset = 3f;
@@ -43,8 +43,8 @@ public class FishMoveSound : MonoBehaviour
         newAudio.clip = clip;
         newAudio.spatialize = true;
         newAudio.spatialBlend = 1f;
-        newAudio.maxDistance = 15f;
-        newAudio.minDistance = 3f;
+        newAudio.maxDistance = 25f;
+        newAudio.minDistance = 2f;
         newAudio.dopplerLevel = 3f;
 
         newAudio.Play();
