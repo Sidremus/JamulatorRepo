@@ -22,8 +22,6 @@ public class SubmarineCollisionListener : MonoBehaviour
             damageScale *= 0.5f;
 
         float impactMagnitude = collision.relativeVelocity.magnitude;
-        Debug.Log(impactMagnitude);
-
         SubmarineState.Instance.subDamage += impactMagnitude * damageScale;
 
         Vector3 position = collision.contacts[0].point;
