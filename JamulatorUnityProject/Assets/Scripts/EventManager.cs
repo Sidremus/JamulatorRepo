@@ -26,8 +26,6 @@ public class EventManager : MonoBehaviour
     public event Action<Collision> onSubCollision;
     public void NotifyOfSubCollision(Collision collision)
     {
-        Debug.Log("event manager detects collision: " + collision.relativeVelocity.magnitude);
-
         if (onSubCollision != null)
         {
             onSubCollision(collision);

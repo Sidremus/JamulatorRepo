@@ -83,8 +83,7 @@ public class SubmarineState : MonoBehaviour
     }
 
     private void SelfRepair()
-    {
-        Debug.Log("subDamage: " + subDamage);
+    {        
         subDamage -= Time.deltaTime * repairRate;
     }
 

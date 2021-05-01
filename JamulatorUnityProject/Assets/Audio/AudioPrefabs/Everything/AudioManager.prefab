@@ -1388,15 +1388,36 @@ MonoBehaviour:
   - {fileID: 2057777429840090920}
   clickerStartVol: -30.6
   extSubSoundsVol: -3.6
-  collisionFX:
+  collisionFX_Sub:
   - {fileID: 8300000, guid: 6d7a991ed1808b04da1895e08b8670fd, type: 3}
   - {fileID: 8300000, guid: 0bb9ae63f406b3e48a7c08241194852e, type: 3}
   - {fileID: 8300000, guid: d2aa9aa8eefa919469a52b4948795550, type: 3}
   - {fileID: 8300000, guid: a84d21e811e28f54387c59835baf7424, type: 3}
-  - {fileID: 8300000, guid: a84d21e811e28f54387c59835baf7424, type: 3}
   - {fileID: 8300000, guid: faf648dc633609744a0645c361cd684c, type: 3}
   - {fileID: 8300000, guid: de689be72bf329e45b621c5da50193a1, type: 3}
   - {fileID: 8300000, guid: 87c04c68921132649a34775c84eda5d7, type: 3}
+  collisionFX_Rock:
+  - {fileID: 8300000, guid: 5a197f58d18d77b479938958c6d0b63f, type: 3}
+  - {fileID: 8300000, guid: 291e733783279694b96e278a6271b982, type: 3}
+  - {fileID: 8300000, guid: a56ea0d52ce60414b85702877e2bce5c, type: 3}
+  collisionFX_Plant:
+  - {fileID: 8300000, guid: 2f7aa6b0d650c6d448c406136fc03efa, type: 3}
+  - {fileID: 8300000, guid: 34b9a5b1786c47f4daacc004e67c1253, type: 3}
+  - {fileID: 8300000, guid: d7d656534bbe1cb41a6a75b67161b245, type: 3}
+  - {fileID: 8300000, guid: e569a96a0efdd524d9b3dc3792a1e145, type: 3}
+  - {fileID: 8300000, guid: 50b7c4ad665f5d146b1aaed3f2825a92, type: 3}
+  collisionFX_SoftFauna:
+  - {fileID: 8300000, guid: d41a78f20d47b7847b1cf5df83aef007, type: 3}
+  - {fileID: 8300000, guid: 4d1b4bd2f61340d4d8edd7211689534e, type: 3}
+  - {fileID: 8300000, guid: d4b21d03e0c7ec14380276c851797196, type: 3}
+  - {fileID: 8300000, guid: e26aec4b508e064408ea9d31942e0719, type: 3}
+  - {fileID: 8300000, guid: aee20fc47faacb940ba64b35136ee675, type: 3}
+  - {fileID: 8300000, guid: fcc7f1145ac73f14d87e49f88faf9421, type: 3}
+  collisionFX_HardFauna:
+  - {fileID: 8300000, guid: 493edd6490fed154aa4561ec2bc69971, type: 3}
+  - {fileID: 8300000, guid: e5414d05f98af2347a445ca9207cf404, type: 3}
+  - {fileID: 8300000, guid: 0a73c98b42a18d5488f7b65f4b15a338, type: 3}
+  - {fileID: 8300000, guid: a7d3ab8e8758c314ba4890ddba4a7ebb, type: 3}
   AOCollisionPrefab: {fileID: 5846133063322831264, guid: 0dd2102f4531cf2458c3ea7d22e4226d, type: 3}
   sonarVol: -18.9
   sonarOneShotObject: {fileID: 2057777429741578576}
