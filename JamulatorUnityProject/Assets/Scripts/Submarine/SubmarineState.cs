@@ -46,6 +46,8 @@ public class SubmarineState : MonoBehaviour
 
     public float subDamage { get; set; }
     float repairRate = 0.2f;
+    public bool inCave { get; set; }
+    private InCaveTrigger lastCaveTrigger;
 
 
 
@@ -226,5 +228,16 @@ public class SubmarineState : MonoBehaviour
       {
         EventManager.Instance.NotifyOfLightsOff();
       }
+    }
+
+    public void CaveTrigger(InCaveTrigger trigger) 
+    {
+        if (lastCaveTrigger != InCaveTrigger.MID) {
+            return;
+        }
+        switch(trigger) {
+            case InCaveTrigger.START:
+                break;
+        }
     }
 }
