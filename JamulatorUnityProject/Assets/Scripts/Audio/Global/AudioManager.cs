@@ -31,8 +31,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject[] finWhale;
     [Range(-90, 12)] public float finWhaleStartVol;
 
-    [SerializeField] GameObject[] clicker;
-    [Range(-90, 12)] public float clickerStartVol;
 
     [Header("External Submarine Sounds")]
     [Range(-80, 0)] public float extSubSoundsVol;
@@ -70,6 +68,8 @@ public class AudioManager : MonoBehaviour
     float sonarHumFadeTime = 16f;
     float sonarFindPitchRandRange = 0.01f;
 
+    float worldDepth = 800f;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -96,7 +96,6 @@ public class AudioManager : MonoBehaviour
 
         rumbleStartVol += environmentalStartVol;
         finWhaleStartVol += environmentalStartVol;
-        clickerStartVol += environmentalStartVol;
 
         for (int i = 0; i < rumble.Length; ++i)
         {
@@ -108,11 +107,6 @@ public class AudioManager : MonoBehaviour
             finWhale[i].GetComponent<AudioSourceFader>().outputGain = finWhaleStartVol;
         }
 
-        for (int i = 0; i < clicker.Length; ++i)
-        {
-            clicker[i].GetComponent<AudioSourceFader>().outputGain = clickerStartVol;
-        }
-
     }
 
 
@@ -120,7 +114,7 @@ public class AudioManager : MonoBehaviour
     {
         if (!UseInternalControl)
         {
-            subDepth = submarine.transform.position.y;
+            subDepth = Mathf.Clamp((submarine.transform.position.y / worldDepth) * 100f, 0, 100);
             subSensorEnergy = SubmarineState.Instance.sensorEnergyLerp;
             subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
             subDamage = SubmarineState.Instance.subDamage;
@@ -277,7 +271,7 @@ public class AudioManager : MonoBehaviour
         var source = newAO.GetComponent<AudioSource>();
         AudioClip[] collisionFX = new AudioClip[0];
 
-        if (other.tag == "Submarine")
+        if (other.tag == "Submarine" || other.tag == "Wreck")
             collisionFX = collisionFX_Sub;
         else if (other.tag == "Plant")
             collisionFX = collisionFX_Plant;
