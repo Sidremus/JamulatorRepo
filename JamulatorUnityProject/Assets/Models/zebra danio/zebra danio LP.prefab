@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2384980391635454285}
   - component: {fileID: 1292916093}
   - component: {fileID: 1292916094}
+  - component: {fileID: 5488684263276776016}
   m_Layer: 0
   m_Name: zebra danio LP
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,3 +117,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155676f0fdde24323b69f10c73c86702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &5488684263276776016
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186618635333904536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5175709493274948070, guid: bcf9a4d31dbb1a749ba62a7ef18ae4a2, type: 3}

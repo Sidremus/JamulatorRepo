@@ -1,6 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &252851048870485694
+--- !u!64 &7561677057356653189
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378127376448652115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1156508531768724625, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
+--- !u!1 &1405462790807028220
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,35 +22,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8866849141928541679}
+  - component: {fileID: 7714131896337638061}
   m_Layer: 0
-  m_Name: WallMushroom03
+  m_Name: WallMushroom03 1
   m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8866849141928541679
+--- !u!4 &7714131896337638061
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 252851048870485694}
+  m_GameObject: {fileID: 1405462790807028220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.042618513, y: -0.022503853, z: -0.15155852}
+  m_LocalPosition: {x: 258.69934, y: -235.06247, z: -495.1992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5567065151829667396}
+  - {fileID: 6719733503582597382}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5388707861834369455
+--- !u!64 &3733269232870240728
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8130742518657502812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3838399582355140731, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
+--- !u!1001 &6542590587603359469
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8866849141928541679}
+    m_TransformParent: {fileID: 7714131896337638061}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
       propertyPath: m_RootOrder
@@ -82,6 +110,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6188578898870576975, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
+      propertyPath: m_TagString
+      value: SoftFauna
+      objectReference: {fileID: 0}
     - target: {fileID: -1297439015887735840, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -90,10 +122,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallMushroomcluster3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
+      propertyPath: m_TagString
+      value: SoftFauna
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326602728244188606, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
+      propertyPath: m_TagString
+      value: SoftFauna
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
---- !u!4 &5567065151829667396 stripped
+--- !u!4 &6719733503582597382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
-  m_PrefabInstance: {fileID: 5388707861834369455}
+  m_PrefabInstance: {fileID: 6542590587603359469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1378127376448652115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5326602728244188606, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
+  m_PrefabInstance: {fileID: 6542590587603359469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8130742518657502812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6188578898870576975, guid: e8bf03e34b5024b44ac86d15497f680d, type: 3}
+  m_PrefabInstance: {fileID: 6542590587603359469}
   m_PrefabAsset: {fileID: 0}
