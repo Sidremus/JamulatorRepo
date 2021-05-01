@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1785717088}
   - component: {fileID: 1785717089}
   - component: {fileID: 8999774327871931628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hammerfish
   m_TagString: fish
   m_Icon: {fileID: 0}

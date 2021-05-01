@@ -48,7 +48,6 @@ public class SubmarineState : MonoBehaviour
     float repairRate = 0.2f;
 
 
-
     // These floats are the energy states of the drive and sensor systems. 0 = lowest, 1 = highest
     private float _driveEnergyLerp;
     public float driveEnergyLerp { get { return _driveEnergyLerp; } set { _driveEnergyLerp = Mathf.Clamp(value, 0, 1); } }
