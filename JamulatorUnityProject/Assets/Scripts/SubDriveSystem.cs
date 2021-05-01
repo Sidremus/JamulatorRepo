@@ -9,6 +9,8 @@ public class SubDriveSystem : MonoBehaviour
     public float lateralSpeedLowEnergy = 5, lateralSpeedHighEnergy = 0;
     public float turningTorqueLowEnergy = 15, turningTorqueHighEnergy = 5;
 
+    public Transform mapBoundsCenter;
+
     Rigidbody rb;
     Vector3 moveVec, torqueVec;
 
@@ -23,16 +25,26 @@ public class SubDriveSystem : MonoBehaviour
     {
         ConstructMovAndTorqueVectors();
 
-        rb.AddRelativeForce(moveVec);
-        rb.AddRelativeTorque(torqueVec * Time.fixedDeltaTime);
+        if (SubmarineState.Instance.outOfBounds) {
+            MoveInBounds();
+        } else {
+            rb.AddRelativeForce(moveVec);
+            rb.AddRelativeTorque(torqueVec * Time.fixedDeltaTime);
+        }
 
-        // if (SubmarineState.Instance.interfaceMode == ControlMode.STEERING) 
-        // {
-        //     Turn();
-        //     Pitch();
-        // }
 
         Level();
+    }
+
+    private void MoveInBounds() {
+        GameObject sub = SubmarineState.Instance.submarine;
+        // Push player back towards map
+        Vector3 mapDir = (mapBoundsCenter.position - sub.transform.position);
+
+        float pushForce = 10f;
+
+        Rigidbody rb = sub.GetComponent<Rigidbody>();
+        rb.AddRelativeForce(mapDir * pushForce);
     }
 
     private void Level()
