@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: rock underwater
-  m_Shader: {fileID: -6465566751694194690, guid: 5d4108d39156b1248b9105e8d1a59f4f, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b8cf4071baf0c0940be35769f66b2457, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
