@@ -78,7 +78,7 @@ public class WanderFishAI : BaseFishAI
     // Will only set a new random target direction if haven't turned in a while
     private void SetWanderDirection()
     {
-               if (lastTurned < turnTimeout) return;
+        if (lastTurned < turnTimeout) return;
 
         Vector2 rng = Random.insideUnitCircle.normalized;
         // Lower the y by a random range amount (leaning towards downward direction)
