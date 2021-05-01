@@ -46,9 +46,6 @@ public class SubmarineState : MonoBehaviour
 
     public float subDamage { get; set; }
     float repairRate = 0.2f;
-    public bool inCave { get; set; }
-    private InCaveTrigger lastCaveTrigger;
-
 
 
     // These floats are the energy states of the drive and sensor systems. 0 = lowest, 1 = highest
@@ -228,16 +225,5 @@ public class SubmarineState : MonoBehaviour
       {
         EventManager.Instance.NotifyOfLightsOff();
       }
-    }
-
-    public void CaveTrigger(InCaveTrigger trigger) 
-    {
-        if (lastCaveTrigger != InCaveTrigger.MID) {
-            return;
-        }
-        switch(trigger) {
-            case InCaveTrigger.START:
-                break;
-        }
     }
 }

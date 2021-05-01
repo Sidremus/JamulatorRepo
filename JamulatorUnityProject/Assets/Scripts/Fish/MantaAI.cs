@@ -10,14 +10,6 @@ public class MantaAI : BaseFishAI
     // assign speed accordling
     // to change direction, rotate on y by 180
 
-    private void OnEnable() {
-        print("manta enabled");
-    }
-
-    private void OnDisable() {
-        print("manta disabled");
-    }
-
     private void FixedUpdate() {
         transform.RotateAround(rotatePoint.position, Vector3.up, speed * Time.deltaTime);
     }
