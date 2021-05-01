@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class MainEngineAudio : MonoBehaviour
 {
-    [Header("Controlled Objects")]
 
+    [Header("Sub Info")]
+    [SerializeField] [Range(0, 100)] float speed;
+
+    [Header("Controlled Objects")]
     [SerializeField] GameObject engineWhirr;
     Gain whirrGain;        
     [SerializeField] GameObject engineHumStatic;
@@ -26,7 +29,6 @@ public class MainEngineAudio : MonoBehaviour
     [SerializeField] float gainHighPowerMin = -12f;
     [SerializeField] float gainMax = 0f;
 
-    float speed;
 
     private void Start()
     {

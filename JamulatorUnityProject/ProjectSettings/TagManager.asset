@@ -10,6 +10,7 @@ TagManager:
   - SoftFauna
   - Plant
   - Submarine
+  - Wreck
   layers:
   - Default
   - TransparentFX
