@@ -141,10 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -14.6
+  outputGain: -21.3
   inputGain: 0
-  audioSource: {fileID: 0}
-  fadeInOnAwakeTime: 5
+  audioSource: {fileID: 8671213962580457843}
+  fadeInOnAwakeTime: 2
 --- !u!114 &39418308
 MonoBehaviour:
   m_ObjectHideFlags: 0
