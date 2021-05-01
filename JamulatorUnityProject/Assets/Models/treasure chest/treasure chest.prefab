@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7909817690810594529}
   - component: {fileID: 6515172494428781380}
   - component: {fileID: 9047306778437635982}
+  - component: {fileID: 2155619122554918419}
   m_Layer: 0
   m_Name: treasure chest
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2155619122554918419
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389986857908301403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6093789492850456457, guid: 20ba9d6b24063ff49acde182697fc61e, type: 3}
 --- !u!1001 &786232183
 PrefabInstance:
   m_ObjectHideFlags: 0

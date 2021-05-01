@@ -90,11 +90,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9179405674674216586}
-  - component: {fileID: 7656764098765942389}
   - component: {fileID: -663238210038202030}
-  m_Layer: 0
+  - component: {fileID: 6138518510821906843}
+  - component: {fileID: 6804155272112350141}
+  m_Layer: 6
   m_Name: BottomFeeder
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,18 +116,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7656764098765942389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8369971239298073648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a440113c7221a447bbba01bc3b4bf63d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-663238210038202030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +137,32 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b672e7b3297712049bf538b8c4ae8f90, type: 3}
   - {fileID: 8300000, guid: 241662dc73febbd458b1c416fea87fed, type: 3}
   fishScale: 3.68
+--- !u!64 &6138518510821906843
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369971239298073648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7560625819173877715, guid: 5ec0dfa07d9355643b6f78c472c27144, type: 3}
+--- !u!114 &6804155272112350141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369971239298073648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a440113c7221a447bbba01bc3b4bf63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8810731476536588167
 PrefabInstance:
   m_ObjectHideFlags: 0

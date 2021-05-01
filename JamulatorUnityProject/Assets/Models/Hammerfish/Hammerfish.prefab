@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 43542072209667634}
   - component: {fileID: 1785717088}
   - component: {fileID: 1785717089}
-  m_Layer: 0
+  - component: {fileID: 8999774327871931628}
+  m_Layer: 6
   m_Name: Hammerfish
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +67,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155676f0fdde24323b69f10c73c86702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &8999774327871931628
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851569437108022408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3063673289255639294, guid: a567bd1f5c3aa6e4889a0974b9ad07d7, type: 3}
 --- !u!1 &4608408086555976725
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +216,10 @@ PrefabInstance:
     - target: {fileID: 987975425327461750, guid: 70213c40ca4ee1f478beef049d03f6a6, type: 3}
       propertyPath: m_Name
       value: AO_Hammerfish
+      objectReference: {fileID: 0}
+    - target: {fileID: 987975425327461750, guid: 70213c40ca4ee1f478beef049d03f6a6, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70213c40ca4ee1f478beef049d03f6a6, type: 3}

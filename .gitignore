@@ -60,4 +60,5 @@ crashlytics-build.properties
 
 *.blend1
 *.blend2
+*autosave_*.spp
 JamulatorUnityProject/UserSettings/EditorUserSettings.asset

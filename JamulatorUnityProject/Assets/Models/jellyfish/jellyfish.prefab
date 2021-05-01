@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6479711475300389838}
   - component: {fileID: 2104737137186222844}
   - component: {fileID: 5434393820255281438}
+  - component: {fileID: 7230099483613865300}
   m_Layer: 0
   m_Name: jellyfish tentacle.001
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7230099483613865300
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129930763606033775}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &183087095699268949
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +107,7 @@ GameObject:
   - component: {fileID: 2056875017697310369}
   - component: {fileID: 3773020413342690573}
   - component: {fileID: 8647862577005961108}
+  - component: {fileID: 6573122874662120016}
   m_Layer: 0
   m_Name: jellyfish tentacle.016
   m_TagString: Untagged
@@ -162,6 +178,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6573122874662120016
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183087095699268949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &231656144611752917
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +203,7 @@ GameObject:
   - component: {fileID: 8305712020972012426}
   - component: {fileID: 7887240543075729179}
   - component: {fileID: 2436613598193295212}
+  - component: {fileID: 4045092715054726864}
   m_Layer: 0
   m_Name: jellyfish tentacle.017
   m_TagString: Untagged
@@ -243,6 +274,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4045092715054726864
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231656144611752917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &541308608546200378
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +299,7 @@ GameObject:
   - component: {fileID: 8441524778251861042}
   - component: {fileID: 5851148684341694153}
   - component: {fileID: 4949774294978044562}
+  - component: {fileID: 2613424114207069753}
   m_Layer: 0
   m_Name: jellyfish tentacle.002
   m_TagString: Untagged
@@ -324,6 +370,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2613424114207069753
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541308608546200378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &612139947328406046
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +395,7 @@ GameObject:
   - component: {fileID: 8945416913452545864}
   - component: {fileID: 357943183755128507}
   - component: {fileID: 3644479796838912353}
+  - component: {fileID: 9048651740505713883}
   m_Layer: 0
   m_Name: jellyfish tentacle.007
   m_TagString: Untagged
@@ -405,6 +466,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9048651740505713883
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612139947328406046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &1023913634113698316
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +491,7 @@ GameObject:
   - component: {fileID: 8673651763307347011}
   - component: {fileID: 5614353417901941261}
   - component: {fileID: 7244305682449910869}
+  - component: {fileID: 5639607132608362400}
   m_Layer: 0
   m_Name: jellyfish tentacle.010
   m_TagString: Untagged
@@ -486,6 +562,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5639607132608362400
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023913634113698316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &1830918156346943033
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +587,7 @@ GameObject:
   - component: {fileID: 8667557804582688270}
   - component: {fileID: 8033765126254802788}
   - component: {fileID: 7707525517201514710}
+  - component: {fileID: 3057486211353676257}
   m_Layer: 0
   m_Name: jellyfish tentacle.019
   m_TagString: Untagged
@@ -567,6 +658,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3057486211353676257
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830918156346943033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &2251738995901620433
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +683,7 @@ GameObject:
   - component: {fileID: 1139340472753847471}
   - component: {fileID: 4081563562294355509}
   - component: {fileID: 3204628663001625236}
+  - component: {fileID: 2072688786892100603}
   m_Layer: 0
   m_Name: jellyfish tentacle.015
   m_TagString: Untagged
@@ -648,6 +754,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2072688786892100603
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251738995901620433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &2339762580323576599
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +779,7 @@ GameObject:
   - component: {fileID: 1900899120029690571}
   - component: {fileID: 9039379071582242082}
   - component: {fileID: 2459299897902370111}
+  - component: {fileID: 3525300952486961965}
   m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
@@ -729,6 +850,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3525300952486961965
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339762580323576599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &2914585384888759396
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +875,7 @@ GameObject:
   - component: {fileID: 7637474441392561688}
   - component: {fileID: 3842897725716416974}
   - component: {fileID: 9125353078194983066}
+  - component: {fileID: 3050987704517406612}
   m_Layer: 0
   m_Name: jellyfish tentacle.013
   m_TagString: Untagged
@@ -810,6 +946,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3050987704517406612
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914585384888759396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &2998073664669464861
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +971,7 @@ GameObject:
   - component: {fileID: 322591001525875158}
   - component: {fileID: 6785479454569028306}
   - component: {fileID: 1947208642547547633}
+  - component: {fileID: 4713313269125006329}
   m_Layer: 0
   m_Name: jellyfish inner dome
   m_TagString: Untagged
@@ -891,6 +1042,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4713313269125006329
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998073664669464861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6026351044749693374, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &3198234003655469794
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +1067,7 @@ GameObject:
   - component: {fileID: 7791114991045358431}
   - component: {fileID: 8787668586633056626}
   - component: {fileID: 4543144382629202147}
+  - component: {fileID: 5079247194707371123}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -972,6 +1138,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5079247194707371123
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198234003655469794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &3272355326238799881
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1163,7 @@ GameObject:
   - component: {fileID: 1681306577194720897}
   - component: {fileID: 1214399317394066129}
   - component: {fileID: 828723425377158656}
+  - component: {fileID: 3957980775879131009}
   m_Layer: 0
   m_Name: jellyfish tentacle.012
   m_TagString: Untagged
@@ -1053,6 +1234,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3957980775879131009
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3272355326238799881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &3441531167787784827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1259,7 @@ GameObject:
   - component: {fileID: 6921054099386003490}
   - component: {fileID: 8690845086173152524}
   - component: {fileID: 1272865822073143560}
+  - component: {fileID: 3522401901663004976}
   m_Layer: 0
   m_Name: jellyfish tentacle.006
   m_TagString: Untagged
@@ -1134,6 +1330,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3522401901663004976
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441531167787784827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &4805679638047075992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1355,7 @@ GameObject:
   - component: {fileID: 3405770141183330541}
   - component: {fileID: 3145351405309593179}
   - component: {fileID: 4789327385151010863}
+  - component: {fileID: 6916293649224287655}
   m_Layer: 0
   m_Name: jellyfish tentacle.014
   m_TagString: Untagged
@@ -1215,6 +1426,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6916293649224287655
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4805679638047075992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &5427096853766570611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1451,7 @@ GameObject:
   - component: {fileID: 5757152447364542951}
   - component: {fileID: 5794647588122689008}
   - component: {fileID: 3493136636165245730}
+  - component: {fileID: 4215878852967732026}
   m_Layer: 0
   m_Name: jellyfish tentacle.011
   m_TagString: Untagged
@@ -1296,6 +1522,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4215878852967732026
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427096853766570611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &5597184142532591014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1547,7 @@ GameObject:
   - component: {fileID: 222799021827651313}
   - component: {fileID: 3216576683241292423}
   - component: {fileID: 2875971606950405994}
+  - component: {fileID: 7635815556865457000}
   m_Layer: 0
   m_Name: jellyfish tentacle
   m_TagString: Untagged
@@ -1377,6 +1618,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7635815556865457000
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597184142532591014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &5740241605387654368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1643,7 @@ GameObject:
   - component: {fileID: 7798969008342597565}
   - component: {fileID: 5779851550811222111}
   - component: {fileID: 8825385330848198731}
+  - component: {fileID: 5959447137902596265}
   m_Layer: 0
   m_Name: jellyfish tentacle.004
   m_TagString: Untagged
@@ -1458,6 +1714,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5959447137902596265
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740241605387654368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &6049787828880389135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,6 +1846,7 @@ GameObject:
   - component: {fileID: 925780013171641462}
   - component: {fileID: 6837808561616295448}
   - component: {fileID: 5320639031396377892}
+  - component: {fileID: 5871712984031572463}
   m_Layer: 0
   m_Name: jellyfish tentacle.008
   m_TagString: Untagged
@@ -1646,6 +1917,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5871712984031572463
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053501137373516420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &6374126976641259427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,9 +1940,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5998409986951056665}
-  m_Layer: 0
+  - component: {fileID: 261994474}
+  m_Layer: 6
   m_Name: jellyfish
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1705,6 +1991,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261994474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374126976641259427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ff9b8f621b4401fa9d5805f03a0bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobSpeed: 1
+  bobHeight: 0.5
 --- !u!1 &6829221131836210019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +2016,7 @@ GameObject:
   - component: {fileID: 2900035310497449712}
   - component: {fileID: 2854165609077151892}
   - component: {fileID: 493984576321033772}
+  - component: {fileID: 797785244527025726}
   m_Layer: 0
   m_Name: jellyfish tentacle.009
   m_TagString: Untagged
@@ -1786,6 +2087,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &797785244527025726
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6829221131836210019}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &6861366984393676950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +2112,7 @@ GameObject:
   - component: {fileID: 7444173691876972156}
   - component: {fileID: 2211923931042930914}
   - component: {fileID: 7760925860322065469}
+  - component: {fileID: 4495166229871902961}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1867,6 +2183,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4495166229871902961
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6861366984393676950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &7340413636743042909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,6 +2208,7 @@ GameObject:
   - component: {fileID: 5826673617658254126}
   - component: {fileID: 7119515683621965271}
   - component: {fileID: 1495364138031785305}
+  - component: {fileID: 2929819988984965159}
   m_Layer: 0
   m_Name: jellyfish tentacle.020
   m_TagString: Untagged
@@ -1948,6 +2279,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2929819988984965159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7340413636743042909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &7999821576934234736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,6 +2304,7 @@ GameObject:
   - component: {fileID: 1627751244933660480}
   - component: {fileID: 4720955483437960496}
   - component: {fileID: 4752115818198855316}
+  - component: {fileID: 4753695460324663505}
   m_Layer: 0
   m_Name: jellyfish tentacle.005
   m_TagString: Untagged
@@ -2029,6 +2375,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4753695460324663505
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999821576934234736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &8718958941737303162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2400,7 @@ GameObject:
   - component: {fileID: 6661102248618961356}
   - component: {fileID: 8117609832340654337}
   - component: {fileID: 631208831454101903}
+  - component: {fileID: 8747173527549037977}
   m_Layer: 0
   m_Name: jellyfish dome
   m_TagString: Untagged
@@ -2110,6 +2471,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8747173527549037977
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718958941737303162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7441895262415057700, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &8935131910832374091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,6 +2496,7 @@ GameObject:
   - component: {fileID: 7225593747381319943}
   - component: {fileID: 9081332371247100711}
   - component: {fileID: 6997210591571252070}
+  - component: {fileID: 8144765238228172580}
   m_Layer: 0
   m_Name: jellyfish tentacle.003
   m_TagString: Untagged
@@ -2191,6 +2567,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8144765238228172580
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935131910832374091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1 &9173088549714876465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,6 +2592,7 @@ GameObject:
   - component: {fileID: 8331560693962240343}
   - component: {fileID: 1131824460760789715}
   - component: {fileID: 7487479491774600669}
+  - component: {fileID: 7212565595686838411}
   m_Layer: 0
   m_Name: jellyfish tentacle.018
   m_TagString: Untagged
@@ -2272,6 +2663,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7212565595686838411
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173088549714876465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: f4c2c567d0594304ca4e84dbc83ac153, type: 3}
 --- !u!1001 &6103533524511165573
 PrefabInstance:
   m_ObjectHideFlags: 0

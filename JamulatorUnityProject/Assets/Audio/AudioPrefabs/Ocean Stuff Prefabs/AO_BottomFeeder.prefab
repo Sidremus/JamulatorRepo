@@ -54,7 +54,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1.59
   MinDistance: 2.44
-  MaxDistance: 20
+  MaxDistance: 30.6
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -141,10 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -16.8
+  outputGain: -3.5
   inputGain: 0
   audioSource: {fileID: 9185286988140915727}
-  fadeInOnAwakeTime: 1
+  fadeInOnAwakeTime: 2
 --- !u!114 &9185286988140915726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c89b898ae9542a647b50e5bede74dffd, type: 3}
   loop: 1
   clipPlaying: 0
-  intervalBetweenPlays: 1
+  intervalBetweenPlays: 3
   intervalRand: 1
   pitch: 1.5
   pitchRand: 0.5

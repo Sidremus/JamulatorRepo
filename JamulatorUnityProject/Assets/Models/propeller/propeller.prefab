@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7197043908403930522}
   - component: {fileID: 6075024776269736511}
   - component: {fileID: 8334515365997567733}
+  - component: {fileID: 8025240105123469007}
   m_Layer: 0
   m_Name: propeller
-  m_TagString: Untagged
+  m_TagString: Wreck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8025240105123469007
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7542080086443196192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: f96569cf3e6ddaa4f9b8747401f283cc, type: 3}
 --- !u!1001 &7236070949406174901
 PrefabInstance:
   m_ObjectHideFlags: 0

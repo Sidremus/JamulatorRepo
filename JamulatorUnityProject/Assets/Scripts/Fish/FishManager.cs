@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FishManager : MonoBehaviour
 {
-    private GameObject[] fish;
+    [SerializeField] private GameObject[] fish;
     private float scanTimer = 0f;
     private float scanDelay = 5f;
 
@@ -34,7 +34,7 @@ public class FishManager : MonoBehaviour
     private void ActivateNearbyFishAI() 
     {
         // Spherecast around submarine
-        int radius = 200;
+        int radius = 600;
         int layerMask = 1 << 6;
         Vector3 origin = SubmarineState.Instance.submarine.transform.position;
         Collider[] colliders = Physics.OverlapSphere(origin, radius, layerMask);

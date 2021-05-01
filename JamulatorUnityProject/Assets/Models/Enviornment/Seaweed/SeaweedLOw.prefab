@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 303280226075420850}
   - component: {fileID: 3677728502801175831}
   - component: {fileID: 8325136447324268949}
+  - component: {fileID: 4350512545398960270}
   m_Layer: 0
   m_Name: Group31254
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4350512545398960270
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763390121582892837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3091926058176295964, guid: cf5ff7afd29aa0c4c962d9d95dfd8f70, type: 3}
 --- !u!1 &2658032771965603183
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +107,7 @@ GameObject:
   - component: {fileID: 3434252094954739669}
   m_Layer: 0
   m_Name: SeaweedLOw
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
