@@ -159,8 +159,8 @@ public class SubDriveSystem : MonoBehaviour
                 SubmarineController.mousePos.x);
 
             torqueVec.x = Mathf.Lerp(
-                Mathf.Lerp(-turningTorqueLowEnergy, -turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
                 Mathf.Lerp(turningTorqueLowEnergy, turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
+                Mathf.Lerp(-turningTorqueLowEnergy, -turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
                 SubmarineController.mousePos.y
             );
         }

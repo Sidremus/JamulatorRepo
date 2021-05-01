@@ -13839,6 +13839,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1864977817, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: field of view
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.148
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.506
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9993919
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.034868997
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -9.313226e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864977818, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 3.997
+      objectReference: {fileID: 0}
     - target: {fileID: 1371199209572424942, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: mapBoundsCenter
       value: 
@@ -13861,11 +13897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1371199209572424942, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: turningTorqueLowEnergy
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1371199209572424942, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: turningTorqueHighEnergy
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6496703359121049689, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Name
