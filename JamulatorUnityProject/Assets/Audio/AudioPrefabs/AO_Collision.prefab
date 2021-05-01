@@ -50,10 +50,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 92
+  Priority: 144
   DopplerLevel: 1.57
   MinDistance: 5
-  MaxDistance: 43.5
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -97,7 +97,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
