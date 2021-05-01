@@ -40,6 +40,8 @@ public class SubmarineState : MonoBehaviour
     private ControlMode _interfaceMode;
     public ControlMode interfaceMode { get { return _interfaceMode; } }
 
+    public bool outOfBounds { get; set; }
+
     // Total damage of the sub from 0-100.
 
     public float subDamage { get; set; }
