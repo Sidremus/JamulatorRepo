@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2728100178999912219}
   m_Layer: 0
-  m_Name: MushroomTree_Small03 (1)
+  m_Name: MushroomTree_Small03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: be9962b4095456149aac94edc9e6ad27, type: 2}
+  - {fileID: 2100000, guid: 0513388bd4401794eb83b6c7195f80f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

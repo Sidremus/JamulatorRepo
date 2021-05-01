@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1303325622991431092
+--- !u!1 &304173239368546492
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,76 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4109836672956300216}
-  - component: {fileID: 1156738677028986942}
-  - component: {fileID: 4345894151714372213}
+  - component: {fileID: 1113360386898108934}
   m_Layer: 0
-  m_Name: Group38055
+  m_Name: rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4109836672956300216
+--- !u!4 &1113360386898108934
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303325622991431092}
+  m_GameObject: {fileID: 304173239368546492}
+  m_LocalRotation: {x: -0.08174948, y: 0.6831342, z: 0.08622808, w: 0.72056186}
+  m_LocalPosition: {x: 30.550928, y: -258.1, z: -90.76}
+  m_LocalScale: {x: 10.768815, y: 10.768815, z: 10.768815}
+  m_Children:
+  - {fileID: 5447599501941014415}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -13.628, y: 86.857, z: 0.741}
+--- !u!1 &1382072840107550484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5447599501941014415}
+  - component: {fileID: 8134556248315343727}
+  - component: {fileID: 8639463906402795900}
+  m_Layer: 0
+  m_Name: Crystals_Generator_object1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5447599501941014415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382072840107550484}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8244184111274532097}
+  m_Father: {fileID: 1113360386898108934}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1156738677028986942
+--- !u!33 &8134556248315343727
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303325622991431092}
-  m_Mesh: {fileID: 5964394875283669090, guid: 228b2887cdd6cb249a4e8328f252fe4d, type: 3}
---- !u!23 &4345894151714372213
+  m_GameObject: {fileID: 1382072840107550484}
+  m_Mesh: {fileID: 8741612809714870292, guid: dfdac22e64227074baf4a6fa096cfb99, type: 3}
+--- !u!23 &8639463906402795900
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303325622991431092}
+  m_GameObject: {fileID: 1382072840107550484}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c89616a2276dd3142829e2571f2910fc, type: 2}
+  - {fileID: 2100000, guid: 6a144efffdd57a44ab1cfb48a6885d32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,34 +112,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8728795667624904635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8244184111274532097}
-  m_Layer: 0
-  m_Name: MushroomTree_Small01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8244184111274532097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8728795667624904635}
-  m_LocalRotation: {x: 0.4839158, y: 0.6671254, z: -0.17464532, w: -0.5387655}
-  m_LocalPosition: {x: 156.3, y: -317.22086, z: -162.9}
-  m_LocalScale: {x: 0.13368082, y: 0.13368082, z: 0.13368082}
-  m_Children:
-  - {fileID: 4109836672956300216}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -16.763, y: 248.015, z: 60.558}
