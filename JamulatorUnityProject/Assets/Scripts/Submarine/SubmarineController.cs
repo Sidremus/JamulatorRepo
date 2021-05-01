@@ -5,7 +5,6 @@ public class SubmarineController : MonoBehaviour
 {
     private SubmarineInputAsset controls;
     private Camera mainCamera;
-    private Transform currentUIElement;
     public static Vector2 mousePos { get; private set; }
     public static Vector2 mouseDelta { get; private set; }
 
@@ -39,7 +38,7 @@ public class SubmarineController : MonoBehaviour
         controls.Submarine.MouseDelta.performed += (InputAction.CallbackContext ctx) => MouseMoveStart(ctx.ReadValue<Vector2>());
         controls.Submarine.MouseDelta.canceled += (InputAction.CallbackContext ctx) => MouseMoveStop();
 
-        controls.Submarine.SwitchInterfaceMode.performed += (InputAction.CallbackContext ctx) => SwitchInterfaceMode();
+        controls.Submarine.SwitchInterfaceMode.performed += (InputAction.CallbackContext ctx) => SubmarineState.Instance.SwitchInterfaceMode();
 
         controls.Submarine.LeftClickInteract.performed += (InputAction.CallbackContext ctx) => LeftClickEnter();
         controls.Submarine.LeftClickInteract.canceled += (InputAction.CallbackContext ctx) => LeftClickExit();
@@ -130,21 +129,6 @@ public class SubmarineController : MonoBehaviour
     private void MouseMoveStop()
     {
         mouseDelta = Vector2.zero;
-    }
-
-    private void SwitchInterfaceMode()
-    {
-        if (SubmarineState.Instance.interfaceMode == ControlMode.INTERFACE)
-        {
-            SubmarineState.Instance.SwitchInterfaceMode(ControlMode.STEERING);
-            // TODO: Currently there appears to be an error when triggering SendMessage() through input events. More research required.
-            // if (currentUIElement != null)
-            // {
-            //     currentUIElement.SendMessage("OnMouseExit", SendMessageOptions.DontRequireReceiver);
-            //     currentUIElement = null;
-            // }
-        }
-        else SubmarineState.Instance.SwitchInterfaceMode(ControlMode.INTERFACE);
     }
 
     private void LeftClickEnter()
