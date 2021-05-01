@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SubDriveSystem : MonoBehaviour
 {
-    public Transform steeringStick;// Just for testing / visual feedback
+    //public Transform steeringStick;// Just for testing / visual feedback
 
     public float forwardSpeedLowEnergy = 5, forwardSpeedHighEnergy = 30;
     public float lateralSpeedLowEnergy = 5, lateralSpeedHighEnergy = 0;
@@ -71,7 +71,7 @@ public class SubDriveSystem : MonoBehaviour
                 Mathf.Lerp(turningTorqueLowEnergy, turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
                 SubmarineController.mousePos.x);
 
-            steeringStick.localRotation = Quaternion.Euler(0, Mathf.Lerp(30, -30, SubmarineController.mousePos.x), 0);// Just for testing / visual feedback
+            //steeringStick.localRotation = Quaternion.Euler(0, Mathf.Lerp(30, -30, SubmarineController.mousePos.x), 0);// Just for testing / visual feedback
         }
         //else torqueVec = Vector3.zero; // If commented out, torque will be applied even if the player lets go of the wheel
     }
