@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4115685237992154474
+--- !u!1 &1555523341441454453
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8770515410133245516}
-  - component: {fileID: 3767023867350630060}
-  - component: {fileID: 5556755179975274438}
-  - component: {fileID: 2046480565758198273}
+  - component: {fileID: 702963359166337129}
+  - component: {fileID: 3314283153072598484}
+  - component: {fileID: 4117101793490282058}
+  - component: {fileID: 6292656883996731011}
   m_Layer: 0
-  m_Name: Group15979
+  m_Name: Group25915
   m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &8770515410133245516
+--- !u!4 &702963359166337129
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4115685237992154474}
+  m_GameObject: {fileID: 1555523341441454453}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4749859610921747678}
+  m_Father: {fileID: 3342604160414335219}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3767023867350630060
+--- !u!33 &3314283153072598484
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4115685237992154474}
-  m_Mesh: {fileID: 7861235872772831950, guid: 999212be74e4a594f82de68c7e8bf83e, type: 3}
---- !u!23 &5556755179975274438
+  m_GameObject: {fileID: 1555523341441454453}
+  m_Mesh: {fileID: 8334889389782272605, guid: 9e42e12f21d517642aac9aebc9537213, type: 3}
+--- !u!23 &4117101793490282058
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4115685237992154474}
+  m_GameObject: {fileID: 1555523341441454453}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8469e3a8fb3727f4baaddb9cb6d77a02, type: 2}
+  - {fileID: 2100000, guid: f89a096aaba3a5b45b53a9ae7f23615b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,21 +82,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2046480565758198273
+--- !u!64 &6292656883996731011
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4115685237992154474}
+  m_GameObject: {fileID: 1555523341441454453}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 7861235872772831950, guid: 999212be74e4a594f82de68c7e8bf83e, type: 3}
---- !u!1 &5377637201180302948
+  m_Mesh: {fileID: 8334889389782272605, guid: 9e42e12f21d517642aac9aebc9537213, type: 3}
+--- !u!1 &2677531174390012489
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,26 +104,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4749859610921747678}
+  - component: {fileID: 3342604160414335219}
   m_Layer: 0
-  m_Name: Rocl_Medium04
-  m_TagString: Rock
+  m_Name: MushroomGardenCave02
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &4749859610921747678
+--- !u!4 &3342604160414335219
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5377637201180302948}
+  m_GameObject: {fileID: 2677531174390012489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 229.08762, y: -254.84245, z: -489.2961}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 32.481995, y: -2125.3, z: -87.647}
+  m_LocalScale: {x: 9.94751, y: 9.94751, z: 9.94751}
   m_Children:
-  - {fileID: 8770515410133245516}
+  - {fileID: 702963359166337129}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
