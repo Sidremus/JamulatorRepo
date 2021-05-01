@@ -189,7 +189,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1864977818}
   - component: {fileID: 1864977817}
-  - component: {fileID: 1864977816}
   - component: {fileID: 1864977819}
   m_Layer: 0
   m_Name: Main Camera
@@ -255,14 +254,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1864977816
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864977815}
-  m_Enabled: 1
 --- !u!114 &1864977819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,9 +299,10 @@ GameObject:
   - component: {fileID: 1371199209572424942}
   - component: {fileID: 1371199209572424943}
   - component: {fileID: 1371199209572424944}
+  - component: {fileID: 3877997192334332047}
   m_Layer: 0
   m_Name: Submarine 1
-  m_TagString: Untagged
+  m_TagString: Submarine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,6 +361,7 @@ MonoBehaviour:
   lateralSpeedHighEnergy: 15
   turningTorqueLowEnergy: 15
   turningTorqueHighEnergy: 30
+  mapBoundsCenter: {fileID: 0}
 --- !u!114 &1371199209572424943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +387,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21be170c1f8a4dfcb1c90d232df756c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &3877997192334332047
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496703359121049689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.72
+  m_Height: 7.94
+  m_Direction: 2
+  m_Center: {x: 0, y: 1, z: -1.33}
 --- !u!1001 &3877002386921295973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4159,6 +4166,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9e648b95eca31f54aacf5373fae55808, type: 2}
+    - target: {fileID: 2740703064289274730, guid: 32dcffc48240085439f6d23a0cb62700, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968668682419228867, guid: 32dcffc48240085439f6d23a0cb62700, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3077877609619518066, guid: 32dcffc48240085439f6d23a0cb62700, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0

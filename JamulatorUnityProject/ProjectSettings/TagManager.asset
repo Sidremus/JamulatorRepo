@@ -9,6 +9,7 @@ TagManager:
   - HardFauna
   - SoftFauna
   - Plant
+  - Submarine
   layers:
   - Default
   - TransparentFX

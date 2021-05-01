@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FishManager : MonoBehaviour
 {
-    private GameObject[] fish;
+    [SerializeField] private GameObject[] fish;
     private float scanTimer = 0f;
     private float scanDelay = 5f;
 

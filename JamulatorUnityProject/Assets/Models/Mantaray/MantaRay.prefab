@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3446980810535357059}
   - component: {fileID: 112638434}
   - component: {fileID: 112638435}
+  - component: {fileID: 816048922754915831}
   m_Layer: 0
   m_Name: MantaRay
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,6 +68,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440113c7221a447bbba01bc3b4bf63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &816048922754915831
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2638531469583847481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3855641757940741576, guid: 65b8145ab6d9f89409bf3f507425ca5d, type: 3}
 --- !u!1 &6465515290469685662
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +217,14 @@ PrefabInstance:
     - target: {fileID: 8671213962580457841, guid: d650246db7201154b8fa8af88ab5a150, type: 3}
       propertyPath: m_Name
       value: AO_Manta
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671213962580457841, guid: d650246db7201154b8fa8af88ab5a150, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671213962580457842, guid: d650246db7201154b8fa8af88ab5a150, type: 3}
+      propertyPath: outputGain
+      value: -20.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d650246db7201154b8fa8af88ab5a150, type: 3}
