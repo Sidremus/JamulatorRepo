@@ -7611,6 +7611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 932945922}
   - component: {fileID: 932945921}
+  - component: {fileID: 932945923}
   m_Layer: 0
   m_Name: event manager
   m_TagString: Untagged
@@ -7644,6 +7645,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &932945923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932945920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d1b1bb344bae14eafacef26dc00ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSonarPing: 0
+  onLightsOn: 0
+  onLightsOff: 0
+  onCaveEntered: 0
+  onCaveExited: 0
 --- !u!4 &942862241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9317ca7adb660c646adaeef3fce86eab, type: 3}
@@ -9273,42 +9291,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2057777427773874651, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777427773874651, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777427773874651, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777427773874653, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777427975801953, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428174334748, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428174334750, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428174334750, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428174334750, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.49444443
-      objectReference: {fileID: 0}
     - target: {fileID: 2057777428263547410, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -9358,133 +9340,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2057777428263547412, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+      propertyPath: sonarVol
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057777428263547412, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
       propertyPath: submarine
       value: 
       objectReference: {fileID: 1909669955}
-    - target: {fileID: 2057777428263547412, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: rumbleStartVol
-      value: -29.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428263547412, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: extSubSoundsVol
-      value: -2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428263547412, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: finWhaleStartVol
-      value: -32.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428431030960, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428431030960, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428431030960, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.49444443
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428431030974, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.897
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428685058546, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428685058546, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428685058546, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428685058548, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429053041714, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429053041716, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429053041716, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429053041716, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.49444443
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429396423014, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429396423014, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429497492764, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429550769752, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429550769830, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429550769830, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429648859120, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429648859120, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: DopplerLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429648859120, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.49444443
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429648859134, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429738094789, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429738094789, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429738094791, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: MaxDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429823406993, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2057777429825323344, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
       propertyPath: gameobjectToFollow
       value: 
       objectReference: {fileID: 1888911578}
-    - target: {fileID: 2057777429862410833, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
 --- !u!1001 &1118113274
