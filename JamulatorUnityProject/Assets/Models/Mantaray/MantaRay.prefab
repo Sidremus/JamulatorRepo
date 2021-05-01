@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505635768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: -70, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3446980810535357059}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 112638434}
   - component: {fileID: 816048922754915831}
   - component: {fileID: 957912400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MantaRay
   m_TagString: fish
   m_Icon: {fileID: 0}
