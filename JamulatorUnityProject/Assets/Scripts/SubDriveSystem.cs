@@ -9,7 +9,8 @@ public class SubDriveSystem : MonoBehaviour
     public float lateralSpeedLowEnergy = 5, lateralSpeedHighEnergy = 0;
     public float turningTorqueLowEnergy = 15, turningTorqueHighEnergy = 5;
 
-    public Transform mapBoundsCenter;
+    public Transform mapBoundsCenter; 
+    public float offMapPushForce = 5f;
 
     Rigidbody rb;
     Vector3 moveVec, torqueVec;
@@ -41,10 +42,8 @@ public class SubDriveSystem : MonoBehaviour
         // Push player back towards map
         Vector3 mapDir = (mapBoundsCenter.position - sub.transform.position);
 
-        float pushForce = 10f;
-
         Rigidbody rb = sub.GetComponent<Rigidbody>();
-        rb.AddRelativeForce(mapDir * pushForce);
+        rb.AddRelativeForce(mapDir * offMapPushForce);
     }
 
     private void Level()
@@ -160,8 +159,8 @@ public class SubDriveSystem : MonoBehaviour
                 SubmarineController.mousePos.x);
 
             torqueVec.x = Mathf.Lerp(
-                Mathf.Lerp(-turningTorqueLowEnergy, -turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
                 Mathf.Lerp(turningTorqueLowEnergy, turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
+                Mathf.Lerp(-turningTorqueLowEnergy, -turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
                 SubmarineController.mousePos.y
             );
         }

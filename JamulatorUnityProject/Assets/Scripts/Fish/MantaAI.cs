@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MantaAI : MonoBehaviour
+public class MantaAI : BaseFishAI
 {
     public Transform rotatePoint;
     public float speed = 10f;
