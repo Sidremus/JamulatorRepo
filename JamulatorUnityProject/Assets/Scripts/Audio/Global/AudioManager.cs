@@ -69,6 +69,8 @@ public class AudioManager : MonoBehaviour
 
     float worldDepth = 800f;
 
+    GameObject collisionsContainer;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -105,6 +107,10 @@ public class AudioManager : MonoBehaviour
         {
             finWhale[i].GetComponent<AudioSourceFader>().outputGain = finWhaleStartVol;
         }
+
+        collisionsContainer = new GameObject();
+        collisionsContainer.name = "Collisions Container";
+        collisionsContainer.transform.parent = this.transform;
 
     }
 
@@ -209,14 +215,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlayCollisionSound(Vector3 position, float impactMagnitude, GameObject other)
     {
-
+        float sensitivity = 50f;
         // chooses clip, sets gain and pitch based on impactMagnitude, plays at position
-        impactMagnitude = Mathf.Clamp(impactMagnitude, 0f, 50f) / 50f;
-
-        Debug.Log("Audiomanager: receiving collision with " + other.gameObject.name + " at position " + position + ", magnitude " + impactMagnitude);
+        impactMagnitude = Mathf.Clamp(impactMagnitude, 0f, sensitivity) / sensitivity;
 
         var newAO = Instantiate(AOCollisionPrefab, position, Quaternion.identity);
-        newAO.transform.parent = transform;
+        newAO.transform.parent = collisionsContainer.transform;
 
         // Attach source to new prefab, choose a clip depending on the tag of the other game object
         var source = newAO.GetComponent<AudioSource>();
@@ -232,14 +236,20 @@ public class AudioManager : MonoBehaviour
             collisionFX = collisionFX_HardFauna;
         else if (other.tag == "SoftFauna")
             collisionFX = collisionFX_SoftFauna;
-        else Debug.Log("I've collided into something untagged.") ;
+        else
+        {
+            Debug.Log("I've collided into something untagged.");
+            return;
+        }
         // if it's crashed into something untagged, it shouldn't make a sound.
 
         // clips are ordered in order of impact magnitude, where -01 is the lightest
         var clip = collisionFX[Mathf.RoundToInt(impactMagnitude * (collisionFX.Length - 1))];
         source.clip = clip;
 
-        
+        var gain = newAO.GetComponent<Gain>();
+        gain.inputGain = 0f + (AudioUtility.ScaleValue(impactMagnitude, 0f, 1f, -24f, 0f));
+                
         var pitch = Random.Range(0.85f, 1.15f) - (impactMagnitude / 2);
         source.pitch = pitch;
 

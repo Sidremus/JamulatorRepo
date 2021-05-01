@@ -25,13 +25,16 @@ public class SubmarineCollisionListener : MonoBehaviour
 
         float impactMagnitude = collision.relativeVelocity.magnitude;
         SubmarineState.Instance.subDamage += impactMagnitude * damageScale;
-
+        
         Vector3 position = collision.contacts[0].point;
+
+        //Debug.Log("SubmarineCollisionListener: collision with " + collision.gameObject.name + ", with tag " + collision.gameObject.tag + " at position " + position + ", magnitude " + impactMagnitude);
+
         AudioManager.Instance.PlayCollisionSound(position, impactMagnitude, SubmarineState.Instance.gameObject);
-        //AudioManager.Instance.PlayCollisionSound(position, impactMagnitude, collision.gameObject);
+        AudioManager.Instance.PlayCollisionSound(position, impactMagnitude, collision.gameObject);
         // two collisions: one for the sub, one for whatever it's hit
 
-        Debug.Log("SubmarineCollisionListener: collision with " + collision.gameObject.name + " at position " + position + ", magnitude " + impactMagnitude);
+       
 
     }
 }

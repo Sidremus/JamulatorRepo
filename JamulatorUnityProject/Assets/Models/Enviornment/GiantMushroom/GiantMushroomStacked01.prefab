@@ -183,9 +183,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: AO_GiantMushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 5338202542363605881, guid: f2fd325ef09fc2f42a272d95b18b49a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5338202542363605885, guid: f2fd325ef09fc2f42a272d95b18b49a4, type: 3}
       propertyPath: MaxDistance
-      value: 22.3
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5338202542363605887, guid: f2fd325ef09fc2f42a272d95b18b49a4, type: 3}
       propertyPath: pitchMax

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2272284523992120634}
   - component: {fileID: 5526489202094108860}
   - component: {fileID: 8711772782145152109}
+  - component: {fileID: 7439517991015899067}
   m_Layer: 0
   m_Name: Group28467
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7439517991015899067
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053806363100820944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6481264800535877389, guid: d0bce7570c43ab842a5ca6680a339f7d, type: 3}
 --- !u!1 &2544993481671899711
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,9 +139,10 @@ GameObject:
   - component: {fileID: 3699465582371613013}
   - component: {fileID: 8170709822734361086}
   - component: {fileID: 4018532752342176417}
+  - component: {fileID: 7918280078387002656}
   m_Layer: 0
   m_Name: Group63029
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,3 +210,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7918280078387002656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644331625783652358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3303840593226264924, guid: d0bce7570c43ab842a5ca6680a339f7d, type: 3}
