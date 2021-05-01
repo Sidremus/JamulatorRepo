@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class WanderFishAI : BaseFishAI
@@ -14,7 +15,7 @@ public class WanderFishAI : BaseFishAI
     private void OnEnable() 
     {
         targetDirection = transform.forward;
-        canCheckCols = Random.Range(0, 1) > 0.5;    
+        canCheckCols = Random.Range(0, 1) > 0.5;   
     }
 
     private void FixedUpdate() 
@@ -33,6 +34,7 @@ public class WanderFishAI : BaseFishAI
 
         // Start wandering if haven't turned around in a while
         SetWanderDirection();
+        
     }
 
     private void FaceTarget(Vector3 targetDir)
@@ -76,27 +78,17 @@ public class WanderFishAI : BaseFishAI
     // Will only set a new random target direction if haven't turned in a while
     private void SetWanderDirection()
     {
-        // Only wander if fish hasn't turned in a while
-        if (lastTurned < turnTimeout) return;
+               if (lastTurned < turnTimeout) return;
 
-        // Get a target point to travel to
-        float dir = Random.Range(0, 1) > 0.5 ? 1 : -1;
-        Vector3 targetPoint = transform.position + (dir * transform.forward);
-
+        Vector2 rng = Random.insideUnitCircle.normalized;
         // Lower the y by a random range amount (leaning towards downward direction)
-        float Ymin = -0.25f;
-        float Ymax = 1f;
-        targetPoint.y -= Random.Range(Ymin, Ymax);
+        float Ymin = 0.25f;
+        float Ymax = -0.75f;
+        float y = Random.Range(Ymin, Ymax);
 
-        // Adjust x position by a random range amount
-        float Xmin = -2f;
-        float Xmax = 2f;
-        targetPoint.x += Random.Range(Xmin, Xmax);
+        Vector3 newDir = new Vector3(rng.x, y, rng.y);
 
-        // Get the direction towards the new target
-        Vector3 targetDir = targetPoint - transform.position;
-
-        Turn(targetDir);
+        Turn(newDir);
     }
 
     private void Turn(Vector3 turnDir)

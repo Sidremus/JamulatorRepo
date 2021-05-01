@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1035116150001080276}
   m_Layer: 0
   m_Name: MushroomTree_Medium04
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 7645369666485672427}
   - component: {fileID: 919983670644620201}
   - component: {fileID: 4481495921132389170}
+  - component: {fileID: 4150993093920756883}
   m_Layer: 0
   m_Name: Group4858
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +116,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4150993093920756883
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780537265528665874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -956587377936948682, guid: 9317ca7adb660c646adaeef3fce86eab, type: 3}
 --- !u!1 &6794110060984828047
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,9 +141,10 @@ GameObject:
   - component: {fileID: 2951134864454207682}
   - component: {fileID: 7705886943489606591}
   - component: {fileID: 7265637923862901457}
+  - component: {fileID: 8584071481424840796}
   m_Layer: 0
   m_Name: Group4873
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,6 +212,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8584071481424840796
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794110060984828047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4862040281825329272, guid: 9317ca7adb660c646adaeef3fce86eab, type: 3}
 --- !u!1 &8171769725200512051
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,9 +237,10 @@ GameObject:
   - component: {fileID: 1060291709715381827}
   - component: {fileID: 2337518132195864782}
   - component: {fileID: 764597158171815612}
+  - component: {fileID: 2337574174446811630}
   m_Layer: 0
   m_Name: Group35137
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,6 +308,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2337574174446811630
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8171769725200512051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2569150610373138129, guid: 9317ca7adb660c646adaeef3fce86eab, type: 3}
 --- !u!1001 &494376673699026319
 PrefabInstance:
   m_ObjectHideFlags: 0

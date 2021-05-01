@@ -40,6 +40,15 @@ public class SubmarineState : MonoBehaviour
     private ControlMode _interfaceMode;
     public ControlMode interfaceMode { get { return _interfaceMode; } }
 
+    public bool outOfBounds { get; set; }
+
+    // Total damage of the sub from 0-100.
+
+    public float subDamage { get; set; }
+    float repairRate = 0.2f;
+
+
+
     // These floats are the energy states of the drive and sensor systems. 0 = lowest, 1 = highest
     private float _driveEnergyLerp;
     public float driveEnergyLerp { get { return _driveEnergyLerp; } set { _driveEnergyLerp = Mathf.Clamp(value, 0, 1); } }
@@ -60,14 +69,30 @@ public class SubmarineState : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
+
+
+        // set sub health to 100%
+        subDamage = 0f;
     }
 
+
+    private void Update()
+    {
+        if (subDamage > 0f)
+        {
+            SelfRepair();
+        }
+    }
+
+    private void SelfRepair()
+    {        
+        subDamage -= Time.deltaTime * repairRate;
+    }
 
     private void FixedUpdate()
     {
         CheckIsMoving();
     }
-
     private void CheckIsMoving()
     {
         _isMoving =
@@ -183,9 +208,11 @@ public class SubmarineState : MonoBehaviour
         }
     }
 
-    public void SwitchInterfaceMode(ControlMode mode)
+    public void SwitchInterfaceMode()
     {
-        _interfaceMode = mode;
+        _interfaceMode = _interfaceMode == ControlMode.INTERFACE
+        ? ControlMode.STEERING
+        : ControlMode.INTERFACE;
     }
 
     public void ToggleLights()

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8468253154590428467}
   - component: {fileID: 9182634316789383241}
   - component: {fileID: 8201244718937513644}
+  - component: {fileID: 5677410757990864427}
   m_Layer: 0
   m_Name: Group61872
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5677410757990864427
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699949600868488156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7973595634841406329, guid: 7bb9211528fa8a145808ba1083e7f9e7, type: 3}
 --- !u!1 &8506697420650553605
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +107,7 @@ GameObject:
   - component: {fileID: 9026916347051506623}
   m_Layer: 0
   m_Name: MushroomTree_Large02
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

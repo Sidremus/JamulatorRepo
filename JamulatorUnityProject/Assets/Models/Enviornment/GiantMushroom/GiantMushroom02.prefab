@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2602598732321134502}
   m_Layer: 0
   m_Name: GiantMushroom02
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 3287208790770008510}
   - component: {fileID: 6312253562008112994}
   - component: {fileID: 1632705813930876071}
+  - component: {fileID: 4474239220417661042}
   m_Layer: 0
   m_Name: Group63331
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4474239220417661042
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8902438768798001130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -765714984307935024, guid: 921ab854af35e604184bc71ecde5c209, type: 3}
 --- !u!1001 &3578582670770416210
 PrefabInstance:
   m_ObjectHideFlags: 0

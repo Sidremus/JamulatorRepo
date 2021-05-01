@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - fish
+  - Rock
+  - HardFauna
+  - SoftFauna
+  - Plant
+  - Submarine
   layers:
   - Default
   - TransparentFX

@@ -38,7 +38,11 @@ public class AudioManager : MonoBehaviour
     [Range(-80, 0)] public float extSubSoundsVol;
 
     [Header("Submarine Collision")]
-    [SerializeField] AudioClip[] collisionFX;
+    [SerializeField] AudioClip[] collisionFX_Sub;
+    [SerializeField] AudioClip[] collisionFX_Rock;
+    [SerializeField] AudioClip[] collisionFX_Plant;
+    [SerializeField] AudioClip[] collisionFX_SoftFauna;
+    [SerializeField] AudioClip[] collisionFX_HardFauna;
     [SerializeField] GameObject AOCollisionPrefab;
 
     [Header("Submarine Actions: Sonar")]
@@ -90,7 +94,6 @@ public class AudioManager : MonoBehaviour
         // Sends params from inspector to relevant gameobjects.
         bubbleVol += environmentalStartVol;
 
-
         rumbleStartVol += environmentalStartVol;
         finWhaleStartVol += environmentalStartVol;
         clickerStartVol += environmentalStartVol;
@@ -119,7 +122,8 @@ public class AudioManager : MonoBehaviour
         {
             subDepth = submarine.transform.position.y;
             subSensorEnergy = SubmarineState.Instance.sensorEnergyLerp;
-            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;            
+            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
+            subDamage = SubmarineState.Instance.subDamage;
         }
 
 
@@ -133,7 +137,6 @@ public class AudioManager : MonoBehaviour
         EventManager.Instance.onSonarPing += SonarPingStart;
         EventManager.Instance.onLightsOn += LightsOn;
         EventManager.Instance.onLightsOff += LightsOff;
-        EventManager.Instance.onSubCollision += ProcessCollision;
 
     }
     private void OnDisable()
@@ -141,7 +144,6 @@ public class AudioManager : MonoBehaviour
         EventManager.Instance.onSonarPing -= SonarPingStart;
         EventManager.Instance.onLightsOn -= LightsOn;
         EventManager.Instance.onLightsOff -= LightsOff;
-        EventManager.Instance.onSubCollision -= ProcessCollision;
     }
 
     #region Sonar Ping Control
@@ -262,32 +264,38 @@ public class AudioManager : MonoBehaviour
     #endregion Lights
 
     #region Collision SFX
-    // TODO: Connect to event system? //
 
-    private void ProcessCollision(Collision collision)
-    {
-        float impactMagnitude = collision.relativeVelocity.magnitude;
-        Vector3 position = collision.contacts[0].point;
-        AudioManager.Instance.PlayCollisionSound(position, impactMagnitude);
-
-        Debug.Log("Collision! at position: " + position + " with an impactMagnitude of " + impactMagnitude);
-
-        PlayCollisionSound(position, impactMagnitude);
-    }
-
-    public void PlayCollisionSound(Vector3 position, float impactMagnitude)
+    public void PlayCollisionSound(Vector3 position, float impactMagnitude, GameObject other)
     {
         // chooses clip, sets gain and pitch based on impactMagnitude, plays at position
-        impactMagnitude = Mathf.Clamp(impactMagnitude, 0f, 5f) / 5f;
+        impactMagnitude = Mathf.Clamp(impactMagnitude, 0f, 10f) / 10f;
 
         var newAO = Instantiate(AOCollisionPrefab, position, Quaternion.identity);
         newAO.transform.parent = transform;
 
+        // Attach source to new prefab, choose a clip depending on the tag of the other game object
         var source = newAO.GetComponent<AudioSource>();
+        AudioClip[] collisionFX = new AudioClip[0];
+
+        if (other.tag == "Submarine")
+            collisionFX = collisionFX_Sub;
+        else if (other.tag == "Plant")
+            collisionFX = collisionFX_Plant;
+        else if (other.tag == "Rock")
+            collisionFX = collisionFX_Rock;
+        else if (other.tag == "HardFauna")
+            collisionFX = collisionFX_HardFauna;
+        else if (other.tag == "SoftFauna")
+            collisionFX = collisionFX_SoftFauna;
+        else return;
+        // if it's crashed into something untagged, it shouldn't make a sound.
+
+        // clips are ordered in order of impact magnitude, where -01 is the lightest
         var clip = collisionFX[Mathf.RoundToInt(impactMagnitude * (collisionFX.Length - 1))];
         source.clip = clip;
 
-        newAO.GetComponent<Gain>().inputGain = 0f - ((1f - impactMagnitude) * 24f);
+        // slight relation to impact volume
+        newAO.GetComponent<Gain>().inputGain = 0f - ((1f - impactMagnitude) * 30f);
         var pitch = Random.Range(0.85f, 1.15f) - (impactMagnitude / 2);
         source.pitch = pitch;
 

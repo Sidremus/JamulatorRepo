@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &6400743586599955297
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019277517550195628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1484925043178273400, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
 --- !u!1 &1150057033512965064
 GameObject:
   m_ObjectHideFlags: 0
@@ -9898,10 +9912,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: GeyserMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 4034064797970166707, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
 --- !u!4 &4491331768204986356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
+  m_PrefabInstance: {fileID: 4170002366553415711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1019277517550195628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4034064797970166707, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
   m_PrefabInstance: {fileID: 4170002366553415711}
   m_PrefabAsset: {fileID: 0}
