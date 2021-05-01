@@ -183,9 +183,11 @@ public class SubmarineState : MonoBehaviour
         }
     }
 
-    public void SwitchInterfaceMode(ControlMode mode)
+    public void SwitchInterfaceMode()
     {
-        _interfaceMode = mode;
+        _interfaceMode = _interfaceMode == ControlMode.INTERFACE
+        ? ControlMode.STEERING
+        : ControlMode.INTERFACE;
     }
 
     public void ToggleLights()

@@ -71,6 +71,12 @@ public class SubDriveSystem : MonoBehaviour
                 Mathf.Lerp(turningTorqueLowEnergy, turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
                 SubmarineController.mousePos.x);
 
+            torqueVec.x = Mathf.Lerp(
+                Mathf.Lerp(-turningTorqueLowEnergy, -turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
+                Mathf.Lerp(turningTorqueLowEnergy, turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
+                SubmarineController.mousePos.y
+            );
+
             //steeringStick.localRotation = Quaternion.Euler(0, Mathf.Lerp(30, -30, SubmarineController.mousePos.x), 0);// Just for testing / visual feedback
         }
         //else torqueVec = Vector3.zero; // If commented out, torque will be applied even if the player lets go of the wheel

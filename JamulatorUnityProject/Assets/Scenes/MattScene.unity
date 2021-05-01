@@ -832,12 +832,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358a1a7d172630549ae55244d0097228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeedLowEnergy: 5
-  forwardSpeedHighEnergy: 15
-  lateralSpeedLowEnergy: 5
-  lateralSpeedHighEnergy: 0
-  turningTorqueLowEnergy: 5
-  turningTorqueHighEnergy: 1
+  forwardSpeedLowEnergy: 15
+  forwardSpeedHighEnergy: 30
+  lateralSpeedLowEnergy: 10
+  lateralSpeedHighEnergy: 15
+  turningTorqueLowEnergy: 10
+  turningTorqueHighEnergy: 15
 --- !u!114 &1371199209572424943
 MonoBehaviour:
   m_ObjectHideFlags: 0
