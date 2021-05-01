@@ -327,6 +327,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3446980810535357059, guid: 3df9185e2ed844649abfca487f6ccc9e, type: 3}
   m_PrefabInstance: {fileID: 1403862244}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &541301014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5425739000884919599, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
+  m_PrefabInstance: {fileID: 222668628126742955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &862459825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9179405674674216586, guid: 6c1db4ee08d95416aa8fe326c7845009, type: 3}
@@ -800,10 +805,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1371199209572424942, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: mapBoundsCenter
+    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: TreasureChestSpawnPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 76394200}
+      objectReference: {fileID: 1513769125778335475}
+    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: TreasureChestSpawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 541301014}
+    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: TreasureChestSpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1928235846}
     - target: {fileID: 6496703359121049689, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Name
       value: Submarine 1
@@ -1106,6 +1119,11 @@ PrefabInstance:
       objectReference: {fileID: 1122545041}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+--- !u!1 &1928235846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5425739001172581000, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
+  m_PrefabInstance: {fileID: 222668628126742955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1943407935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af313e0cc8f0b4357a9d4980b810cf15, type: 3}
+--- !u!1 &1513769125778335475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6795338239298323144, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
+  m_PrefabInstance: {fileID: 222668628126742955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4733005070572289790
 PrefabInstance:
   m_ObjectHideFlags: 0

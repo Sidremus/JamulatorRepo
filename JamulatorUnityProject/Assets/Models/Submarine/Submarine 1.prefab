@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 1371199209572424943}
   - component: {fileID: 1371199209572424944}
   - component: {fileID: 3877997192334332047}
+  - component: {fileID: 2817667604621304044}
   m_Layer: 0
   m_Name: Submarine 1
   m_TagString: Submarine
@@ -642,6 +643,25 @@ CapsuleCollider:
   m_Height: 7.94
   m_Direction: 2
   m_Center: {x: 0, y: 1, z: -1.33}
+--- !u!114 &2817667604621304044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496703359121049689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0870c34a2480642b3ee06f507a13e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedTreasureCount: 0
+  treasureChestToSpawn: {fileID: 7389986857908301403, guid: 0b611264964664bef92253db384cabe4, type: 3}
+  TreasureChestSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  MaxChests: 1
 --- !u!1001 &3877002386921295973
 PrefabInstance:
   m_ObjectHideFlags: 0

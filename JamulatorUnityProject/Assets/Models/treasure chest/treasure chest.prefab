@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 6515172494428781380}
   - component: {fileID: 9047306778437635982}
   - component: {fileID: 2155619122554918419}
+  - component: {fileID: 1485489074269820798}
+  - component: {fileID: 2781443596294178568}
   m_Layer: 0
   m_Name: treasure chest
-  m_TagString: Rock
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7389986857908301403}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 1099.9838, y: 783.15955, z: 269.643}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children:
   - {fileID: 6892103208845452381}
   m_Father: {fileID: 0}
@@ -61,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a51273e1c587db54f97d0d0d4d5c452e, type: 2}
+  - {fileID: 2100000, guid: aa23a6818ddb5674f9f68d5b1b5fc7f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +99,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6093789492850456457, guid: 20ba9d6b24063ff49acde182697fc61e, type: 3}
+--- !u!65 &1485489074269820798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389986857908301403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04653296, y: 0.020918703, z: 0.024927089}
+  m_Center: {x: -1.970459e-10, y: -0.0004594072, z: 0.012463544}
+--- !u!65 &2781443596294178568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389986857908301403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.075, y: 0.05, z: 0.05}
+  m_Center: {x: 6.548138e-11, y: -0.00045934884, z: 0.012463423}
 --- !u!1001 &786232183
 PrefabInstance:
   m_ObjectHideFlags: 0

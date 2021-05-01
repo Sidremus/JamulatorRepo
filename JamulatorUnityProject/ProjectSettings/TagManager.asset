@@ -11,6 +11,7 @@ TagManager:
   - Plant
   - Submarine
   - Wreck
+  - Pickup
   layers:
   - Default
   - TransparentFX
