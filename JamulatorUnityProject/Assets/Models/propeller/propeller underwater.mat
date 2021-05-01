@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: propeller underwater
-  m_Shader: {fileID: -6465566751694194690, guid: 5d4108d39156b1248b9105e8d1a59f4f, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b8cf4071baf0c0940be35769f66b2457, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,12 +19,20 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_0380a3b8255540b796d752507c0df2b0:
+        m_Texture: {fileID: 2800000, guid: a8d696b450398a7478b2975e1f916d0d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_3e9cd291b3d34881a9ac45b495a275cb:
-        m_Texture: {fileID: 2800000, guid: 10a633c4c38266f4f90dfbdcc7ec0c63, type: 3}
+        m_Texture: {fileID: 2800000, guid: face256e0ac00854892d4608e79318c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_53760d2017824fc3b10800af8237b6f4:
         m_Texture: {fileID: 2800000, guid: a8d696b450398a7478b2975e1f916d0d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_5c1ae177a6f24783806c197a79ba8ec1:
+        m_Texture: {fileID: 2800000, guid: face256e0ac00854892d4608e79318c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -85,6 +93,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_00cfddcddbe149d4bfe80a1af043d935: 1
+    - Vector1_1e9b1a3170fd446e8a054e1e3cdcbb75: 1
+    - Vector1_1ed8ca97eb6649c1a4c4dda00901cf8d: 1
+    - Vector1_2477f7079a0a4cdb817b04cbbe0197d4: 1
+    - Vector1_2f7237f1c4204349bdb8e4057f1c6e30: 1
     - Vector1_a68d9abd315043deb052636e573f6ec3: 1
     - _AlphaClip: 0
     - _Blend: 0
