@@ -31,8 +31,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject[] finWhale;
     [Range(-90, 12)] public float finWhaleStartVol;
 
-    [SerializeField] GameObject[] clicker;
-    [Range(-90, 12)] public float clickerStartVol;
 
     [Header("External Submarine Sounds")]
     [Range(-80, 0)] public float extSubSoundsVol;
@@ -50,7 +48,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject sonarOneShotObject;
     [SerializeField] AudioClip pingSound;
     [SerializeField] AudioClip findSound;
-    [SerializeField] GameObject sonarLoop;
     bool isPinging;
 
     [Header("Submarine Actions: Lights")]
@@ -69,6 +66,8 @@ public class AudioManager : MonoBehaviour
     float sonarHumPreWait = 0.8f;
     float sonarHumFadeTime = 16f;
     float sonarFindPitchRandRange = 0.01f;
+
+    float worldDepth = 800f;
 
     void Awake()
     {
@@ -96,7 +95,6 @@ public class AudioManager : MonoBehaviour
 
         rumbleStartVol += environmentalStartVol;
         finWhaleStartVol += environmentalStartVol;
-        clickerStartVol += environmentalStartVol;
 
         for (int i = 0; i < rumble.Length; ++i)
         {
@@ -108,11 +106,6 @@ public class AudioManager : MonoBehaviour
             finWhale[i].GetComponent<AudioSourceFader>().outputGain = finWhaleStartVol;
         }
 
-        for (int i = 0; i < clicker.Length; ++i)
-        {
-            clicker[i].GetComponent<AudioSourceFader>().outputGain = clickerStartVol;
-        }
-
     }
 
 
@@ -120,7 +113,7 @@ public class AudioManager : MonoBehaviour
     {
         if (!UseInternalControl)
         {
-            subDepth = submarine.transform.position.y;
+            subDepth = Mathf.Clamp((submarine.transform.position.y / worldDepth) * 100f, 0, 100);
             subSensorEnergy = SubmarineState.Instance.sensorEnergyLerp;
             subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
             subDamage = SubmarineState.Instance.subDamage;
@@ -134,77 +127,26 @@ public class AudioManager : MonoBehaviour
 
     private void SubscribeToEvents()
     {
-        EventManager.Instance.onSonarPing += SonarPingStart;
+        EventManager.Instance.onSonarPing += PingSonar;
         EventManager.Instance.onLightsOn += LightsOn;
         EventManager.Instance.onLightsOff += LightsOff;
 
     }
     private void OnDisable()
     {
-        EventManager.Instance.onSonarPing -= SonarPingStart;
+        EventManager.Instance.onSonarPing -= PingSonar;
         EventManager.Instance.onLightsOn -= LightsOn;
         EventManager.Instance.onLightsOff -= LightsOff;
     }
 
     #region Sonar Ping Control
-    // TODO: something in the fade control isn't cancelling right and there's pops/jumps in volume sometimes, especially when sonar pings are triggered at quick intervals.
     
-    void SonarPingStart()
+    void PingSonar()
     {
-        if (isPinging)
-        {            
-            StartCoroutine(FadeAndStop(sonarLoop));
-            StopCoroutine(PlaySonarPing());
-        }
-            
-        
-        StartCoroutine(PlaySonarPing());
-
-    }
-
-    IEnumerator FadeAndStop(GameObject audioObject)
-    {
-        var loopASF = audioObject.GetComponent<AudioSourceFader>();
-        var loopSource = audioObject.GetComponent<AudioSource>();
-
-        loopASF.FadeTo(-80f, 0.1f, 0.9f);
-        yield return new WaitForSeconds(0.1f);
-        loopSource.Stop();
-    }
-
-    IEnumerator PlaySonarPing()
-    {
-        isPinging = true;
-        // Play ping sound
         sonarOneShotObject.GetComponent<Gain>().inputGain = sonarVol;
         sonarOneShotObject.GetComponent<AudioSource>().PlayOneShot(pingSound);
-        
-        var loopSource = sonarLoop.GetComponent<AudioSource>();
-        var loopASF = sonarLoop.GetComponent<AudioSourceFader>();
-
-        // Fade it down if it's already playing
-        if (loopSource.isPlaying)
-        {
-            loopASF.FadeTo(-80f, 0.1f, 0.9f);
-            yield return new WaitForSeconds(0.1f);
-            loopSource.Stop();
-        }
-
-        // Play & fade up sonar hum loop
-        loopSource.Play();
-        loopASF.FadeTo(sonarVol, sonarHumPreWait, 0.8f);
-
-        // Wait, then fade down and stop sonar hum loop
-        yield return new WaitForSeconds(sonarHumPreWait);
-        loopASF.FadeTo(-80f, sonarHumFadeTime, 0.1f);
-        yield return new WaitForSeconds(sonarHumFadeTime);
-        loopSource.Stop();
-
-        isPinging = false;
-        yield break;
-
-
     }
+
     void SonarPingFind()
     {
         sonarOneShotObject.GetComponent<Gain>().inputGain = sonarVol;
@@ -277,7 +219,7 @@ public class AudioManager : MonoBehaviour
         var source = newAO.GetComponent<AudioSource>();
         AudioClip[] collisionFX = new AudioClip[0];
 
-        if (other.tag == "Submarine")
+        if (other.tag == "Submarine" || other.tag == "Wreck")
             collisionFX = collisionFX_Sub;
         else if (other.tag == "Plant")
             collisionFX = collisionFX_Plant;

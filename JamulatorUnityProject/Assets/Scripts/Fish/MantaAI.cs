@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MantaAI : MonoBehaviour
+public class MantaAI : BaseFishAI
 {
     public Transform rotatePoint;
     public float speed = 10f;
@@ -11,6 +9,14 @@ public class MantaAI : MonoBehaviour
     // move target rotate point child object where you like
     // assign speed accordling
     // to change direction, rotate on y by 180
+
+    private void OnEnable() {
+        print("manta enabled");
+    }
+
+    private void OnDisable() {
+        print("manta disabled");
+    }
 
     private void FixedUpdate() {
         transform.RotateAround(rotatePoint.position, Vector3.up, speed * Time.deltaTime);
