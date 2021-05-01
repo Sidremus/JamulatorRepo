@@ -90,7 +90,6 @@ public class AudioManager : MonoBehaviour
         // Sends params from inspector to relevant gameobjects.
         bubbleVol += environmentalStartVol;
 
-
         rumbleStartVol += environmentalStartVol;
         finWhaleStartVol += environmentalStartVol;
         clickerStartVol += environmentalStartVol;
@@ -119,7 +118,8 @@ public class AudioManager : MonoBehaviour
         {
             subDepth = submarine.transform.position.y;
             subSensorEnergy = SubmarineState.Instance.sensorEnergyLerp;
-            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;            
+            subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
+            subDamage = SubmarineState.Instance.subDamage;
         }
 
 
@@ -133,7 +133,6 @@ public class AudioManager : MonoBehaviour
         EventManager.Instance.onSonarPing += SonarPingStart;
         EventManager.Instance.onLightsOn += LightsOn;
         EventManager.Instance.onLightsOff += LightsOff;
-        EventManager.Instance.onSubCollision += ProcessCollision;
 
     }
     private void OnDisable()
@@ -141,7 +140,6 @@ public class AudioManager : MonoBehaviour
         EventManager.Instance.onSonarPing -= SonarPingStart;
         EventManager.Instance.onLightsOn -= LightsOn;
         EventManager.Instance.onLightsOff -= LightsOff;
-        EventManager.Instance.onSubCollision -= ProcessCollision;
     }
 
     #region Sonar Ping Control
@@ -264,21 +262,11 @@ public class AudioManager : MonoBehaviour
     #region Collision SFX
     // TODO: Connect to event system? //
 
-    private void ProcessCollision(Collision collision)
-    {
-        float impactMagnitude = collision.relativeVelocity.magnitude;
-        Vector3 position = collision.contacts[0].point;
-        AudioManager.Instance.PlayCollisionSound(position, impactMagnitude);
-
-        Debug.Log("Collision! at position: " + position + " with an impactMagnitude of " + impactMagnitude);
-
-        PlayCollisionSound(position, impactMagnitude);
-    }
 
     public void PlayCollisionSound(Vector3 position, float impactMagnitude)
     {
         // chooses clip, sets gain and pitch based on impactMagnitude, plays at position
-        impactMagnitude = Mathf.Clamp(impactMagnitude, 0f, 5f) / 5f;
+        impactMagnitude = Mathf.Clamp(impactMagnitude, 0f, 10f) / 10f;
 
         var newAO = Instantiate(AOCollisionPrefab, position, Quaternion.identity);
         newAO.transform.parent = transform;
