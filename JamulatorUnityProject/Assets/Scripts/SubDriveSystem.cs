@@ -5,14 +5,14 @@ using UnityEngine.InputSystem;
 
 public class SubDriveSystem : MonoBehaviour
 {
-    //public Transform steeringStick;// Just for testing / visual feedback
-
     public float forwardSpeedLowEnergy = 5, forwardSpeedHighEnergy = 30;
     public float lateralSpeedLowEnergy = 5, lateralSpeedHighEnergy = 0;
     public float turningTorqueLowEnergy = 15, turningTorqueHighEnergy = 5;
 
     Rigidbody rb;
     Vector3 moveVec, torqueVec;
+
+    private float mouseDeadzone = 0.05f;
 
     private void Awake()
     {
@@ -24,13 +24,89 @@ public class SubDriveSystem : MonoBehaviour
         ConstructMovAndTorqueVectors();
 
         rb.AddRelativeForce(moveVec);
-        rb.AddTorque(torqueVec * Time.fixedDeltaTime);
+        rb.AddRelativeTorque(torqueVec * Time.fixedDeltaTime);
+
+        // if (SubmarineState.Instance.interfaceMode == ControlMode.STEERING) 
+        // {
+        //     Turn();
+        //     Pitch();
+        // }
+
+        Level();
+    }
+
+    private void Level()
+    {
+        GameObject sub = SubmarineState.Instance.submarine;
+
+        if (sub.transform.rotation.z == 0f)
+        {
+            return;
+        } 
+
+        sub.transform.rotation = Quaternion.Euler(sub.transform.eulerAngles.x, sub.transform.eulerAngles.y, 0f);
+    }
+
+    private void Turn()
+    {
+        Vector2 mouse = SubmarineController.mousePos;
+        GameObject sub = SubmarineState.Instance.submarine;
+        // Mouse values are 0-1, where 0.5 is the middle, account for deadzone
+        float xOffset = mouse.x;
+        int dir;
+        float turnSpeed;
+        float leftThreshold = 0.5f - mouseDeadzone;
+        float rightThreshold = 0.5f + mouseDeadzone;
+
+        if (xOffset < leftThreshold) 
+        {
+            dir = -1;
+            turnSpeed = leftThreshold - xOffset;
+        } else if (xOffset > rightThreshold) 
+        {
+            dir = 1;
+            turnSpeed = xOffset - rightThreshold;
+        } else {
+            dir = 0;
+            turnSpeed = 0f;
+        }
+
+        float rotateVal = dir * turnSpeed * Time.deltaTime * 40f;
+        sub.transform.Rotate(0f, rotateVal, 0f, Space.Self);
+    }
+
+    private void Pitch()
+    {
+        Vector2 mouse = SubmarineController.mousePos;
+        GameObject sub = SubmarineState.Instance.submarine;
+
+        float yOffset = mouse.y;
+        int dir;
+        float turnSpeed;
+        float leftThreshold = 0.5f - mouseDeadzone;
+        float rightThreshold = 0.5f + mouseDeadzone;
+
+        if (yOffset < leftThreshold) 
+        {
+            dir = -1;
+            turnSpeed = leftThreshold - yOffset;
+        } else if (yOffset > rightThreshold) 
+        {
+            dir = 1;
+            turnSpeed = yOffset - rightThreshold;
+        } else {
+            dir = 0;
+            turnSpeed = 0f;
+        }
+
+        float rotateVal = dir * turnSpeed * Time.deltaTime * 40f;
+        sub.transform.Rotate(rotateVal, 0f, 0f, Space.Self);
     }
 
     private void ConstructMovAndTorqueVectors()
     {
         moveVec = Vector3.zero;
-
+       
         // Z-movement
         if (SubmarineState.Instance.zMoveState == Direction.FORWARDS)
         {
@@ -76,9 +152,6 @@ public class SubDriveSystem : MonoBehaviour
                 Mathf.Lerp(turningTorqueLowEnergy, turningTorqueHighEnergy, SubmarineState.Instance.driveEnergyLerp),
                 SubmarineController.mousePos.y
             );
-
-            //steeringStick.localRotation = Quaternion.Euler(0, Mathf.Lerp(30, -30, SubmarineController.mousePos.x), 0);// Just for testing / visual feedback
         }
-        //else torqueVec = Vector3.zero; // If commented out, torque will be applied even if the player lets go of the wheel
     }
 }
