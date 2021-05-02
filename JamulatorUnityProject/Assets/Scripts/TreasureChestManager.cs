@@ -48,6 +48,7 @@ public class TreasureChestManager : MonoBehaviour
         //TODO: code to spawn a chest
         if (TreasureChestSpawnPoints?.Count > 0)
         {
+            Debug.Log("Spawning chest. Current chest count: " + currentChestCount);
             if (currentChestCount < MaxChests)
             {
                 currentChestCount++;
