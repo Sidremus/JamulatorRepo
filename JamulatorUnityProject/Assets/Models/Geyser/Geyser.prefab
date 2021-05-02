@@ -40,8 +40,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150057033512965064}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
+  m_LocalScale: {x: 27, y: 27, z: 27}
   m_Children: []
   m_Father: {fileID: 8516491406606189966}
   m_RootOrder: 1
@@ -57,7 +57,7 @@ ParticleSystem:
   lengthInSec: 100
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 0
+  cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
@@ -129,7 +129,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -182,7 +182,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.73
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -614,13 +614,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 1500
     size3D: 1
     rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -100
+      scalar: -1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -674,7 +674,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 5.6
+    angle: 6.57
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -879,7 +879,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 70
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2374,7 +2374,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
+    inWorldSpace: 1
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
@@ -2710,11 +2710,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.73
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2880,7 +2880,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.7
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3707,7 +3707,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4863,7 +4863,7 @@ Transform:
   m_GameObject: {fileID: 1150057034033672610}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.048, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 8516491406606189966}
   m_RootOrder: 2
@@ -4879,8 +4879,8 @@ ParticleSystem:
   lengthInSec: 100
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 0
-  ringBufferMode: 0
+  cullingMode: 3
+  ringBufferMode: 2
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 1
@@ -4951,8 +4951,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5
-      minScalar: 1
+      scalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5004,7 +5004,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.73
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5436,13 +5436,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1500
+    maxNumParticles: 100
     size3D: 1
     rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -100
+      scalar: -1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5496,7 +5496,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 5.6
+    angle: 10.16
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -7514,7 +7514,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
@@ -7675,7 +7675,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 21.89
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -9883,16 +9883,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8449
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8449
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8449
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0017378
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.022057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.00027928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8c231f52d0286a46b196ea6e59b2e43, type: 3}
       propertyPath: m_LocalRotation.w
