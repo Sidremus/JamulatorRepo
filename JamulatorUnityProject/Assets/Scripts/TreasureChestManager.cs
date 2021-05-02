@@ -21,13 +21,15 @@ public class TreasureChestManager : MonoBehaviour
     [SerializeField]
     int MaxChests = 1;
 
-    int currentChestCount = 1;
+    List<GameObject> SpawnedChests;
+    int currentChestCount = 0;
     System.Random random = new System.Random();
     
 
     // Start is called before the first frame update
     void Start()
     {
+        SpawnedChests = new List<GameObject>();
         collectedTreasureCount = 0;
         if (TreasureChestSpawnPoints.Count == 0)
         {
@@ -47,13 +49,33 @@ public class TreasureChestManager : MonoBehaviour
         if (other.gameObject.tag == "Pickup")
         {
             collectedTreasureCount++;
-
+            if (SpawnedChests.Contains(other.gameObject))
+            {
+                SpawnedChests.Remove(other.gameObject);
+            }
             GameObject.Destroy(other.gameObject);
             currentChestCount--;
             SpawnChest();
         }
     }
-
+    public GameObject GetClosestChest(Vector3 position)
+    {
+        GameObject closestChest=null;
+        float closestDistance = float.MaxValue;
+        if (SpawnedChests.Count == 0)
+        {
+            Debug.Log("No chests spawned!!");
+        }
+        foreach(var chest in SpawnedChests)
+        {
+            var distance = Vector3.Distance(position, chest.transform.position);
+            if (distance < closestDistance)
+            {
+                closestChest = chest;
+            }
+        }
+        return closestChest;
+    }
     private void SpawnChest()
     {
         //TODO: code to spawn a chest
@@ -65,7 +87,8 @@ public class TreasureChestManager : MonoBehaviour
                 currentChestCount++;
                 int i = random.Next(TreasureChestSpawnPoints.Count);
                 Transform transform = TreasureChestSpawnPoints[i].transform;
-                Instantiate(treasureChestToSpawn, transform.position, transform.rotation);
+                var chest = Instantiate(treasureChestToSpawn, transform.position, transform.rotation);
+                SpawnedChests.Add(chest);
             }
             else
             {

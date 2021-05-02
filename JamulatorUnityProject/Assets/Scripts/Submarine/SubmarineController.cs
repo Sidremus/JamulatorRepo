@@ -44,6 +44,7 @@ public class SubmarineController : MonoBehaviour
         controls.Submarine.LeftClickInteract.canceled += (InputAction.CallbackContext ctx) => LeftClickExit();
 
         controls.Submarine.ToggleLight.performed += (InputAction.CallbackContext ctx) => SubmarineState.Instance.ToggleLights();
+        controls.Submarine.Ping.performed += (InputAction.CallbackContext ctx) => SubmarineState.Instance.TogglePing();
     }
 
     private void OnEnable()
