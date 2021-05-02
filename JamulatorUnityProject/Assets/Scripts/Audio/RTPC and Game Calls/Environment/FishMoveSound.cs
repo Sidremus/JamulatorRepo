@@ -9,7 +9,9 @@ using UnityEngine;
 public class FishMoveSound : MonoBehaviour
 {
     [SerializeField] AudioClip[] rippleClips;
-    [SerializeField] [Range(0.5f, 10f)] float fishScale = 1f;
+    const float minFishScale = 0.5f;
+    const float maxFishScale = 10f;
+    [SerializeField] [Range(minFishScale, maxFishScale)] float fishScale = 1f;
 
     bool ripplePlaying;
 
@@ -23,26 +25,30 @@ public class FishMoveSound : MonoBehaviour
     {
         if (ripplePlaying) return;
 
-        float pitch = fishPitch * Random.Range(-pitchRandScaleFactor, pitchRandScaleFactor);
+        float pitchMultiplier = fishPitch * Random.Range(1/pitchRandScaleFactor, pitchRandScaleFactor);
         float vol = fishVol + Random.Range(-volRandOffset, volRandOffset);
 
         StartCoroutine(PlayClipThenDestroySource(
             AudioUtility.RandomClipFromArray(rippleClips),
             vol,
-            pitch));
+            pitchMultiplier));
 
         ripplePlaying = true;
 
     }
 
-    IEnumerator PlayClipThenDestroySource(AudioClip clip, float vol, float pitch)
+    IEnumerator PlayClipThenDestroySource(AudioClip clip, float vol, float pitchMultiplier)
     {
         var newAudio = gameObject.AddComponent<AudioSource>();
 
         newAudio.playOnAwake = false;
         newAudio.volume = AudioUtility.ConvertDbtoA(vol + (1f * fishScale));
-        pitch -= fishPitch - (fishScale / 12f);
-        newAudio.pitch = pitch;
+        float fishScalePitchMultiplier = fishScale / maxFishScale;
+        Debug.Log("Fish pitch before: " + pitchMultiplier);
+        Debug.Log($"{pitchMultiplier} * {fishScalePitchMultiplier}");
+        pitchMultiplier = pitchMultiplier * fishScalePitchMultiplier;
+        Debug.Log("Fish pitch after: " + pitchMultiplier);
+        newAudio.pitch = pitchMultiplier;
         newAudio.clip = clip;
         newAudio.spatialize = true;
         newAudio.spatialBlend = 1f;
@@ -52,7 +58,7 @@ public class FishMoveSound : MonoBehaviour
 
         newAudio.Play();
 
-        yield return new WaitForSeconds((clip.length / pitch));
+        yield return new WaitForSeconds((clip.length / pitchMultiplier));
         Destroy(newAudio);
 
         ripplePlaying = false;
