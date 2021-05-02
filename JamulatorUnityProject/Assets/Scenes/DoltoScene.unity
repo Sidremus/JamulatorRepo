@@ -1269,22 +1269,6 @@ PrefabInstance:
       propertyPath: mapBoundsCenter
       value: 
       objectReference: {fileID: 76394200}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 222668628126742959}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 222668628126742958}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 222668628126742957}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 2006976199}
     - target: {fileID: 6496703359121049689, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Name
       value: Submarine 1
@@ -1694,11 +1678,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ae28479bc66304884696dc3573bbda, type: 3}
---- !u!1 &2006976199 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5213773294362680721, guid: f7ae28479bc66304884696dc3573bbda, type: 3}
-  m_PrefabInstance: {fileID: 2006976198}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2061846645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,21 +1839,6 @@ PrefabInstance:
 --- !u!4 &222668628126742956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 222668628179295497, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
-  m_PrefabInstance: {fileID: 222668628126742955}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &222668628126742957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5425739001172581000, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
-  m_PrefabInstance: {fileID: 222668628126742955}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &222668628126742958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5425739000884919599, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
-  m_PrefabInstance: {fileID: 222668628126742955}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &222668628126742959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7321043286703426319, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
   m_PrefabInstance: {fileID: 222668628126742955}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &585840378197024337
