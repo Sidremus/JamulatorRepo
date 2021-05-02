@@ -599,6 +599,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1749174430, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_Text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749174430, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 1982942003, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Text
       value: 20m/s
@@ -611,6 +619,10 @@ PrefabInstance:
       propertyPath: mapBoundsCenter
       value: 
       objectReference: {fileID: 136957579}
+    - target: {fileID: 4770565492117359457, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6496703359121049689, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Name
       value: Submarine 1
@@ -1975,6 +1987,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b60a897d8c7ec24c9fb840e86d1a39a, type: 3}
+--- !u!1 &1727931510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749174428, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+  m_PrefabInstance: {fileID: 299876221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1727931512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727931510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f9f3886232e0c4eb680cc0aa6b9b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1730081229
 PrefabInstance:
   m_ObjectHideFlags: 0
