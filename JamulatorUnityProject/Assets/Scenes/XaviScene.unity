@@ -371,10 +371,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: XaviPrefabs
       objectReference: {fileID: 0}
-    - target: {fileID: 928131702925948290, guid: af313e0cc8f0b4357a9d4980b810cf15, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 928131702925948291, guid: af313e0cc8f0b4357a9d4980b810cf15, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1755,26 +1751,10 @@ PrefabInstance:
       propertyPath: submarine
       value: 
       objectReference: {fileID: 299876222}
-    - target: {fileID: 2057777428673316197, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: numberOfSoundsToDistribute
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777428853713973, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: numberOfSoundsToDistribute
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057777429259501356, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: numberOfSoundsToDistribute
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 2057777429825323344, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
       propertyPath: gameobjectToFollow
       value: 
       objectReference: {fileID: 1471784808}
-    - target: {fileID: 2057777429871931098, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
-      propertyPath: numberOfSoundsToDistribute
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
 --- !u!1001 &1730081229
