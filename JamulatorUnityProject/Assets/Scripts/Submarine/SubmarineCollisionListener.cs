@@ -34,7 +34,17 @@ public class SubmarineCollisionListener : MonoBehaviour
         AudioManager.Instance.PlayCollisionSound(position, impactMagnitude, collision.gameObject);
         // two collisions: one for the sub, one for whatever it's hit
 
-       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Plant")
+        {
+            float magnitude = GetComponent<Rigidbody>().velocity.magnitude / 2f;
+            Vector3 position = transform.position;
+
+            AudioManager.Instance.PlayCollisionSound(position, magnitude, other.gameObject);
+        }
 
     }
 }

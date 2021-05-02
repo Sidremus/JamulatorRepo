@@ -1619,10 +1619,10 @@ MonoBehaviour:
   rumble:
   - {fileID: 2815884270070736853}
   - {fileID: 2815884270058217049}
-  rumbleStartVol: -29.1
+  rumbleStartVol: -13.4
   finWhale:
   - {fileID: 2815884270400419627}
-  finWhaleStartVol: -32.7
+  finWhaleStartVol: -17.9
   extSubSoundsVol: -2.4
   collisionFX_Sub:
   - {fileID: 8300000, guid: 6d7a991ed1808b04da1895e08b8670fd, type: 3}
