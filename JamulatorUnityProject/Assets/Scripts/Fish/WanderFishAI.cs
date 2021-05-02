@@ -6,7 +6,7 @@ using UnityEngine;
 public class WanderFishAI : BaseFishAI
 {
     protected float moveSpeed = 2.5f;
-    protected float minMoveSpeed = 2.5f;
+    public float minMoveSpeed = 2.5f;
     private Vector3 targetDirection;
     private float lastTurned = 0f;
     private float turnTimeout = 8f;
