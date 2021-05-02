@@ -212,6 +212,18 @@ public class AudioManager : MonoBehaviour
     }
     #endregion Lights
 
+    #region Ping
+    private void PingOn()
+    {
+
+    }
+
+    private void PingOff()
+    {
+
+    }
+    #endregion Ping
+
     #region Collision SFX
 
     public void PlayCollisionSound(Vector3 position, float impactMagnitude, GameObject other)

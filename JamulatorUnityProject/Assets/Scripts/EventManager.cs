@@ -32,6 +32,8 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    public Guid EventManagerId = Guid.NewGuid();
+
 
     public event Action onSonarPing;
     public void NotifyOfSonarPing()
@@ -57,6 +59,25 @@ public class EventManager : MonoBehaviour
         if (onLightsOff != null)
         {
             onLightsOff();
+        }
+    }
+
+    public event Action onPingOn;
+    public void NotifyOfPingOn()
+    {
+        if (onPingOn != null)
+        {
+            Debug.Log("NotifyOfPingOn");
+            onPingOn();
+        }
+    }
+
+    public event Action onPingOff;
+    public void NotifyOfPingOff()
+    {
+        if (onPingOff != null)
+        {
+            onPingOff();
         }
     }
 

@@ -105,6 +105,14 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ping"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fbd2ded-7f47-4282-a58b-40fe491e4ba6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -228,6 +236,17 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                     ""action"": ""ToggleLight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""925995f8-3cdf-4742-b6f2-17a5dd55f9a8"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Ping"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -308,6 +327,7 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         m_Submarine_SwitchInterfaceMode = m_Submarine.FindAction("SwitchInterfaceMode", throwIfNotFound: true);
         m_Submarine_LeftClickInteract = m_Submarine.FindAction("LeftClickInteract", throwIfNotFound: true);
         m_Submarine_ToggleLight = m_Submarine.FindAction("ToggleLight", throwIfNotFound: true);
+        m_Submarine_Ping = m_Submarine.FindAction("Ping", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -368,6 +388,7 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
     private readonly InputAction m_Submarine_SwitchInterfaceMode;
     private readonly InputAction m_Submarine_LeftClickInteract;
     private readonly InputAction m_Submarine_ToggleLight;
+    private readonly InputAction m_Submarine_Ping;
     public struct SubmarineActions
     {
         private @SubmarineInputAsset m_Wrapper;
@@ -383,6 +404,7 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         public InputAction @SwitchInterfaceMode => m_Wrapper.m_Submarine_SwitchInterfaceMode;
         public InputAction @LeftClickInteract => m_Wrapper.m_Submarine_LeftClickInteract;
         public InputAction @ToggleLight => m_Wrapper.m_Submarine_ToggleLight;
+        public InputAction @Ping => m_Wrapper.m_Submarine_Ping;
         public InputActionMap Get() { return m_Wrapper.m_Submarine; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -425,6 +447,9 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                 @ToggleLight.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnToggleLight;
                 @ToggleLight.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnToggleLight;
                 @ToggleLight.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnToggleLight;
+                @Ping.started -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnPing;
+                @Ping.performed -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnPing;
+                @Ping.canceled -= m_Wrapper.m_SubmarineActionsCallbackInterface.OnPing;
             }
             m_Wrapper.m_SubmarineActionsCallbackInterface = instance;
             if (instance != null)
@@ -462,6 +487,9 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
                 @ToggleLight.started += instance.OnToggleLight;
                 @ToggleLight.performed += instance.OnToggleLight;
                 @ToggleLight.canceled += instance.OnToggleLight;
+                @Ping.started += instance.OnPing;
+                @Ping.performed += instance.OnPing;
+                @Ping.canceled += instance.OnPing;
             }
         }
     }
@@ -524,5 +552,6 @@ public class @SubmarineInputAsset : IInputActionCollection, IDisposable
         void OnSwitchInterfaceMode(InputAction.CallbackContext context);
         void OnLeftClickInteract(InputAction.CallbackContext context);
         void OnToggleLight(InputAction.CallbackContext context);
+        void OnPing(InputAction.CallbackContext context);
     }
 }
