@@ -1751,10 +1751,18 @@ PrefabInstance:
       propertyPath: submarine
       value: 
       objectReference: {fileID: 299876222}
+    - target: {fileID: 2057777429823406993, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2057777429825323344, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
       propertyPath: gameobjectToFollow
       value: 
       objectReference: {fileID: 1471784808}
+    - target: {fileID: 2057777429862410833, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
 --- !u!1001 &1730081229

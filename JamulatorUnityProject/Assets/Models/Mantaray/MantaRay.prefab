@@ -252,6 +252,10 @@ PrefabInstance:
       value: AO_Manta
       objectReference: {fileID: 0}
     - target: {fileID: 8671213962580457841, guid: d650246db7201154b8fa8af88ab5a150, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671213962580457841, guid: d650246db7201154b8fa8af88ab5a150, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
