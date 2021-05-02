@@ -45,7 +45,7 @@ public class SubmarineState : MonoBehaviour
     // Total damage of the sub from 0-100.
 
     public float subDamage { get; set; }
-    float repairRate = 0.2f;
+    float repairRate = 0.5f;
 
 
     // These floats are the energy states of the drive and sensor systems. 0 = lowest, 1 = highest

@@ -43,7 +43,7 @@ public class SubDriveSystem : MonoBehaviour
         Vector3 mapDir = (mapBoundsCenter.position - sub.transform.position);
 
         Rigidbody rb = sub.GetComponent<Rigidbody>();
-        rb.AddRelativeForce(mapDir * offMapPushForce);
+        rb.AddForce(mapDir * offMapPushForce);
     }
 
     private void Level()

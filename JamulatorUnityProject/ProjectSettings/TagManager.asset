@@ -11,6 +11,8 @@ TagManager:
   - Plant
   - Submarine
   - Wreck
+  - Pickup
+  - TreasureSpawn
   layers:
   - Default
   - TransparentFX

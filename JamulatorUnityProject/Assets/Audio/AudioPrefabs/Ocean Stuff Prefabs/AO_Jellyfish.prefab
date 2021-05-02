@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3929727786689947368}
   - component: {fileID: 3929727786689947374}
   - component: {fileID: 3929727786689947369}
+  - component: {fileID: 1039538280771669080}
   m_Layer: 0
   m_Name: AO_Jellyfish
   m_TagString: Untagged
@@ -54,7 +55,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.99
-  MaxDistance: 4.36
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -64,28 +65,46 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.22706422
+      time: 0.066
       value: 1
-      inSlope: -4.4058013
-      outSlope: -4.4058013
+      inSlope: -15.157551
+      outSlope: -15.157551
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.45412844
+      time: 0.132
       value: 0.5
-      inSlope: -1.1014503
-      outSlope: -1.1014503
+      inSlope: -3.7893877
+      outSlope: -3.7893877
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.99835205
-      value: 0.13538942
-      inSlope: -0.22715479
-      outSlope: -0.22715479
+      time: 0.23031622
+      value: 0.23091125
+      inSlope: -0.9473469
+      outSlope: -0.9473469
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.49432385
+      value: 0.06008911
+      inSlope: -0.23683673
+      outSlope: -0.23683673
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.0660263
+      outSlope: -0.0660263
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -168,3 +187,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchMin: 1.1
   pitchMax: 1.8
+--- !u!114 &1039538280771669080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929727786689947370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}

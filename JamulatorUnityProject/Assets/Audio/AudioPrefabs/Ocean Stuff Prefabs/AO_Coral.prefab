@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2756718925090304020}
   - component: {fileID: 2756718925090304023}
   - component: {fileID: 2756718925090304022}
+  - component: {fileID: 8028540071121916213}
   m_Layer: 0
   m_Name: AO_Coral
   m_TagString: Untagged
@@ -52,9 +53,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0.1
   MinDistance: 1
-  MaxDistance: 49.2
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -73,31 +74,31 @@ AudioSource:
       inWeight: 0
       outWeight: 0.44489437
     - serializedVersion: 3
-      time: 0.3852802
-      value: 0.9453139
-      inSlope: -0.44588628
-      outSlope: -0.44588628
+      time: 0.34382206
+      value: 0.81545395
+      inSlope: -1.1271381
+      outSlope: -1.1271381
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.7949877
     - serializedVersion: 3
-      time: 0.6502801
-      value: 0.6449911
-      inSlope: -1.2065842
-      outSlope: -1.2065842
+      time: 0.5880853
+      value: 0.2668783
+      inSlope: -1.0899024
+      outSlope: -1.0899024
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.4333905
+      outWeight: 0.22012125
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1.010101
-      outSlope: -1.010101
+      inSlope: -0.036857642
+      outSlope: -0.036857642
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.50314754
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -187,3 +188,17 @@ MonoBehaviour:
   intervalRand: 2.5
   pitch: 1
   pitchRand: 0
+--- !u!114 &8028540071121916213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756718925090304016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paused: 0
+  source: {fileID: 0}
