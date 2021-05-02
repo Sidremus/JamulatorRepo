@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TreasureChestManager : MonoBehaviour
@@ -28,7 +29,17 @@ public class TreasureChestManager : MonoBehaviour
     void Start()
     {
         collectedTreasureCount = 0;
+        if (TreasureChestSpawnPoints.Count == 0)
+        {
+            PopulateSpawnPointsByTag();
+            Debug.Log($"Found {TreasureChestSpawnPoints.Count} spawn points for treasure");
+        }
         SpawnChest();
+    }
+
+    private void PopulateSpawnPointsByTag()
+    {
+        TreasureChestSpawnPoints = GameObject.FindGameObjectsWithTag("TreasureSpawn").ToList();
     }
 
     private void OnCollisionEnter(Collision other)
