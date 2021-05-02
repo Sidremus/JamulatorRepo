@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AO_GiantMushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 5338202542363605881, guid: f2fd325ef09fc2f42a272d95b18b49a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2fd325ef09fc2f42a272d95b18b49a4, type: 3}
 --- !u!4 &5851146814589261039 stripped

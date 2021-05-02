@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2283330319519484350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204357888132340326}
+  m_Layer: 0
+  m_Name: GlowingGiantGreenMush
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204357888132340326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283330319519484350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.21161461, y: -46.302803, z: -1.3104382}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5466680790216078265}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5500922964301485138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 204357888132340326}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35501006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35501006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35501
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.21161461
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 46.302803
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3104382
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9996397
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.026844703
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -3.077
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_Name
+      value: MushroomTree_Large01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717335825743588288, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 632c8e0553c3fa44f8f2b4602abfd27a, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+--- !u!4 &5466680790216078265 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6293479016dc374ab89360235d3bda0, type: 3}
+  m_PrefabInstance: {fileID: 5500922964301485138}
+  m_PrefabAsset: {fileID: 0}

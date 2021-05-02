@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 987975425327461747}
   - component: {fileID: 987975425327461746}
   - component: {fileID: 987975425327461744}
+  - component: {fileID: 6250305029664294813}
   m_Layer: 0
   m_Name: AO_Hammerfish
   m_TagString: Untagged
@@ -54,9 +55,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5.14
-  MaxDistance: 13.9
+  MaxDistance: 60
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -64,23 +65,41 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.085666664
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -11.67782
+      outSlope: -11.67782
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.17133333
+      value: 0.5
+      inSlope: -2.919455
+      outSlope: -2.919455
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.34266666
+      value: 0.25
+      inSlope: -0.72986376
+      outSlope: -0.72986376
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.08570086
+      outSlope: -0.08570086
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -168,3 +187,16 @@ MonoBehaviour:
   intervalRand: 4
   pitch: 1
   pitchRand: 0.053
+--- !u!114 &6250305029664294813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987975425327461750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 987975425327461747}
