@@ -119,7 +119,7 @@ public class AudioSourceFader : MonoBehaviour
         }
     }
 
-    public void FadeDownAndStop(float fadetime)             // Made for Unity Events: fades down to -70db over (fadetime) seconds, then stops the clip.
+    public void FadeToAndStop(float targetDb, float fadetime, float curveShape)             // Made for Unity Events: fades down to -70db over (fadetime) seconds, then stops the clip.
     {
         if (FadeDownCurve.keys.Length > 0)
         {
@@ -130,7 +130,7 @@ public class AudioSourceFader : MonoBehaviour
                 StopAllCoroutines();
                 isFading = false;
             }
-            StartCoroutine(StartFadeInDb(fadetime, -70.0f, FadeDownCurve));
+            FadeTo(targetDb, fadetime, curveShape);
             StartCoroutine(StopClipAfterFade(audioSource, fadetime));
             isFading = true;
         }
