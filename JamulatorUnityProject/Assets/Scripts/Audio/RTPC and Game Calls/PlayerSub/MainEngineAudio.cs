@@ -29,6 +29,9 @@ public class MainEngineAudio : MonoBehaviour
     [SerializeField] float gainHighPowerMin = -12f;
     [SerializeField] float gainMax = 0f;
 
+    [SerializeField] float acceleration = 15f;
+    [SerializeField] float deceleration = 10f;
+
 
     private void Start()
     {
@@ -38,9 +41,27 @@ public class MainEngineAudio : MonoBehaviour
         whirrGain = engineWhirr.GetComponent<Gain>();
     }
 
+    void GetSpeed()
+    {
+        /*speed = 100f * AudioManager.Instance.subDriveEnergy;*/
+
+        
+        if (SubmarineState.Instance.zMoveState == Direction.FORWARDS)
+        {
+            speed += acceleration * Time.deltaTime;
+        }
+        else
+        {
+            speed -= deceleration * Time.deltaTime;
+        }
+        speed = Mathf.Clamp(speed, 0, 100);
+
+
+    }
+
     void Update()
     {
-        speed = 100f * AudioManager.Instance.subDriveEnergy;
+        GetSpeed();
 
         if (speed <= engineOnThreshold)
         {

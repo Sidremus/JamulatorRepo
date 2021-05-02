@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7180215552481173543}
   - component: {fileID: -8328352783156979808}
   m_Layer: 0
-  m_Name: AO_PlayerSub
+  m_Name: AO_SubExternal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,3 +143,4 @@ MonoBehaviour:
   outputGain: 0
   inputGain: 0
   audioSource: {fileID: 0}
+  fadeInOnAwakeTime: 0
