@@ -585,18 +585,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6496703359121049689, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
   m_PrefabInstance: {fileID: 1699571063}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1122545042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122545041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cf35356298e47045b20dad5f6a84e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1264706179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1281,22 +1269,6 @@ PrefabInstance:
       propertyPath: mapBoundsCenter
       value: 
       objectReference: {fileID: 76394200}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 222668628126742959}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 222668628126742958}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 222668628126742957}
-    - target: {fileID: 2817667604621304044, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: TreasureChestSpawnPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 2006976199}
     - target: {fileID: 6496703359121049689, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Name
       value: Submarine 1
@@ -1597,6 +1569,14 @@ PrefabInstance:
       propertyPath: submarine
       value: 
       objectReference: {fileID: 1122545041}
+    - target: {fileID: 2057777429741578579, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e23494ae91b2a07499319910171cd5fe, type: 3}
+    - target: {fileID: 2057777429823406993, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
 --- !u!1 &1943407935
@@ -1706,11 +1686,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ae28479bc66304884696dc3573bbda, type: 3}
---- !u!1 &2006976199 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5213773294362680721, guid: f7ae28479bc66304884696dc3573bbda, type: 3}
-  m_PrefabInstance: {fileID: 2006976198}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2061846645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,21 +1847,6 @@ PrefabInstance:
 --- !u!4 &222668628126742956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 222668628179295497, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
-  m_PrefabInstance: {fileID: 222668628126742955}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &222668628126742957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5425739001172581000, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
-  m_PrefabInstance: {fileID: 222668628126742955}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &222668628126742958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5425739000884919599, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
-  m_PrefabInstance: {fileID: 222668628126742955}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &222668628126742959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7321043286703426319, guid: 8baba0446bbfe4a24add9efe5ff48ba8, type: 3}
   m_PrefabInstance: {fileID: 222668628126742955}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &585840378197024337

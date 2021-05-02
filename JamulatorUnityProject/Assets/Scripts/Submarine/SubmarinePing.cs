@@ -34,9 +34,15 @@ public class SubmarinePing : MonoBehaviour
         pingIsOn = false;
     }
 
+
+    private float lastBeepTime = 0;
+    [SerializeField]
+    float minimumBeepGap = 0.05f;
+    
     // Update is called once per frame
     void Update()
     {
+        
         if (pingIsOn)
         {
             if (treasureChestManager != null)
@@ -45,7 +51,16 @@ public class SubmarinePing : MonoBehaviour
                 if (chest != null)
                 {
                     float distance = Vector3.Distance(chest.transform.position, submarine.transform.position);
-                    Debug.Log("Ping! " + distance);
+                    
+                    float pingGap = minimumBeepGap * Mathf.Sqrt(distance);
+                    Debug.Log($"Ping! dist {distance} delta {pingGap}" );
+                    float timeSincePing = Time.time - lastBeepTime;
+
+                    if (pingGap < timeSincePing)
+                    {
+                        EventManager.Instance.NotifyOfSonarPing();
+                        lastBeepTime = Time.time;
+                    }
                 }
                 else
                 {

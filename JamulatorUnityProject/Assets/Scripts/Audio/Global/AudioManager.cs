@@ -134,14 +134,14 @@ public class AudioManager : MonoBehaviour
 
     private void SubscribeToEvents()
     {
-        EventManager.Instance.onSonarPing += PingSonar;
+        EventManager.Instance.onSonarPing += SonarPingFind;
         EventManager.Instance.onLightsOn += LightsOn;
         EventManager.Instance.onLightsOff += LightsOff;
 
     }
     private void OnDisable()
     {
-        EventManager.Instance.onSonarPing -= PingSonar;
+        EventManager.Instance.onSonarPing -= SonarPingFind;
         EventManager.Instance.onLightsOn -= LightsOn;
         EventManager.Instance.onLightsOff -= LightsOff;
     }
