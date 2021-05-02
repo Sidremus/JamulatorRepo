@@ -1581,7 +1581,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2815884270666053518}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3656,72 +3656,6 @@ Transform:
   m_Father: {fileID: 2815884271253653006}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2815884270176438319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9219658114748768797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: ce3e4d36b67614347b55680dae4484d0, type: 3}
-  - {fileID: 8300000, guid: 4870c138eb0bc6c4c8bbe821e9b72431, type: 3}
-  - {fileID: 8300000, guid: 00c0716ff2ede2c4ea3049746f9e7e23, type: 3}
-  loop: 0
-  clipPlaying: 0
-  intervalBetweenPlays: 8
-  intervalRand: 4
-  pitch: 1
-  pitchRand: 0.11
---- !u!114 &2815884270659138018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9219658114299632598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: ce3e4d36b67614347b55680dae4484d0, type: 3}
-  - {fileID: 8300000, guid: 4870c138eb0bc6c4c8bbe821e9b72431, type: 3}
-  - {fileID: 8300000, guid: 00c0716ff2ede2c4ea3049746f9e7e23, type: 3}
-  loop: 0
-  clipPlaying: 0
-  intervalBetweenPlays: 5
-  intervalRand: 2.81
-  pitch: 0.794
-  pitchRand: 0
---- !u!114 &2815884271799257265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9219658115306988167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: cca9f65c15a3e5741bb24e7ce4fffc02, type: 3}
-  - {fileID: 8300000, guid: ede5e0caf89327d4fb2f66fa61b1f4a3, type: 3}
-  - {fileID: 8300000, guid: 2739ff8c6e2935347ae1a51dbbc85850, type: 3}
-  loop: 0
-  clipPlaying: 0
-  intervalBetweenPlays: 0
-  intervalRand: 4.19
-  pitch: 0.68
-  pitchRand: 0.122
 --- !u!1 &3895440199280420179
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,7 +3806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -12
+  outputGain: -16
   inputGain: 0
   audioSource: {fileID: 3895440199280420183}
   fadeInOnAwakeTime: 0
@@ -4272,6 +4206,72 @@ MonoBehaviour:
   intervalRand: 8.5
   pitch: 1
   pitchRand: 0.189
+--- !u!114 &2815884270659138018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219658114299632598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: ce3e4d36b67614347b55680dae4484d0, type: 3}
+  - {fileID: 8300000, guid: 4870c138eb0bc6c4c8bbe821e9b72431, type: 3}
+  - {fileID: 8300000, guid: 00c0716ff2ede2c4ea3049746f9e7e23, type: 3}
+  loop: 0
+  clipPlaying: 0
+  intervalBetweenPlays: 5
+  intervalRand: 2.81
+  pitch: 0.794
+  pitchRand: 0
+--- !u!114 &2815884270176438319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219658114748768797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: ce3e4d36b67614347b55680dae4484d0, type: 3}
+  - {fileID: 8300000, guid: 4870c138eb0bc6c4c8bbe821e9b72431, type: 3}
+  - {fileID: 8300000, guid: 00c0716ff2ede2c4ea3049746f9e7e23, type: 3}
+  loop: 0
+  clipPlaying: 0
+  intervalBetweenPlays: 8
+  intervalRand: 4
+  pitch: 1
+  pitchRand: 0.11
+--- !u!114 &2815884271799257265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219658115306988167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: cca9f65c15a3e5741bb24e7ce4fffc02, type: 3}
+  - {fileID: 8300000, guid: ede5e0caf89327d4fb2f66fa61b1f4a3, type: 3}
+  - {fileID: 8300000, guid: 2739ff8c6e2935347ae1a51dbbc85850, type: 3}
+  loop: 0
+  clipPlaying: 0
+  intervalBetweenPlays: 0
+  intervalRand: 4.19
+  pitch: 0.68
+  pitchRand: 0.122
 --- !u!1001 &2815884270176438316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4279,6 +4279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2815884271148510145}
     m_Modifications:
+    - target: {fileID: -8328352783156979808, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
+      propertyPath: outputGain
+      value: -9
+      objectReference: {fileID: 0}
     - target: {fileID: -8328352783156979808, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: fadeInOnAwakeTime
       value: 1
@@ -4363,6 +4367,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2815884271148510145}
     m_Modifications:
     - target: {fileID: -8328352783156979808, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
+      propertyPath: outputGain
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8328352783156979808, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: fadeInOnAwakeTime
       value: 1
       objectReference: {fileID: 0}
@@ -4445,6 +4453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2815884271148510145}
     m_Modifications:
+    - target: {fileID: -8328352783156979808, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
+      propertyPath: outputGain
+      value: -9
+      objectReference: {fileID: 0}
     - target: {fileID: -8328352783156979808, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: fadeInOnAwakeTime
       value: 1
