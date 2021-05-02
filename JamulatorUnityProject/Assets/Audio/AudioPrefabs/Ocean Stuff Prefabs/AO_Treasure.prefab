@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6892103208069289770}
   - component: {fileID: 6892103208069289771}
   - component: {fileID: 6892103208069289772}
+  - component: {fileID: -4597450979654500371}
   m_Layer: 0
   m_Name: AO_Treasure
   m_TagString: Untagged
@@ -180,3 +181,16 @@ MonoBehaviour:
   inputGain: 0
   audioSource: {fileID: 6892103208069289771}
   fadeInOnAwakeTime: 5
+--- !u!114 &-4597450979654500371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892103208069289769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}

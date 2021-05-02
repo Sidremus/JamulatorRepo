@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
 
 
     public GameObject submarine;
+    public GameObject listener;
 
     [Header("Global Messages")]
     [SerializeField] bool UseInternalControl;

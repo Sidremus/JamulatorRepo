@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 1643539635598882882}
   - component: {fileID: 1643539635598882883}
   - component: {fileID: 1643539635598882881}
+  - component: {fileID: 8069040291848478407}
   m_Layer: 0
   m_Name: AO_MushroomTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1643539635598882880
 Transform:
   m_ObjectHideFlags: 0
@@ -303,3 +304,16 @@ MonoBehaviour:
   inputGain: 0
   audioSource: {fileID: 1643539635598882883}
   fadeInOnAwakeTime: 0
+--- !u!114 &8069040291848478407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643539635598882887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1643539635598882892}

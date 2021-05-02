@@ -1492,6 +1492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   submarine: {fileID: 0}
+  listener: {fileID: 2057777429825323358}
   UseInternalControl: 0
   subDepth: 0
   subDamage: 0
@@ -2297,7 +2298,7 @@ MonoBehaviour:
   createdObjectGain: -12
   pitchOffset: 0
   randomPitchRange: 0.1
-  PlayOnAwake: 1
+  PlayOnAwake: 0
   createdAudioObjects: []
 --- !u!1 &2057777428685058545
 GameObject:
@@ -2701,7 +2702,7 @@ MonoBehaviour:
   createdObjectGain: -6
   pitchOffset: 0
   randomPitchRange: 0.1
-  PlayOnAwake: 1
+  PlayOnAwake: 0
   createdAudioObjects: []
 --- !u!1 &2057777428935274356
 GameObject:
@@ -2753,7 +2754,7 @@ MonoBehaviour:
   createdObjectGain: -12
   pitchOffset: 0
   randomPitchRange: 0.1
-  PlayOnAwake: 1
+  PlayOnAwake: 0
   createdAudioObjects: []
 --- !u!1 &2057777429003925754
 GameObject:
@@ -2805,7 +2806,7 @@ MonoBehaviour:
   createdObjectGain: -6
   pitchOffset: 0.33
   randomPitchRange: 0.1
-  PlayOnAwake: 1
+  PlayOnAwake: 0
   createdAudioObjects: []
 --- !u!1 &2057777429019126874
 GameObject:
@@ -3123,7 +3124,7 @@ MonoBehaviour:
   createdObjectGain: -9
   pitchOffset: 0
   randomPitchRange: 0.1
-  PlayOnAwake: 1
+  PlayOnAwake: 0
   createdAudioObjects: []
 --- !u!1 &2057777429391699548
 GameObject:
@@ -4725,7 +4726,7 @@ MonoBehaviour:
   createdObjectGain: -9
   pitchOffset: 0
   randomPitchRange: 0.1
-  PlayOnAwake: 1
+  PlayOnAwake: 0
   createdAudioObjects: []
 --- !u!1 &2324320984123481195
 GameObject:
