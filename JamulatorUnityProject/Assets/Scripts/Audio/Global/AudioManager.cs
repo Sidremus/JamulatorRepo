@@ -89,7 +89,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {        
-        SubscribeToEvents();
+        SubscribeToEvents();    
     }
     private void SetParams()
     {
