@@ -33,7 +33,7 @@ public class MuteIfInaudible : MonoBehaviour
     void ToggleAudioSource(bool isAudible)
     {
         if (!isAudible && source.isPlaying)
-            source.Pause();
+            source.Stop();
         else if (isAudible && !source.isPlaying)
             source.Play();
 

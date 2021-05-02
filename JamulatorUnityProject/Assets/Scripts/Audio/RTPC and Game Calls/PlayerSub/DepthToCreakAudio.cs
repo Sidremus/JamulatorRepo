@@ -5,11 +5,17 @@ using UnityEngine;
 public class DepthToCreakAudio : MonoBehaviour
 {
     [SerializeField] GameObject slightCreak;
-    Gain lightGain;
+    Gain slightGain;
+    AudioSourcePlayer slightSource;
+
     [SerializeField] GameObject mediumCreak;
     Gain mediumGain;
-    [SerializeField] GameObject heavyCreek;
+    AudioSourcePlayer mediumSource;
+
+    [SerializeField] GameObject heavyCreak;
     Gain heavyGain;
+    AudioSourcePlayer heavySource;
+    
 
     [SerializeField] [Range(-100, 0)] float subDepth;
 
@@ -18,15 +24,19 @@ public class DepthToCreakAudio : MonoBehaviour
     float _gainMin = -48f;
     float _gainMax = 0f;
 
-    float slightDepthMin = 0.2f;
-    float mediumDepthMin = 0.5f;
-    float deepDepthMin = 0.75f;
+    [SerializeField] float slightDepthMin = 0.5f;
+    [SerializeField] float mediumDepthMin = 0.6f;
+    [SerializeField] float deepDepthMin = 0.8f;
 
     private void Start()
     {
-        lightGain = slightCreak.GetComponent<Gain>();
+        slightGain = slightCreak.GetComponent<Gain>();
         mediumGain = mediumCreak.GetComponent<Gain>();
-        heavyGain = heavyCreek.GetComponent<Gain>();
+        heavyGain = heavyCreak.GetComponent<Gain>();
+
+        slightSource = slightCreak.GetComponent<AudioSourcePlayer>();
+        mediumSource = mediumCreak.GetComponent<AudioSourcePlayer>();
+        heavySource = heavyCreak.GetComponent<AudioSourcePlayer>();
 
     }
 
@@ -42,37 +52,73 @@ public class DepthToCreakAudio : MonoBehaviour
 
         if (depth < slightDepthMin)
         {
-            lightGain.inputGain = AudioUtility.ScaleValue(depth, 0, slightDepthMin, gainMin, gainMax);
+            slightGain.inputGain = AudioUtility.ScaleValue(depth, 0, slightDepthMin, gainMin, gainMax);
+            PlayIfNotPlaying(slightSource);
+
             mediumGain.inputGain = gainMin;
+            StopIfPlaying(mediumSource);
+
             heavyGain.inputGain = gainMin;
+            StopIfPlaying(heavySource);
         }
         else if (depth > slightDepthMin && depth < mediumDepthMin)
         {
             //Slight
-            lightGain.inputGain = gainMax;
+            slightGain.inputGain = gainMax;
+            PlayIfNotPlaying(slightSource);
+
             mediumGain.inputGain = AudioUtility.ScaleValue(depth, slightDepthMin, mediumDepthMin, gainMin, gainMax);
+            PlayIfNotPlaying(mediumSource);
+
             heavyGain.inputGain = gainMin;
+            StopIfPlaying(heavySource);
 
         }
         else if (depth > mediumDepthMin && depth < deepDepthMin)
         {
             //Medium
-            lightGain.inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMax, gainMin);
+            slightGain.inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMax, gainMin);
+            PlayIfNotPlaying(slightSource);
+
             mediumGain.inputGain = gainMax;
+            PlayIfNotPlaying(mediumSource);
+
             heavyGain.inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMin, gainMax);
+            PlayIfNotPlaying(heavySource);
 
         }
         else if ( depth > deepDepthMin)
         {
             //Deep
             slightCreak.GetComponent<Gain>().inputGain = gainMin;
+            PlayIfNotPlaying(slightSource);
+
             mediumCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, deepDepthMin, 1f, gainMax, gainMin);
-            heavyCreek.GetComponent<Gain>().inputGain = gainMax;
+            PlayIfNotPlaying(mediumSource);
+
+            heavyCreak.GetComponent<Gain>().inputGain = gainMax;
+            PlayIfNotPlaying(heavySource);
 
         }
 
 
       
+
+    }
+
+    private void PlayIfNotPlaying(AudioSourcePlayer source)
+    {
+        if (source.clipPlaying)
+            return;
+        else
+            source.PlayLoopWithInterval();
+
+    }
+    private void StopIfPlaying(AudioSourcePlayer source)
+    {
+        if (source.clipPlaying)
+            source.loop = false;
+
 
     }
 

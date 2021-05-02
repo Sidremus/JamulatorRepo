@@ -10,6 +10,7 @@ public class FishMoveSound : MonoBehaviour
 {
     [SerializeField] AudioClip[] rippleClips;
     [SerializeField] [Range(0.5f, 10f)] float fishScale = 1f;
+    [SerializeField] AudioListener listener;
 
     bool ripplePlaying;
 
@@ -19,20 +20,32 @@ public class FishMoveSound : MonoBehaviour
     float pitchRandScaleOffset = 0.2f;
     float volRandOffset = 3f;
 
+    float sourceMaxDistance = 10f;
+    float distance;
+
+    private void Start()
+    {
+        listener = AudioManager.Instance.listener.GetComponent<AudioListener>();
+    }
+
     public void TriggerRipple()
     {
-        if (ripplePlaying) return;
+        if (ripplePlaying)
+            return;
 
-        float pitch = Mathf.Clamp((fishPitch + Random.Range(-pitchRandScaleOffset, pitchRandScaleOffset)) - (fishScale / 12f),
-                                0.3f, 2f);
+        float pitch = Mathf.Clamp((fishPitch + Random.Range(-pitchRandScaleOffset, pitchRandScaleOffset)) - (fishScale / 12f), 0.3f, 2f);
         float vol = (fishVol + Random.Range(-volRandOffset, volRandOffset)) * fishScale;
 
-        StartCoroutine(PlayClipThenDestroySource(
-            AudioUtility.RandomClipFromArray(rippleClips),
-            vol,
-            pitch));
+        distance = Vector3.Distance(transform.position, listener.transform.position);
+        if (distance <= sourceMaxDistance * fishScale)
+        {
+            StartCoroutine(PlayClipThenDestroySource(AudioUtility.RandomClipFromArray(rippleClips), vol, pitch));
 
-        ripplePlaying = true;
+            ripplePlaying = true;
+        }
+        else
+            return;
+
 
     }
 
@@ -47,7 +60,7 @@ public class FishMoveSound : MonoBehaviour
         newAudio.clip = clip;
         newAudio.spatialize = true;
         newAudio.spatialBlend = 1f;
-        newAudio.maxDistance = 10f * fishScale;
+        newAudio.maxDistance = sourceMaxDistance * fishScale;
         newAudio.minDistance = 2f * fishScale;
         newAudio.dopplerLevel = 1f;
 

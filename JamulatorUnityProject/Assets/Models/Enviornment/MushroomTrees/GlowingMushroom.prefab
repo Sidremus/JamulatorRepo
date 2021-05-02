@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997294657370021756}
+  - component: {fileID: 3733902577779803992}
   m_Layer: 0
   m_Name: GlowingMushroom
   m_TagString: SoftFauna
@@ -28,10 +29,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1401915943412115952}
-  - {fileID: 3133113296284741614}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3733902577779803992
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223853491850773958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8018487664108500767
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,73 +142,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7973595634841406329, guid: 7bb9211528fa8a145808ba1083e7f9e7, type: 3}
---- !u!1001 &4446191266182436782
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1997294657370021756}
-    m_Modifications:
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882883, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: MaxDistance
-      value: 99.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882887, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_Name
-      value: AO_MushroomTree
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882892, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: MaxDistance
-      value: 204.6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
---- !u!4 &3133113296284741614 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-  m_PrefabInstance: {fileID: 4446191266182436782}
-  m_PrefabAsset: {fileID: 0}

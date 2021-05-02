@@ -124,7 +124,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5616493516251703638}
-  - {fileID: 8907866553030554243}
   - {fileID: 6623024257701290591}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -158,7 +157,7 @@ Transform:
   m_LocalScale: {x: 1.9999998, y: 2, z: 2.0000002}
   m_Children: []
   m_Father: {fileID: 5712366716919804536}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &607900349425050077
 Light:
@@ -222,73 +221,3 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &7876830898918607555
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5712366716919804536}
-    m_Modifications:
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882883, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: MaxDistance
-      value: 88
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882887, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: m_Name
-      value: AO_MushroomTree
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643539635598882892, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-      propertyPath: MaxDistance
-      value: 186.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
---- !u!4 &8907866553030554243 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1643539635598882880, guid: f70a1cefe68e9f749b095ce49def8964, type: 3}
-  m_PrefabInstance: {fileID: 7876830898918607555}
-  m_PrefabAsset: {fileID: 0}

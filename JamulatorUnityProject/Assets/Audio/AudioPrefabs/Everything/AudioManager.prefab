@@ -1499,7 +1499,7 @@ MonoBehaviour:
   subDriveEnergy: 0
   subSensorEnergy: 0
   environmentalStartVol: 0
-  environmentalFadeUpTime: 3
+  environmentalFadeUpTime: 1
   bubbleMakers:
   - {fileID: 2057777428673316195}
   - {fileID: 2057777429871931096}
@@ -2292,7 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: c954fd0ab07076e48b0e7c89669f9435, type: 3}
-  numberOfSoundsToDistribute: 100
+  numberOfSoundsToDistribute: 20
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777428134418373}
   createdObjectGain: -12
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: fbc4de069dc518f46a166dcd52555476, type: 3}
-  numberOfSoundsToDistribute: 70
+  numberOfSoundsToDistribute: 20
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777427942361241}
   createdObjectGain: -6
@@ -2748,7 +2748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: f81f0d1ba3deeaf4291c4a5b75b48afe, type: 3}
-  numberOfSoundsToDistribute: 30
+  numberOfSoundsToDistribute: 20
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2015268848}
   createdObjectGain: -12
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: f409c79926c5ef64080b50c36000bfe7, type: 3}
-  numberOfSoundsToDistribute: 30
+  numberOfSoundsToDistribute: 20
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 726434921}
   createdObjectGain: -6
@@ -3118,7 +3118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: f409c79926c5ef64080b50c36000bfe7, type: 3}
-  numberOfSoundsToDistribute: 50
+  numberOfSoundsToDistribute: 20
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 458604039}
   createdObjectGain: -9
@@ -4545,7 +4545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2057777429823406994
 Transform:
   m_ObjectHideFlags: 0
@@ -4645,7 +4645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2057777429862410834
 Transform:
   m_ObjectHideFlags: 0
@@ -4720,7 +4720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: e5fc462e87fede3498beeaa0168517dd, type: 3}
-  numberOfSoundsToDistribute: 50
+  numberOfSoundsToDistribute: 20
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777429758827589}
   createdObjectGain: -9
