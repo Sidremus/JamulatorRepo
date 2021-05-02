@@ -2292,7 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: c954fd0ab07076e48b0e7c89669f9435, type: 3}
-  numberOfSoundsToDistribute: 30
+  numberOfSoundsToDistribute: 100
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777428134418373}
   createdObjectGain: -12
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: fbc4de069dc518f46a166dcd52555476, type: 3}
-  numberOfSoundsToDistribute: 50
+  numberOfSoundsToDistribute: 70
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777427942361241}
   createdObjectGain: -6
@@ -3118,7 +3118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: f409c79926c5ef64080b50c36000bfe7, type: 3}
-  numberOfSoundsToDistribute: 30
+  numberOfSoundsToDistribute: 50
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 458604039}
   createdObjectGain: -9
@@ -4720,7 +4720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: e5fc462e87fede3498beeaa0168517dd, type: 3}
-  numberOfSoundsToDistribute: 30
+  numberOfSoundsToDistribute: 50
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777429758827589}
   createdObjectGain: -9
