@@ -17,7 +17,7 @@ public class DepthToText : MonoBehaviour
     private void FixedUpdate()
     {
         currentDepth = Mathf.RoundToInt(SubmarineState.Instance.submarine.transform.position.y);
-        text.text = " Depth: \n" + currentDepth + "m";
+        text.text = currentDepth + "m";
     }
 
 

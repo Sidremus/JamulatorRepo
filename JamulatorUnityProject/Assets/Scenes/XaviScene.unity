@@ -167,6 +167,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &50873680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1982942001, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+  m_PrefabInstance: {fileID: 299876221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &50873682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50873680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e498eab009e12f4e85ef9f9e0f557b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentVelocity: 0
 --- !u!1 &81692611
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,45 +593,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1498133064, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Text
-      value: ' Depth:
-
-        -250m'
+      value: -250m
       objectReference: {fileID: 0}
     - target: {fileID: 1498133064, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1498133064, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: m_FontData.m_LineSpacing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749174430, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1864977817, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1864977817, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.8018868
-      objectReference: {fileID: 0}
-    - target: {fileID: 1864977817, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.16264686
-      objectReference: {fileID: 0}
-    - target: {fileID: 1864977817, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.21057205
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1982942003, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_Text
-      value: 
+      value: 20m/s
       objectReference: {fileID: 0}
-    - target: {fileID: 520835274055021094, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-      propertyPath: damageScale
-      value: 1
+    - target: {fileID: 1982942003, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1371199209572424942, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: mapBoundsCenter
@@ -633,7 +625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668175075135639564, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -346
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6668175075135639564, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1499,24 +1491,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9179405674674216586, guid: 6c1db4ee08d95416aa8fe326c7845009, type: 3}
   m_PrefabInstance: {fileID: 1197751914}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1200264671 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1498133062, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
-  m_PrefabInstance: {fileID: 299876221}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1200264675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200264671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed18fa499169874d89fb2aaaf079e2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDepth: 0
 --- !u!1 &1356255853
 GameObject:
   m_ObjectHideFlags: 0
