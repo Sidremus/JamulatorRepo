@@ -57,6 +57,7 @@ public class SubmarineState : MonoBehaviour
     // Subsystem values
     public float fuel { get; set; }
     public bool lightsOn { get; private set; }
+    public bool pingOn { get; private set; }
 
     private void Awake()
     {
@@ -225,5 +226,19 @@ public class SubmarineState : MonoBehaviour
       {
         EventManager.Instance.NotifyOfLightsOff();
       }
+    }
+
+    public void TogglePing()
+    {
+        pingOn = !pingOn;
+        if (pingOn)
+        {
+            Debug.Log("SubmarineState.TogglePing()");
+            EventManager.Instance.NotifyOfPingOn();
+        }
+        else
+        {
+            EventManager.Instance.NotifyOfPingOff();
+        }
     }
 }

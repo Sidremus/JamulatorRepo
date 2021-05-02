@@ -12,6 +12,8 @@ public class TriggerEventsFromInspector : MonoBehaviour
     [SerializeField] bool onSonarPing;
     [SerializeField] bool onLightsOn;
     [SerializeField] bool onLightsOff;
+    [SerializeField] bool onPingOn;
+    [SerializeField] bool onPingOff;
     [SerializeField] bool onCaveEntered;
     [SerializeField] bool onCaveExited;
 
@@ -35,6 +37,19 @@ public class TriggerEventsFromInspector : MonoBehaviour
             {
                 EventManager.Instance.NotifyOfLightsOff();
                 onLightsOff = false;
+            }
+
+            if (onPingOn)
+            {
+                Debug.Log("EventManager.Instance.NotifyOfPingOn();");
+                EventManager.Instance.NotifyOfPingOn();
+                onPingOn = false;
+            }
+
+            if (onPingOff)
+            {
+                EventManager.Instance.NotifyOfPingOff();
+                onPingOff = false;
             }
 
             if (onCaveEntered)

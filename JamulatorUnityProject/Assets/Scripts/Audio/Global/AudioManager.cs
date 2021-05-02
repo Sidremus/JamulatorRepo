@@ -134,14 +134,14 @@ public class AudioManager : MonoBehaviour
 
     private void SubscribeToEvents()
     {
-        EventManager.Instance.onSonarPing += PingSonar;
+        EventManager.Instance.onSonarPing += SonarPingFind;
         EventManager.Instance.onLightsOn += LightsOn;
         EventManager.Instance.onLightsOff += LightsOff;
 
     }
     private void OnDisable()
     {
-        EventManager.Instance.onSonarPing -= PingSonar;
+        EventManager.Instance.onSonarPing -= SonarPingFind;
         EventManager.Instance.onLightsOn -= LightsOn;
         EventManager.Instance.onLightsOff -= LightsOff;
     }
@@ -211,6 +211,18 @@ public class AudioManager : MonoBehaviour
 
     }
     #endregion Lights
+
+    #region Ping
+    private void PingOn()
+    {
+
+    }
+
+    private void PingOff()
+    {
+
+    }
+    #endregion Ping
 
     #region Collision SFX
 
