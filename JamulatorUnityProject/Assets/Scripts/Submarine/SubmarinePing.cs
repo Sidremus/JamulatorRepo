@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class SubmarinePing : MonoBehaviour
 {
+    private GameObject submarine;
+    private TreasureChestManager treasureChestManager;
     // Start is called before the first frame update
     void Start()
     { 
         Debug.Log("Registering onPingOn for "+EventManager.Instance.EventManagerId);
         EventManager.Instance.onPingOn += TurnOnPing;
         EventManager.Instance.onPingOff += TurnOffPing;
+        submarine = gameObject;
+        treasureChestManager = GetComponent<TreasureChestManager>();
     }
 
     private void OnDisable()
@@ -35,7 +39,20 @@ public class SubmarinePing : MonoBehaviour
     {
         if (pingIsOn)
         {
-            Debug.Log("Ping!");
+            if (treasureChestManager != null)
+            {
+                var chest = treasureChestManager.GetClosestChest(submarine.transform.position);
+                if (chest != null)
+                {
+                    float distance = Vector3.Distance(chest.transform.position, submarine.transform.position);
+                    Debug.Log("Ping! " + distance);
+                }
+                else
+                {
+                    Debug.Log("Ping found no chest!");
+                }
+            }
+            
         }
     }
 }
