@@ -89,7 +89,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {        
-        SubscribeToEvents();
+        SubscribeToEvents();    
     }
     private void SetParams()
     {
@@ -120,7 +120,7 @@ public class AudioManager : MonoBehaviour
     {
         if (!UseInternalControl)
         {
-            subDepth = Mathf.Clamp((submarine.transform.position.y / worldDepth) * 100f, 0, 100);
+            subDepth = 0 - (100 * Mathf.Clamp(Mathf.Abs(submarine.transform.position.y / worldDepth), 0f, 100f));
             subSensorEnergy = SubmarineState.Instance.sensorEnergyLerp;
             subDriveEnergy = SubmarineState.Instance.driveEnergyLerp;
             subDamage = SubmarineState.Instance.subDamage;

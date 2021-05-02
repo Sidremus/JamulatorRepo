@@ -7,8 +7,8 @@ public class AudioSourcePlayer : MonoBehaviour
     //[SerializeField] AudioClip[] clips;
     [SerializeField] List<AudioClip> clips = new List<AudioClip>();
 
-    [SerializeField] bool loop;
-    [SerializeField] bool clipPlaying;
+    [SerializeField] public bool loop;
+    [SerializeField] public bool clipPlaying;
     [SerializeField] float intervalBetweenPlays;
     [SerializeField] float intervalRand = 0f;
 
@@ -51,7 +51,9 @@ public class AudioSourcePlayer : MonoBehaviour
 
     void LoopClip(float interval)
     {
-        StartCoroutine(ClipLooper(source, AudioUtility.RandomClipFromList(clips), interval));
+        if (loop)
+            StartCoroutine(ClipLooper(source, AudioUtility.RandomClipFromList(clips), interval));
+        else return;
     }
 
 

@@ -44,7 +44,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
@@ -64,40 +64,49 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1.0001678
-      inSlope: 0
-      outSlope: 0
+      time: 0.07692308
+      value: 1
+      inSlope: -13.0051985
+      outSlope: -13.0051985
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.38513565
-      value: 0.91231537
-      inSlope: -0.52989894
-      outSlope: -0.52989894
+      time: 0.15384616
+      value: 0.5
+      inSlope: -3.2512996
+      outSlope: -3.2512996
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.3071548
-      outWeight: 0.8587504
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.7029177
-      value: 0.09490752
-      inSlope: -0.91445065
-      outSlope: -0.91445065
+      time: 0.30769232
+      value: 0.25
+      inSlope: -0.8128249
+      outSlope: -0.8128249
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.36341158
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.61538464
+      value: 0.125
+      inSlope: -0.20320623
+      outSlope: -0.20320623
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.14383468
-      outSlope: -0.14383468
+      inSlope: -0.07695388
+      outSlope: -0.07695388
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.71507204
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -236,3 +245,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
+  source: {fileID: 0}

@@ -7,20 +7,43 @@ public class ThrusterAudio : MonoBehaviour
     // decides which audiosource will trigger the thruster sound depending on the direction of movement.
 
     [SerializeField] GameObject[] thrusters;
-    [SerializeField] float[] thrusterVols = { 0f, 0f, 0f, 0f, 0f };
+    float[] thrusterVols = { 0f, 0f, 0f, 0f, 0f };
 
     [Header("Internal Controls")]
     [SerializeField] bool UseInternalControl;
-    [Range(0, 1)] float subDriveEnergy;
+    [SerializeField] [Range(0, 100)] float speed;
     bool DirectionLeft;
     bool DirectionRight;
     bool DirectionUp;
     bool DirectionDown;
     bool DirectionBackwards;
 
+    [SerializeField] float acceleration = 100f;
+    [SerializeField] float deceleration = 200f;
+
+
+    void GetSpeed()
+    {
+        /*subDriveEnergy = AudioManager.Instance.subDriveEnergy;*/        
+
+
+        if (SubmarineState.Instance.zMoveState == Direction.BACKWARDS |
+            SubmarineState.Instance.strafeState != Direction.NONE |
+            SubmarineState.Instance.yMoveState != Direction.NONE)
+        {
+            speed += acceleration * Time.deltaTime;
+        }
+        else
+        {
+            speed -= deceleration * Time.deltaTime;
+        }
+        speed = Mathf.Clamp(speed, 0, 100);
+
+
+    }
     private void Update()
     {
-        subDriveEnergy = AudioManager.Instance.subDriveEnergy;
+        GetSpeed();
 
         if (!UseInternalControl)
         {           
@@ -56,7 +79,7 @@ public class ThrusterAudio : MonoBehaviour
         for (int i = 0; i < thrusters.Length; ++i)
         {
             var gainComp = thrusters[i].GetComponent<Gain>();
-            gainComp.inputGain = AudioUtility.ConvertAtoDb(thrusterVols[i] * subDriveEnergy);
+            gainComp.inputGain = AudioUtility.ConvertAtoDb(thrusterVols[i] * speed/100);
 
         }
     }
