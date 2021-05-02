@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -30
+  outputGain: -40
   inputGain: -100
   audioSource: {fileID: 0}
   fadeInOnAwakeTime: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -45
+  outputGain: -50
   inputGain: 0
   audioSource: {fileID: 2815884270240347240}
   fadeInOnAwakeTime: 0
@@ -1553,7 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -45
+  outputGain: -50
   inputGain: 0
   audioSource: {fileID: 2815884270614651969}
   fadeInOnAwakeTime: 0
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -30
+  outputGain: -40
   inputGain: -100
   audioSource: {fileID: 0}
   fadeInOnAwakeTime: 0
@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -45
+  outputGain: -50
   inputGain: 0
   audioSource: {fileID: 2815884270989435844}
   fadeInOnAwakeTime: 0
@@ -2257,7 +2257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -45
+  outputGain: -50
   inputGain: 0
   audioSource: {fileID: 2815884271038525568}
   fadeInOnAwakeTime: 0
@@ -3034,7 +3034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -45
+  outputGain: -50
   inputGain: 0
   audioSource: {fileID: 2815884271334770011}
   fadeInOnAwakeTime: 0
