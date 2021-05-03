@@ -23,7 +23,7 @@ public class MovementModeToText : MonoBehaviour
         if (currentControlMode == ControlMode.INTERFACE)
             text.text = "Movement Mode is STATIC \n (Toggle: Right Click)";
         else if (currentControlMode == ControlMode.STEERING)
-            text.text = "Movement Mode is FREE \n (WASD Keys & Mouse)";
+            text.text = "Movement Mode is FREE \n (WASDQE Keys & Mouse)";
 
     }
 
