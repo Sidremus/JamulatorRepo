@@ -58,6 +58,7 @@ public class SubDriveSystem : MonoBehaviour
         sub.transform.rotation = Quaternion.Euler(sub.transform.eulerAngles.x, sub.transform.eulerAngles.y, 0f);
     }
 
+    float rotateSpeed = 80f;
     private void Turn()
     {
         Vector2 mouse = SubmarineController.mousePos;
@@ -82,7 +83,7 @@ public class SubDriveSystem : MonoBehaviour
             turnSpeed = 0f;
         }
 
-        float rotateVal = dir * turnSpeed * Time.deltaTime * 40f;
+        float rotateVal = dir * turnSpeed * Time.deltaTime * rotateSpeed;
         sub.transform.Rotate(0f, rotateVal, 0f, Space.Self);
     }
 

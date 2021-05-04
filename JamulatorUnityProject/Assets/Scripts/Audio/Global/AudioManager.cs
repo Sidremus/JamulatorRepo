@@ -63,9 +63,7 @@ public class AudioManager : MonoBehaviour
     [Range(-80, 0)] public float UIVol;
 
 
-    // Sonar ping duration controls //
-    float sonarHumPreWait = 0.8f;
-    float sonarHumFadeTime = 16f;
+   
     float sonarFindPitchRandRange = 0.01f;
 
     float worldDepth = 800f;
@@ -89,7 +87,10 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {        
-        SubscribeToEvents();    
+        SubscribeToEvents();
+        if (submarine == null)
+            submarine = SubmarineState.Instance.submarine;
+
     }
     private void SetParams()
     {
