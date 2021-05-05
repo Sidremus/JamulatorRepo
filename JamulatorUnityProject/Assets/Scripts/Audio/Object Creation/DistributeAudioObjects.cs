@@ -47,7 +47,9 @@ public class DistributeAudioObjects : MonoBehaviour
             audiosource.time = audiosource.clip.length * Random.Range(0, 1);
 
             //vol
-            if (audiosource.GetComponent<AudioSourceFader>())            
+            if (audiosource.GetComponent<AudioSourceController>())
+                audiosource.GetComponent<AudioSourceController>().SetOutputGain(createdObjectGain);
+            else if (audiosource.GetComponent<AudioSourceFader>())            
                 audiosource.GetComponent<AudioSourceFader>().outputGain = createdObjectGain;            
             else
                 audiosource.volume = AudioUtility.ConvertDbtoA(createdObjectGain);

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3892908781490666034}
   - component: {fileID: 689217905734281476}
-  - component: {fileID: 2277560709355977624}
-  - component: {fileID: 7270434420401867930}
+  - component: {fileID: -547245051862439985}
+  - component: {fileID: 4641739829868859175}
   m_Layer: 0
   m_Name: AO_Bubble
   m_TagString: Untagged
@@ -54,7 +54,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5
-  MaxDistance: 65
+  MaxDistance: 250
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -73,34 +73,16 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.15384616
-      value: 0.5
-      inSlope: -3.2512996
-      outSlope: -3.2512996
+      time: 0.25587347
+      value: 0.1430664
+      inSlope: -0.6897617
+      outSlope: -0.6897617
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.99268717
+      outWeight: 0.2181188
     - serializedVersion: 3
-      time: 0.30769232
-      value: 0.25
-      inSlope: -0.8128249
-      outSlope: -0.8128249
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.61538464
-      value: 0.125
-      inSlope: -0.20320623
-      outSlope: -0.20320623
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
+      time: 0.98446655
       value: 0
       inSlope: -0.07695388
       outSlope: -0.07695388
@@ -165,75 +147,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2277560709355977624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892908781490666037}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36f9f79403475d439235f78292d472f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  outputGain: 0
-  FadeInOnAwake: 0
-  FadeInOnAwakeTime: 3
-  FadeUpCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  FadeDownCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  fadeProgress: 0
-  fadeInfo: 
-  amplitude: 0
-  db: 0
---- !u!114 &7270434420401867930
+--- !u!114 &-547245051862439985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,8 +156,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 3892908781490666037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b93a1d8296ad945afb6472883ff1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
   sourceStopped: 0
+--- !u!114 &4641739829868859175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892908781490666037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970f1428b6aa20348806b4af342f9501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 689217905734281476}
+  outputGain: 0
+  inputGain: 0
+  FadeInOnAwakeTime: 0
+  fadeVolume: 0
+  isFading: 0
+  currentFadeTarget: 0
+  currentFadeTime: 0
+  playlist: []
+  playOnAwake: 1
+  loopClips: 1
+  newClipPerPlay: 0
+  intervalBetweenPlays: 0
+  intervalRand: 0
+  pitch: 1
+  pitchRand: 0
+  looperIsLooping: 0
