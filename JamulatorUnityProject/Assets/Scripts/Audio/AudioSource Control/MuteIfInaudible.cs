@@ -5,13 +5,15 @@ using UnityEngine;
 public class MuteIfInaudible : MonoBehaviour
 {
     // credit to John French for the idea and some of the code //
-    [SerializeField] bool paused;
     [SerializeField] AudioSource source;
+    public bool sourceStopped;
+
     AudioSourcePlayer player;
     AudioListener listener;
     float distance;
-
     bool hasPlayer;
+    bool wasPlaying;
+    bool wasLooping;
     
 
     private void Start()
@@ -34,55 +36,56 @@ public class MuteIfInaudible : MonoBehaviour
 
     private void Update()
     {
-        distance = Vector3.Distance(transform.position, listener.transform.position);
+        StopSourceIfFar();
+    }
 
-        if (hasPlayer)
+    void StopSourceIfFar()
+    {
+        
+        distance = Vector3.Distance(transform.position, listener.transform.position);
+        if (distance > source.maxDistance)
         {
-            if (distance <= source.maxDistance)            
-                PlayIfNotPlaying(player);
-                      
-            else            
-                StopIfPlaying(player);
-            
+            // outside of maxDistance: stop
+            if (hasPlayer)
+            {
+                wasLooping = player.loop;
+                player.loop = false;
+                source.Stop();
+            }
+            else
+            {
+                wasPlaying = source.isPlaying;
+                wasLooping = source.loop;
+                source.loop = false;
+                source.Stop();
+                
+            }
+
+            sourceStopped = true;
         }
         else
         {
-            if (distance <= source.maxDistance)
-                ToggleAudioSource(true);
+            // within MaxDistance: restart
+            if (hasPlayer)
+            {
+                if (wasLooping)
+                    player.PlayLoopWithInterval();
+            }
             else
-                ToggleAudioSource(false);
+            {
+                if (wasPlaying)
+                {
+                    source.Play();
+                }
+                source.loop = wasLooping;
+
+            }
+
+            sourceStopped = false;
         }
 
         
-
-
     }
 
-    void ToggleAudioSource(bool isAudible)
-    {
-        if (!isAudible && source.isPlaying)
-            source.Stop();
-        else if (isAudible && !source.isPlaying)
-            source.Play();
-
-        paused = !isAudible;
-    }
-
-
-    private void PlayIfNotPlaying(AudioSourcePlayer source)
-    {
-        if (source.clipPlaying)
-            return;
-        else
-            source.PlayLoopWithInterval();
-
-    }
-    private void StopIfPlaying(AudioSourcePlayer source)
-    {
-        if (source.clipPlaying)
-            source.loop = false;
-
-
-    }
 
 }

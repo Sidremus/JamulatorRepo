@@ -13,10 +13,12 @@ public static class AudioUtility
     /// 
     /// created by blubberbaleen, improved by bemore
     /// </summary>
+    /// 
 
+    public const float min = -80f;
     public static float ConvertAtoDb(float amp)
     {
-        amp = Mathf.Clamp(amp, ConvertDbtoA(-80f), 1f);
+        amp = Mathf.Clamp(amp, ConvertDbtoA(min), 1f);
         return 20 * Mathf.Log(amp) / Mathf.Log(10);
     }
 

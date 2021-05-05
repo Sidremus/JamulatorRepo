@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCreate: {fileID: 2638531469583847481, guid: 3df9185e2ed844649abfca487f6ccc9e, type: 3}
-  dropArea: {fileID: 0}
+  dropArea: {fileID: 496477917}
   numberToDistribute: 30
   createdObjects: []
 --- !u!1 &145255447
@@ -555,6 +555,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2057777428263547412, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+      propertyPath: submarine
+      value: 
+      objectReference: {fileID: 1403523228}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
 --- !u!1 &211003015
@@ -601,7 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCreate: {fileID: 8369971239298073648, guid: 6c1db4ee08d95416aa8fe326c7845009, type: 3}
-  dropArea: {fileID: 0}
+  dropArea: {fileID: 496477917}
   numberToDistribute: 30
   createdObjects: []
 --- !u!1001 &237444719
@@ -860,15 +864,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668175075135639564, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1304.059
+      value: 1022
       objectReference: {fileID: 0}
     - target: {fileID: 6668175075135639564, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -398.2
+      value: -147
       objectReference: {fileID: 0}
     - target: {fileID: 6668175075135639564, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 190.69478
+      value: 676
       objectReference: {fileID: 0}
     - target: {fileID: 6668175075135639564, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -944,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCreate: {fileID: 851569437108022408, guid: 7594b9764ab6b4e5289f6a2665ed0aff, type: 3}
-  dropArea: {fileID: 0}
+  dropArea: {fileID: 496477917}
   numberToDistribute: 30
   createdObjects: []
 --- !u!1001 &433045552
@@ -1102,6 +1106,11 @@ Transform:
   m_Father: {fileID: 433045553}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &496477917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 652123647, guid: 1786505a2651769498d0250f3a3b127d, type: 3}
+  m_PrefabInstance: {fileID: 200170728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &775001297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCreate: {fileID: 4186618635333904536, guid: 0e1ea13647dcc45729b5803db0a19cff, type: 3}
-  dropArea: {fileID: 0}
+  dropArea: {fileID: 496477917}
   numberToDistribute: 30
   createdObjects: []
 --- !u!1 &787891718
@@ -1355,7 +1364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCreate: {fileID: 6374126976641259427, guid: afc00fa98e06d5e49b272cade140c44d, type: 3}
-  dropArea: {fileID: 0}
+  dropArea: {fileID: 496477917}
   numberToDistribute: 30
   createdObjects: []
 --- !u!1001 &1120386221
@@ -1693,6 +1702,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1403523228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6496703359121049689, guid: 5498846d629b47144859a4060b8cc10e, type: 3}
+  m_PrefabInstance: {fileID: 351008395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1534437231
 PrefabInstance:
   m_ObjectHideFlags: 0
