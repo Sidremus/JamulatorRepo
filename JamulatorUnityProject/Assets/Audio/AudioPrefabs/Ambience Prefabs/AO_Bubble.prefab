@@ -175,7 +175,7 @@ MonoBehaviour:
   audioSource: {fileID: 689217905734281476}
   outputGain: 0
   inputGain: 0
-  FadeInOnAwakeTime: 0
+  FadeInOnAwakeTime: 1
   fadeVolume: 0
   isFading: 0
   currentFadeTarget: 0

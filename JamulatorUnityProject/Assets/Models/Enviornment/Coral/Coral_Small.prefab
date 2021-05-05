@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AO_Coral
       objectReference: {fileID: 0}
+    - target: {fileID: 2756718925090304016, guid: a7ca588b20a86a04cb25a2da7b52b174, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2756718925090304017, guid: a7ca588b20a86a04cb25a2da7b52b174, type: 3}
       propertyPath: m_RootOrder
       value: 1

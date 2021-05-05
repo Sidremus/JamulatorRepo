@@ -81,6 +81,20 @@ public class ThrusterAudio : MonoBehaviour
             var gainComp = thrusters[i].GetComponent<Gain>();
             gainComp.inputGain = AudioUtility.ConvertAtoDb(thrusterVols[i] * speed/100);
 
+            var sourceComp = thrusters[i].GetComponent<AudioSource>();
+
+            if (thrusterVols[i] == 0.0f)
+            {
+                sourceComp.Stop();
+            }
+            else
+            {
+                if (!sourceComp.isPlaying)
+                {
+                    sourceComp.Play();
+                }
+            }
+
         }
     }
 

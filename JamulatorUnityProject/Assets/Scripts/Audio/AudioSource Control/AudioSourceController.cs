@@ -132,7 +132,7 @@ public class AudioSourceController : MonoBehaviour
 
         if (FadeInOnAwakeTime > 0.0f)
         {
-            FadeTo(outputGain + inputGain, FadeInOnAwakeTime, 1.0f, false);
+            FadeTo(0f, FadeInOnAwakeTime, 1.0f, false);
         }
 
     }

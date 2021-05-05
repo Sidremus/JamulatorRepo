@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 532187157640767286}
   - component: {fileID: 725891701049697992}
   - component: {fileID: 489379034792213694}
+  - component: {fileID: 1172588328489106067}
   m_Layer: 0
   m_Name: Group11338
-  m_TagString: Untagged
+  m_TagString: SoftFauna
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1172588328489106067
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520441623652063645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2983536627796934881, guid: 588ac22d7b1bc4b43810989f5dddf7e7, type: 3}
 --- !u!1 &7138960300142917506
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7519179854018915640}
-  - component: {fileID: 1258049838410755477}
+  - component: {fileID: 3000751798812795756}
   m_Layer: 0
   m_Name: Coral_Large
   m_TagString: SoftFauna
@@ -114,8 +129,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1258049838410755477
-MeshCollider:
+--- !u!65 &3000751798812795756
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,11 +138,10 @@ MeshCollider:
   m_GameObject: {fileID: 7138960300142917506}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2983536627796934881, guid: 588ac22d7b1bc4b43810989f5dddf7e7, type: 3}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.85, z: 0.52}
+  m_Center: {x: 0.1, y: 0.26, z: 0.09}
 --- !u!1001 &5301319509887293546
 PrefabInstance:
   m_ObjectHideFlags: 0

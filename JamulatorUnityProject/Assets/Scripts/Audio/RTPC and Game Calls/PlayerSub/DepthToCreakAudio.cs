@@ -5,16 +5,13 @@ using UnityEngine;
 public class DepthToCreakAudio : MonoBehaviour
 {
     [SerializeField] GameObject slightCreak;
-    Gain slightGain;
-    AudioSourcePlayer slightSource;
+    AudioSourceController slightCtrl;
 
     [SerializeField] GameObject mediumCreak;
-    Gain mediumGain;
-    AudioSourcePlayer mediumSource;
+    AudioSourceController mediumCtrl;
 
     [SerializeField] GameObject heavyCreak;
-    Gain heavyGain;
-    AudioSourcePlayer heavySource;
+    AudioSourceController heavyCtrl;
     
 
     [SerializeField] [Range(-100, 0)] float subDepth;
@@ -24,19 +21,17 @@ public class DepthToCreakAudio : MonoBehaviour
     float _gainMin = -48f;
     float _gainMax = 0f;
 
-    [SerializeField] float slightDepthMin = 0.5f;
-    [SerializeField] float mediumDepthMin = 0.6f;
-    [SerializeField] float deepDepthMin = 0.8f;
+    [SerializeField] float slightDepthMin = 40f;
+    [SerializeField] float mediumDepthMin = 60f;
+    [SerializeField] float deepDepthMin = 80f;
+
+    [SerializeField] float[] vols;
 
     private void Start()
     {
-        slightGain = slightCreak.GetComponent<Gain>();
-        mediumGain = mediumCreak.GetComponent<Gain>();
-        heavyGain = heavyCreak.GetComponent<Gain>();
-
-        slightSource = slightCreak.GetComponent<AudioSourcePlayer>();
-        mediumSource = mediumCreak.GetComponent<AudioSourcePlayer>();
-        heavySource = heavyCreak.GetComponent<AudioSourcePlayer>();
+        slightCtrl = slightCreak.GetComponent<AudioSourceController>();
+        mediumCtrl = mediumCreak.GetComponent<AudioSourceController>();
+        heavyCtrl = heavyCreak.GetComponent<AudioSourceController>();
 
     }
 
@@ -44,88 +39,86 @@ public class DepthToCreakAudio : MonoBehaviour
     {
 
         subDepth = AudioManager.Instance.subDepth;
-        float depth = Mathf.Abs(subDepth) / subDepthRange;
+        float depth = (Mathf.Abs(subDepth) / subDepthRange) * 100f;
 
         extGain = AudioManager.Instance.extSubSoundsVol;
         float gainMin = _gainMin + extGain;
         float gainMax = _gainMax + extGain;
 
+        float slightVol;
+        float mediumVol;
+        float heavyVol;
+
+        float fadeOutTime = 3f;
+
         if (depth < slightDepthMin)
         {
-            slightGain.inputGain = AudioUtility.ScaleValue(depth, 0, slightDepthMin, gainMin, gainMax);
-            PlayIfNotPlaying(slightSource);
+            slightVol = AudioUtility.ScaleValue(depth, 0, slightDepthMin, gainMin, gainMax);
+            slightCtrl.PlayLoopWithInterval();
 
-            mediumGain.inputGain = gainMin;
-            StopIfPlaying(mediumSource);
+            mediumVol = gainMin;
+            mediumCtrl.StopLooping(fadeOutTime);
 
-            heavyGain.inputGain = gainMin;
-            StopIfPlaying(heavySource);
+            heavyVol = gainMin;
+            heavyCtrl.StopLooping(fadeOutTime);
         }
         else if (depth > slightDepthMin && depth < mediumDepthMin)
         {
             //Slight
-            slightGain.inputGain = gainMax;
-            PlayIfNotPlaying(slightSource);
+            slightVol = gainMax;
+            slightCtrl.PlayLoopWithInterval();
 
-            mediumGain.inputGain = AudioUtility.ScaleValue(depth, slightDepthMin, mediumDepthMin, gainMin, gainMax);
-            PlayIfNotPlaying(mediumSource);
+            mediumVol = AudioUtility.ScaleValue(depth, slightDepthMin, mediumDepthMin, gainMin, gainMax);
+            mediumCtrl.PlayLoopWithInterval();
 
-            heavyGain.inputGain = gainMin;
-            StopIfPlaying(heavySource);
+            heavyVol = gainMin;
+            heavyCtrl.StopLooping(fadeOutTime);
 
         }
         else if (depth > mediumDepthMin && depth < deepDepthMin)
         {
             //Medium
-            slightGain.inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMax, gainMin);
-            PlayIfNotPlaying(slightSource);
+            slightVol = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMax, gainMin);
+            slightCtrl.PlayLoopWithInterval();
 
-            mediumGain.inputGain = gainMax;
-            PlayIfNotPlaying(mediumSource);
+            mediumVol = gainMax;
+            mediumCtrl.PlayLoopWithInterval();
 
-            heavyGain.inputGain = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMin, gainMax);
-            PlayIfNotPlaying(heavySource);
+            heavyVol = AudioUtility.ScaleValue(depth, mediumDepthMin, deepDepthMin, gainMin, gainMax);
+            heavyCtrl.PlayLoopWithInterval();
 
         }
         else if ( depth > deepDepthMin)
         {
             //Deep
-            slightCreak.GetComponent<Gain>().inputGain = gainMin;
-            PlayIfNotPlaying(slightSource);
+            slightVol = gainMin;
+            slightCtrl.StopLooping(fadeOutTime);
 
-            mediumCreak.GetComponent<Gain>().inputGain = AudioUtility.ScaleValue(depth, deepDepthMin, 1f, gainMax, gainMin);
-            PlayIfNotPlaying(mediumSource);
+            mediumVol = AudioUtility.ScaleValue(depth, deepDepthMin, 1f, gainMax, gainMin);
+            mediumCtrl.PlayLoopWithInterval();
 
-            heavyCreak.GetComponent<Gain>().inputGain = gainMax;
-            PlayIfNotPlaying(heavySource);
-
+            heavyVol = gainMax;
+        }
+        else
+        {
+            Debug.Log("Depth to creak audio is reading depth wrong. Sending some values and wishing you the best");
+            slightVol = gainMin;
+            mediumVol = gainMin;
+            heavyVol = gainMin;
         }
 
+        vols = new float[3];
+        vols[0] = slightVol;
+        vols[1] = mediumVol;
+        vols[2] = heavyVol;
 
-      
+        slightCtrl.SetInputGain(slightVol);
+        mediumCtrl.SetInputGain(mediumVol);
+        heavyCtrl.SetInputGain(heavyVol);
 
-    }
-
-    private void PlayIfNotPlaying(AudioSourcePlayer source)
-    {
-        if (source.clipPlaying)
-            return;
-        else
-            source.PlayLoopWithInterval();
-
-    }
-    private void StopIfPlaying(AudioSourcePlayer source)
-    {
-        if (source.clipPlaying)
-            source.loop = false;
 
 
     }
-
-
-
-
-
 
 
 
