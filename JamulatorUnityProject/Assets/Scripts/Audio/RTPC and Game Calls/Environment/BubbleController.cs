@@ -27,10 +27,7 @@ public class BubbleController : MonoBehaviour
         {
             foreach (GameObject obj in oceanMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
             {
-                //obj.GetComponent<AudioSourceFader>().FadeToAndStop(fadeDownLevel + AudioManager.Instance.bubbleVol, 5, 0.3f);
-
                 obj.GetComponent<AudioSourceController>().FadeTo(fadeDownLevel + AudioManager.Instance.bubbleVol, 5, 0.3f, false);
-
             }
         }
 
@@ -38,9 +35,6 @@ public class BubbleController : MonoBehaviour
         {
             foreach (GameObject obj in caveMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
             {
-                /*obj.GetComponent<AudioSource>().Play();
-                obj.GetComponent<AudioSourceFader>().FadeTo(fadeUpLevel + AudioManager.Instance.bubbleVol, 5, 0.8f);*/
-
                 obj.GetComponent<AudioSourceController>().FadeTo(fadeUpLevel + AudioManager.Instance.bubbleVol, 5, 0.8f, false);
             }
         }
@@ -58,11 +52,7 @@ public class BubbleController : MonoBehaviour
             {
                 foreach (GameObject obj in oceanMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
                 {
-                    /*obj.GetComponent<AudioSource>().Play();
-                    obj.GetComponent<AudioSourceFader>().FadeTo(fadeUpLevel + AudioManager.Instance.bubbleVol, 2, 0.8f);*/
-
                     obj.GetComponent<AudioSourceController>().FadeTo(fadeUpLevel + AudioManager.Instance.bubbleVol, 2, 0.8f, false);
-
                 }
             }
 
@@ -70,10 +60,7 @@ public class BubbleController : MonoBehaviour
             {
                 foreach (GameObject obj in caveMakers[i].GetComponent<DistributeAudioObjects>().createdAudioObjects)
                 {
-                    //obj.GetComponent<AudioSourceFader>().FadeToAndStop(fadeDownLevel + AudioManager.Instance.bubbleVol, 5, 0.3f);
-
                     obj.GetComponent<AudioSourceController>().FadeTo(fadeDownLevel + AudioManager.Instance.bubbleVol, 5, 0.3f, false);
-
                 }
             }
 

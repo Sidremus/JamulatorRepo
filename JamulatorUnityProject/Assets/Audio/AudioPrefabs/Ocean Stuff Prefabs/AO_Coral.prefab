@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2756718925090304017}
   - component: {fileID: 2756718925090304020}
-  - component: {fileID: 2756718925090304023}
-  - component: {fileID: 2756718925090304022}
-  - component: {fileID: 8028540071121916213}
+  - component: {fileID: 531465764934764103}
+  - component: {fileID: 937479360174091652}
+  - component: {fileID: 8793735748786208734}
   m_Layer: 0
   m_Name: AO_Coral
   m_TagString: Untagged
@@ -55,7 +55,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0.1
   MinDistance: 50
-  MaxDistance: 200
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -139,7 +139,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2756718925090304023
+--- !u!114 &531465764934764103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,38 +148,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 2756718925090304016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a1f606541989bf4da38f97e10c1699a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &937479360174091652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756718925090304016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970f1428b6aa20348806b4af342f9501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   outputGain: 0
   inputGain: 0
-  audioSource: {fileID: 2756718925090304020}
-  fadeInOnAwakeTime: 6
---- !u!114 &2756718925090304022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756718925090304016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
+  FadeInOnAwakeTime: 6
+  fadeVolume: 0
+  isFading: 0
+  currentFadeTarget: 0
+  currentFadeTime: 0
+  playlist:
   - {fileID: 8300000, guid: cd4d5bc913dfd5449a9f772fa2d9feea, type: 3}
   - {fileID: 8300000, guid: fc4f91cd06c3c9e409bd31d07592d8fc, type: 3}
   - {fileID: 8300000, guid: 372a9a4498a600245bb868874e349f6c, type: 3}
   - {fileID: 8300000, guid: bd5a526a201e03247a9c9acced19936b, type: 3}
   - {fileID: 8300000, guid: b9d0705e0736cf247b3eb00260d01d9f, type: 3}
-  loop: 1
-  clipPlaying: 0
-  intervalBetweenPlays: 0
+  playOnAwake: 1
+  loopClips: 1
+  newClipPerPlay: 1
+  intervalBetweenPlays: 0.1
   intervalRand: 2.5
   pitch: 1
   pitchRand: 0
---- !u!114 &8028540071121916213
+  looperIsLooping: 0
+--- !u!114 &8793735748786208734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,8 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2756718925090304016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b93a1d8296ad945afb6472883ff1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paused: 0
-  source: {fileID: 0}
+  sourceStopped: 0
