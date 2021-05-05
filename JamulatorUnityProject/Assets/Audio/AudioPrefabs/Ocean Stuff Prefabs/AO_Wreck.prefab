@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 677760689948569239}
   - component: {fileID: 677760689948569242}
-  - component: {fileID: 677760689948569241}
-  - component: {fileID: 677760689948569240}
-  - component: {fileID: -2599473072672407236}
+  - component: {fileID: 319379095857727950}
+  - component: {fileID: 3236632687332303}
   m_Layer: 0
   m_Name: AO_Wreck
   m_TagString: Untagged
@@ -65,37 +64,28 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.14825581
+      time: 0.051
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -19.615685
+      outSlope: -19.615685
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.42257452
-      value: 0.7927407
-      inSlope: -1.7008371
-      outSlope: -1.7008371
+      time: 0.15736914
+      value: 0.18122864
+      inSlope: -0.7457026
+      outSlope: -0.7457026
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.12002645
-      outWeight: 0.3754408
-    - serializedVersion: 3
-      time: 0.6771025
-      value: 0.27212283
-      inSlope: -1.332435
-      outSlope: -1.332435
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.3661666
+      inWeight: 0
+      outWeight: 0.16388695
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1.1740614
-      outSlope: -1.1740614
+      inSlope: -0.051020365
+      outSlope: -0.051020365
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -148,7 +138,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &677760689948569241
+--- !u!114 &319379095857727950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,46 +147,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 677760689948569238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b93a1d8296ad945afb6472883ff1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceStopped: 0
+--- !u!114 &3236632687332303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677760689948569238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970f1428b6aa20348806b4af342f9501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   outputGain: 0
   inputGain: 0
-  audioSource: {fileID: 677760689948569242}
-  fadeInOnAwakeTime: 0
---- !u!114 &677760689948569240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677760689948569238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
+  FadeInOnAwakeTime: 20
+  fadeVolume: 0
+  isFading: 0
+  currentFadeTarget: 0
+  currentFadeTime: 0
+  playlist:
   - {fileID: 8300000, guid: ce3e4d36b67614347b55680dae4484d0, type: 3}
   - {fileID: 8300000, guid: 4870c138eb0bc6c4c8bbe821e9b72431, type: 3}
   - {fileID: 8300000, guid: 00c0716ff2ede2c4ea3049746f9e7e23, type: 3}
-  loop: 1
-  clipPlaying: 0
+  playOnAwake: 1
+  loopClips: 1
+  newClipPerPlay: 1
   intervalBetweenPlays: 10
-  intervalRand: 6
+  intervalRand: 8
   pitch: 1.6
   pitchRand: 0.3
---- !u!114 &-2599473072672407236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677760689948569238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  sourceStopped: 0
+  looperIsLooping: 0

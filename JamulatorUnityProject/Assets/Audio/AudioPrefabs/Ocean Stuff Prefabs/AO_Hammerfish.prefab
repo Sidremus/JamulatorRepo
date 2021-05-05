@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 987975425327461745}
   - component: {fileID: 987975425327461747}
-  - component: {fileID: 987975425327461746}
-  - component: {fileID: 987975425327461744}
-  - component: {fileID: 6250305029664294813}
+  - component: {fileID: -8849890390179784875}
+  - component: {fileID: 4949222077236188110}
+  - component: {fileID: 4375050970908700630}
   m_Layer: 0
   m_Name: AO_Hammerfish
   m_TagString: Untagged
@@ -148,7 +148,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &987975425327461746
+--- !u!114 &-8849890390179784875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,47 +157,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 987975425327461750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a1f606541989bf4da38f97e10c1699a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -16
+--- !u!114 &4949222077236188110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987975425327461750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b93a1d8296ad945afb6472883ff1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceStopped: 0
+--- !u!114 &4375050970908700630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987975425327461750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970f1428b6aa20348806b4af342f9501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  outputGain: -6
   inputGain: 0
-  audioSource: {fileID: 987975425327461747}
-  fadeInOnAwakeTime: 5
---- !u!114 &987975425327461744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987975425327461750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b851d92a614954cb2d6d25923a2758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
+  FadeInOnAwakeTime: 5
+  fadeVolume: 0
+  isFading: 0
+  currentFadeTarget: 0
+  currentFadeTime: 0
+  playlist:
+  - {fileID: 8300000, guid: 90f362f885f3ac64bbd3960ee1848251, type: 3}
   - {fileID: 8300000, guid: 5f49b0afca746d340b34a636482448f0, type: 3}
   - {fileID: 8300000, guid: d1d30b96768aea04392d0044b500b756, type: 3}
   - {fileID: 8300000, guid: a62d98ec7dc876843921a12bd738afe7, type: 3}
-  - {fileID: 8300000, guid: 90f362f885f3ac64bbd3960ee1848251, type: 3}
-  loop: 1
-  clipPlaying: 0
+  playOnAwake: 1
+  loopClips: 1
+  newClipPerPlay: 1
   intervalBetweenPlays: 9
   intervalRand: 4
   pitch: 1
-  pitchRand: 0.053
---- !u!114 &6250305029664294813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987975425327461750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d33d41c9b994e4f8ac7d28d44fe68c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paused: 0
-  source: {fileID: 987975425327461747}
+  pitchRand: 0.05
+  looperIsLooping: 0

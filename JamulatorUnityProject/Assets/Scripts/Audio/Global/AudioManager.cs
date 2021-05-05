@@ -102,12 +102,12 @@ public class AudioManager : MonoBehaviour
 
         for (int i = 0; i < rumble.Length; ++i)
         {
-            rumble[i].GetComponent<AudioSourceFader>().outputGain = rumbleStartVol;
+            rumble[i].GetComponent<AudioSourceController>().SetInputGain(rumbleStartVol);
         }
 
         for (int i = 0; i < finWhale.Length; ++i)
         {
-            finWhale[i].GetComponent<AudioSourceFader>().outputGain = finWhaleStartVol;
+            finWhale[i].GetComponent<AudioSourceController>().SetInputGain(finWhaleStartVol);
         }
 
         collisionsContainer = new GameObject();

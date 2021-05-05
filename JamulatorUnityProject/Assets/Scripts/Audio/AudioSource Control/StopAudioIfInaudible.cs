@@ -24,6 +24,7 @@ public class StopAudioIfInaudible : MonoBehaviour
         controller = GetComponent<AudioSourceController>();
         listener = AudioManager.Instance.listener.GetComponent<AudioListener>();        
         source = controller.audioSource;
+
     }
 
 
@@ -52,13 +53,14 @@ public class StopAudioIfInaudible : MonoBehaviour
 
 
             // fades down and stops (prevents clips if spatial blend is less than 1)
+            float fadeOutTime = 1f;
 
-            controller.StopLooping();
-            controller.FadeTo(AudioUtility.min, 1f, 0.5f, true);
+            controller.StopLooping(fadeOutTime);
+            controller.FadeTo(AudioUtility.min, fadeOutTime, 0.5f, true);
 
             sourceStopped = true;
 
-            Debug.Log(this + "on " + gameObject.name + ": audio stopped, because it is " + distanceFromListener + " away from the listener object. When back in range, will fade up to " + fadeTargetWhenStopped);
+            //Debug.Log(this + "on " + gameObject.name + ": audio stopped, because it is " + distanceFromListener + " away from the listener object. When back in range, will fade up to " + fadeTargetWhenStopped);
         }
         else // within distance: restart
         {
@@ -68,7 +70,7 @@ public class StopAudioIfInaudible : MonoBehaviour
             if (wasLooping) // restart the loop
             {
                 controller.PlayLoopWithInterval();
-                Debug.Log(this + "on " + gameObject.name + ": audio restarted, because it is " + distanceFromListener + " away from the listener object, and loopclip = true. Fading up to " +fadeTargetWhenStopped);
+                //Debug.Log(this + "on " + gameObject.name + ": audio restarted, because it is " + distanceFromListener + " away from the listener object, and loopclip = true. Fading up to " +fadeTargetWhenStopped);
             }
 
             if (!wasFading) // sets default vals

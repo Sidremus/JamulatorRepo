@@ -12,6 +12,5 @@ public class ScaleToAudiosourceDistance : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.maxDistance *= scale;
         source.minDistance *= scale;
-        Debug.Log("Scaled " + gameObject.name + "'s distance factor to " + scale + "x its original");
     }
 }

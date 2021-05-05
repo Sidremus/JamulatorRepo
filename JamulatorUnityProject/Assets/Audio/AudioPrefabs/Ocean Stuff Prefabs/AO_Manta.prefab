@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8671213962580457840}
   - component: {fileID: 8671213962580457843}
-  - component: {fileID: 8671213962580457842}
-  - component: {fileID: 39418308}
+  - component: {fileID: -7285113074641382294}
+  - component: {fileID: 4464140905000637066}
   m_Layer: 0
   m_Name: AO_Manta
   m_TagString: Untagged
@@ -54,7 +54,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0.63
   MinDistance: 4.5
-  MaxDistance: 60
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -138,7 +138,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8671213962580457842
+--- !u!114 &-7285113074641382294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,14 +147,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 8671213962580457841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
+  m_Script: {fileID: 11500000, guid: 970f1428b6aa20348806b4af342f9501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -21.3
+  audioSource: {fileID: 0}
+  outputGain: -21
   inputGain: 0
-  audioSource: {fileID: 8671213962580457843}
-  fadeInOnAwakeTime: 2
---- !u!114 &39418308
+  FadeInOnAwakeTime: 0
+  fadeVolume: 0
+  isFading: 0
+  currentFadeTarget: 0
+  currentFadeTime: 0
+  playlist:
+  - {fileID: 8300000, guid: 5f49b0afca746d340b34a636482448f0, type: 3}
+  - {fileID: 8300000, guid: d1d30b96768aea04392d0044b500b756, type: 3}
+  - {fileID: 8300000, guid: a62d98ec7dc876843921a12bd738afe7, type: 3}
+  - {fileID: 8300000, guid: 90f362f885f3ac64bbd3960ee1848251, type: 3}
+  playOnAwake: 1
+  loopClips: 1
+  newClipPerPlay: 1
+  intervalBetweenPlays: 10
+  intervalRand: 3
+  pitch: 1
+  pitchRand: 0.15
+  looperIsLooping: 0
+--- !u!114 &4464140905000637066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,8 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8671213962580457841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c4a247607003b4eb133772b1e80339, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b93a1d8296ad945afb6472883ff1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pitchMin: 0.82
-  pitchMax: 1.09
+  sourceStopped: 0

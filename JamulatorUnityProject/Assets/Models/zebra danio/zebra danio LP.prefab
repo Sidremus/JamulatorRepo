@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b672e7b3297712049bf538b8c4ae8f90, type: 3}
   - {fileID: 8300000, guid: 241662dc73febbd458b1c416fea87fed, type: 3}
   fishScale: 1.09
+  listener: {fileID: 0}
 --- !u!114 &1292916094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155676f0fdde24323b69f10c73c86702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoveSpeed: 5000
+  minMoveSpeed: 4
 --- !u!64 &5488684263276776016
 MeshCollider:
   m_ObjectHideFlags: 0

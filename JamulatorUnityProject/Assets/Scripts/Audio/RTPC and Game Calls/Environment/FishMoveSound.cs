@@ -25,11 +25,18 @@ public class FishMoveSound : MonoBehaviour
 
     private void Start()
     {
-        listener = AudioManager.Instance.listener.GetComponent<AudioListener>();
+        listener = GetAudioListener();
+    }
+
+    AudioListener GetAudioListener()
+    {
+        return AudioManager.Instance.listener.GetComponent<AudioListener>();
     }
 
     public void TriggerRipple()
     {
+        if (!listener) listener = GetAudioListener();
+
         if (ripplePlaying)
             return;
 

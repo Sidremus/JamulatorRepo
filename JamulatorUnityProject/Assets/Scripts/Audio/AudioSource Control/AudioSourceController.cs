@@ -27,6 +27,7 @@ public class AudioSourceController : MonoBehaviour
 
     public float fadeVolume;
     public bool isFading;
+    private IEnumerator fadeCoroutine;
     [HideInInspector] public float currentFadeTarget;
     [HideInInspector] public float currentFadeTime;
 
@@ -38,20 +39,14 @@ public class AudioSourceController : MonoBehaviour
     public bool newClipPerPlay = false;
     [Min(0)] public float intervalBetweenPlays = 0f;
     public float intervalRand = 0f;
+    private IEnumerator loopCoroutine;
 
     [Range(-4f, 4f)] public float pitch = 1f;
     [Range(-1f, 1f)] public float pitchRand = 0f;
     public bool looperIsLooping;
-    /*
-        [Header("3D Optimisation")]
-        [Tooltip("If your audio listener isn't at the main camera, set it here.")]
-        [SerializeField] AudioListener audioListener;
-        [Tooltip("Especially for lightweight (eg. WebGL) builds, stop this audiosource if it falls outside of the source's max distance to cut down on voice usage.")]
-        [SerializeField] bool stopSourceIfFar;
-        bool sourceHasBeenStopped;
-        float fadeVolumeWhenStopped;
-        bool wasLoopingWhenStopped;
-    */
+
+
+
     public void SetInputGain(float value)
     {
         inputGain = value;
@@ -99,12 +94,31 @@ public class AudioSourceController : MonoBehaviour
             }
         }
 
-
         if (newClipPerPlay)
             audioSource.clip = AudioUtility.RandomClipFromList(playlist);
         else
             audioSource.clip = playlist[0];
 
+        StartCoroutine(CheckAudibility(1));
+
+    }
+
+    IEnumerator CheckAudibility(float checkInterval)
+    {
+        do
+        {
+            yield return new WaitForSeconds(checkInterval);
+            if (CheckIfAudible())
+            {
+                Initialise();
+                yield break;
+            }
+        }
+        while (true);
+    }
+
+    private void Initialise()
+    {
         if (playOnAwake)
         {
             audioSource.pitch = pitch + Random.Range(-pitchRand, pitchRand);
@@ -121,8 +135,15 @@ public class AudioSourceController : MonoBehaviour
             FadeTo(outputGain + inputGain, FadeInOnAwakeTime, 1.0f, false);
         }
 
-        /*  if (!audioListener)
-              audioListener = Camera.main.gameObject.GetComponent<AudioListener>();*/
+    }
+
+
+    public bool CheckIfAudible()
+    {
+        GameObject listener = AudioManager.Instance.listener;
+        float distance = Vector3.Distance(transform.position, listener.transform.position);
+        if (distance > audioSource.maxDistance) return false;
+        else return true;
 
     }
 
@@ -136,24 +157,29 @@ public class AudioSourceController : MonoBehaviour
         fadeVolume = AudioUtility.ConvertAtoDb(audioSource.volume);
     }
 
+
+
     #region Player/Looper
 
     public void PlayLoopWithInterval()
     {
         loopClips = true;
-        StartCoroutine(ClipLooper(intervalBetweenPlays));
+        loopCoroutine = ClipLooper(intervalBetweenPlays);
+        StartCoroutine(loopCoroutine);
     }
-    public void PlayLoopWithInterval(float interval)
+    public void StopLooping(float fadeOutTime)
     {
-        loopClips = true;
-        StartCoroutine(ClipLooper(interval));
-    }
-    public void StopLooping()
-    {
-        StopCoroutine(ClipLooper(intervalBetweenPlays));
+        if (loopCoroutine != null) StopCoroutine(loopCoroutine);
+        StartCoroutine(StopSourceAfter(fadeOutTime));
         looperIsLooping = false;
     }
 
+    private IEnumerator StopSourceAfter(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        audioSource.Stop();
+        yield break;
+    }
 
     IEnumerator ClipLooper(float interval)
     {
@@ -170,7 +196,7 @@ public class AudioSourceController : MonoBehaviour
                     {
                         // if no interval (straight loop on one clip): use audiosource native looper, which is more precise than coroutine
                         audioSource.loop = true;
-                        audioSource.pitch = pitch + Random.Range(-pitchRand, pitchRand); 
+                        audioSource.pitch = pitch + Random.Range(-pitchRand, pitchRand);
 
                         if (!audioSource.isPlaying) audioSource.Play();
 
@@ -206,7 +232,7 @@ public class AudioSourceController : MonoBehaviour
 
                 yield return null;
             }
-            yield return null;
+            else yield break;
         }
     }
 
@@ -228,10 +254,11 @@ public class AudioSourceController : MonoBehaviour
 
         if (isFading)
         {
-            StopAllCoroutines();
+            StopCoroutine(fadeCoroutine);
             isFading = false;
         }
-        StartCoroutine(StartFadeInDb(fadetime, targetVol, animcur, stopAfterFade));
+        fadeCoroutine = StartFadeInDb(fadetime, targetVol, animcur, stopAfterFade);
+        StartCoroutine(fadeCoroutine);
         isFading = true;
     }
 
@@ -277,42 +304,6 @@ public class AudioSourceController : MonoBehaviour
 
 
     #endregion
-    /* #region Optimisation Station
-     private void Update()
-     {
-         if (stopSourceIfFar) StopSourceIfFar();
-     }
-
-     void StopSourceIfFar()
-     {
-         if (!sourceHasBeenStopped && 
-             Vector3.Distance(transform.position, audioListener.gameObject.transform.position) > source.maxDistance)
-         {
-             fadeVolumeWhenStopped = fadeVolume;
-             FadeTo(-81, 1f, 1f, true);
-
-             wasLoopingWhenStopped = loop;
-             loop = false;
-
-             sourceHasBeenStopped = true;
-             Debug.Log(this.gameObject.name + " out of its audiosource's max distance. Stopping to conserve voices.");
-         }
-         else
-         {
-             loop = wasLoopingWhenStopped;
-             FadeTo(fadeVolumeWhenStopped, 1f, 1f, false);
-
-             source.Play();
-             sourceHasBeenStopped = false;
-         }
-     }
-     #endregion*/
-
-
-
-
-
-
     private void OnDisable()
     {
         StopAllCoroutines();
