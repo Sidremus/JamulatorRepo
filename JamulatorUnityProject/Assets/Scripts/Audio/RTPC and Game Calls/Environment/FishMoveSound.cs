@@ -20,7 +20,7 @@ public class FishMoveSound : MonoBehaviour
     float pitchRandScaleOffset = 0.2f;
     float volRandOffset = 3f;
 
-    float sourceMaxDistance = 10f;
+    float sourceMaxDistance = 30f;
     float distance;
 
     private void Start()
@@ -41,7 +41,7 @@ public class FishMoveSound : MonoBehaviour
             return;
 
         float pitch = Mathf.Clamp((fishPitch + Random.Range(-pitchRandScaleOffset, pitchRandScaleOffset)) - (fishScale / 12f), 0.3f, 2f);
-        float vol = (fishVol + Random.Range(-volRandOffset, volRandOffset)) * fishScale;
+        float vol = (fishVol + Random.Range(-volRandOffset, volRandOffset)) + fishScale;
 
         distance = Vector3.Distance(transform.position, listener.transform.position);
         if (distance <= sourceMaxDistance * fishScale)
@@ -51,7 +51,10 @@ public class FishMoveSound : MonoBehaviour
             ripplePlaying = true;
         }
         else
+        {
+            ripplePlaying = false;
             return;
+        }
 
 
     }

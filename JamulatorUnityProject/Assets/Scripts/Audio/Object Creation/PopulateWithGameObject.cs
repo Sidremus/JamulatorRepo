@@ -26,7 +26,7 @@ public class PopulateWithGameObject : MonoBehaviour
 
             var go = Instantiate<GameObject>(objectToCreate, this.transform, true);
             go.transform.position = randPos;
-            go.name = this.gameObject.name + "-" + i;
+            go.name = objectToCreate.name + "(" + this.gameObject.name + "-" + i + ")";
 
             createdObjects.Add(go);
         }
