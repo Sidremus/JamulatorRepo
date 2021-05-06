@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DoltoScene.unity
     guid: 81a7296af595ba74b84d3ef1866fe565
   - enabled: 0
-    path: Assets/Scenes/XaviScene.unity
+    path: Assets/Scenes/Xavi/XaviScene.unity
     guid: 32482df59cfda2a4aa7cadea028ab3df
   m_configObjects: {}
