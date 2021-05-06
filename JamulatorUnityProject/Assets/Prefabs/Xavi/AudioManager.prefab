@@ -1833,7 +1833,6 @@ MonoBehaviour:
   rumble:
   - {fileID: 2057777428321985097}
   - {fileID: 2057777428334500805}
-  - {fileID: 0}
   - {fileID: 3755985664136024649}
   rumbleStartVol: -29.1
   finWhale:

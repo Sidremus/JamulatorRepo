@@ -12,15 +12,15 @@ public class SubmarineCollisionListener : MonoBehaviour
         //EventManager.Instance.NotifyOfSubCollision(collision);
 
         // changes damage based on material
-        if (collision.gameObject.tag == "Plant")
+        if (collision.collider.CompareTag("Plant"))
             damageScale *= 0.2f;
-        else if (collision.gameObject.tag == "Rock")
+        else if (collision.collider.CompareTag("Rock"))
             damageScale *= 2.5f;
-        else if (collision.gameObject.tag == "HardFauna")
+        else if (collision.collider.CompareTag("HardFauna"))
             damageScale *= 0.8f;
-        else if (collision.gameObject.tag == "SoftFauna")
+        else if (collision.collider.CompareTag("SoftFauna"))
             damageScale *= 0.4f;
-        else if (collision.gameObject.tag == "Wreck")
+        else if (collision.collider.CompareTag("Wreck"))
             damageScale *= 2f;
 
         float impactMagnitude = collision.relativeVelocity.magnitude;
@@ -38,11 +38,10 @@ public class SubmarineCollisionListener : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Plant")
+        if (other.CompareTag("Plant"))
         {
             float magnitude = GetComponent<Rigidbody>().velocity.magnitude / 2f;
             Vector3 position = transform.position;
-
             AudioManager.Instance.PlayCollisionSound(position, magnitude, other.gameObject);
         }
 
