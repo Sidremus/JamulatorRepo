@@ -13,6 +13,7 @@ TagManager:
   - Wreck
   - Pickup
   - TreasureSpawn
+  - Limit
   layers:
   - Default
   - TransparentFX

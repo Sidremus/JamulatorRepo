@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DoltoScene.unity
-    guid: 81a7296af595ba74b84d3ef1866fe565
-  - enabled: 0
-    path: Assets/Scenes/Xavi/XaviScene.unity
-    guid: 32482df59cfda2a4aa7cadea028ab3df
+    path: Assets/Scenes/Xavi/XaviScene_NewSound.unity
+    guid: 7e38cf9cfedc6d7409c232ef00724885
   m_configObjects: {}
