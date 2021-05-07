@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3929727786689947368}
   - component: {fileID: 6552571133109007163}
   - component: {fileID: 1756951425067534109}
+  - component: {fileID: -4231301748192597633}
   m_Layer: 0
   m_Name: AO_Jellyfish
   m_TagString: Untagged
@@ -199,3 +200,16 @@ MonoBehaviour:
   pitch: 1.45
   pitchRand: 0.35
   looperIsLooping: 0
+--- !u!114 &-4231301748192597633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929727786689947370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1f606541989bf4da38f97e10c1699a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMaximum: 3

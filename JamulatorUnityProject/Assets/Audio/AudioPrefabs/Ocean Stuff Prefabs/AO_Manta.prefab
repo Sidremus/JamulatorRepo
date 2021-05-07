@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8671213962580457843}
   - component: {fileID: -7285113074641382294}
   - component: {fileID: 4464140905000637066}
+  - component: {fileID: 2286947421596543393}
   m_Layer: 0
   m_Name: AO_Manta
   m_TagString: Untagged
@@ -43,7 +44,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4eb173d8950c69640971e6665d363a94, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  outputGain: -21
+  outputGain: -6
   inputGain: 0
   FadeInOnAwakeTime: 0
   fadeVolume: 0
@@ -166,7 +167,7 @@ MonoBehaviour:
   playOnAwake: 1
   loopClips: 1
   newClipPerPlay: 1
-  intervalBetweenPlays: 10
+  intervalBetweenPlays: 12
   intervalRand: 3
   pitch: 1
   pitchRand: 0.15
@@ -184,3 +185,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceStopped: 0
+--- !u!114 &2286947421596543393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8671213962580457841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1f606541989bf4da38f97e10c1699a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMaximum: 3

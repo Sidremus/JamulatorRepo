@@ -15,7 +15,7 @@ public class FishMoveSound : MonoBehaviour
     bool ripplePlaying;
 
     float fishPitch = 1f;
-    float fishVol = -12f;
+    float fishVol = -15f;
 
     float pitchRandScaleOffset = 0.2f;
     float volRandOffset = 3f;

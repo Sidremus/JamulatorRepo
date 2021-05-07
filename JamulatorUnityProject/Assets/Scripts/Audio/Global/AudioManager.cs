@@ -81,7 +81,6 @@ public class AudioManager : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
 
-        SetParams();
 
     }
 
@@ -90,6 +89,9 @@ public class AudioManager : MonoBehaviour
         SubscribeToEvents();
         if (submarine == null)
             submarine = SubmarineState.Instance.submarine;
+
+
+        SetParams();
 
     }
     private void SetParams()

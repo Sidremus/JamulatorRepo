@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: 69e59a5a7db07194dba9cab655485769, type: 3}
-  numberOfSoundsToDistribute: 50
+  numberOfSoundsToDistribute: 100
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777429758827589}
   createdObjectGain: -9
@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458604039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60, y: -506, z: 0}
+  m_LocalPosition: {x: -60, y: -535.3, z: 0}
   m_LocalScale: {x: 251.8, y: 116.91733, z: 174.6}
   m_Children: []
   m_Father: {fileID: 485488951}
@@ -617,8 +617,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015268848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45, y: -369, z: 5}
-  m_LocalScale: {x: 246.9, y: 115.6, z: 480.7}
+  m_LocalPosition: {x: -45, y: -452.7, z: 5}
+  m_LocalScale: {x: 170, y: 104, z: 352.1}
   m_Children: []
   m_Father: {fileID: 485488951}
   m_RootOrder: 0
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -43
+  outputGain: -46
   inputGain: 0
   audioSource: {fileID: 2057777427773874653}
   fadeInOnAwakeTime: 0
@@ -1733,7 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -30
+  outputGain: -36
   inputGain: -100
   audioSource: {fileID: 0}
   fadeInOnAwakeTime: 0
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   - {fileID: 2057777428321985097}
   - {fileID: 2057777428334500805}
   - {fileID: 3755985664136024649}
-  rumbleStartVol: -29.1
+  rumbleStartVol: -20
   finWhale:
   - {fileID: 2057777427988116151}
   - {fileID: 1926244008739033034}
@@ -2410,7 +2410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -30
+  outputGain: -36
   inputGain: -100
   audioSource: {fileID: 0}
   fadeInOnAwakeTime: 0
@@ -2491,7 +2491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: d3e25da01c4b4ad41b5614e6a7184871, type: 3}
-  numberOfSoundsToDistribute: 100
+  numberOfSoundsToDistribute: 150
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777428134418373}
   createdObjectGain: -12
@@ -2639,7 +2639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -43
+  outputGain: -46
   inputGain: 0
   audioSource: {fileID: 2057777428685058548}
   fadeInOnAwakeTime: 0
@@ -2948,7 +2948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: c188382bab2153646ace20e03805982e, type: 3}
-  numberOfSoundsToDistribute: 20
+  numberOfSoundsToDistribute: 10
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 726434921}
   createdObjectGain: -6
@@ -3267,7 +3267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: c188382bab2153646ace20e03805982e, type: 3}
-  numberOfSoundsToDistribute: 20
+  numberOfSoundsToDistribute: 15
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 458604039}
   createdObjectGain: -9
@@ -3325,9 +3325,9 @@ MonoBehaviour:
   mediumCreak: {fileID: 4929322064982007370}
   heavyCreak: {fileID: 4929322066122139419}
   subDepth: -91.8
-  slightDepthMin: 40
+  slightDepthMin: 50
   mediumDepthMin: 60
-  deepDepthMin: 80
+  deepDepthMin: 75
   vols: []
 --- !u!1 &2057777429396423013
 GameObject:
@@ -3470,7 +3470,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3567,10 +3567,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: 0
-  inputGain: 0
+  outputGain: -20
+  inputGain: -24
   audioSource: {fileID: 0}
-  fadeInOnAwakeTime: 2
+  fadeInOnAwakeTime: 0
 --- !u!1 &2057777429497492761
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,7 +3711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -43
+  outputGain: -46
   inputGain: 0
   audioSource: {fileID: 2057777429497492764}
   fadeInOnAwakeTime: 0
@@ -3855,7 +3855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -43
+  outputGain: -46
   inputGain: 0
   audioSource: {fileID: 2057777429550769752}
   fadeInOnAwakeTime: 0
@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87d08c2f2e797849a73dd78f71b278c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputGain: -43
+  outputGain: -46
   inputGain: 0
   audioSource: {fileID: 2057777429738094791}
   fadeInOnAwakeTime: 0
@@ -4710,7 +4710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToDistribute: {fileID: 8300000, guid: 40058d93ef954c64aa5f42d862db9782, type: 3}
-  numberOfSoundsToDistribute: 100
+  numberOfSoundsToDistribute: 250
   audioObject: {fileID: 3892908781490666037, guid: 673b0033a3055404e9023e2f0ef40b00, type: 3}
   dropArea: {fileID: 2057777429758827589}
   createdObjectGain: -9
@@ -5183,11 +5183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+      value: 0.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8999103348986745267, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: m_RootOrder
@@ -5272,11 +5272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+      value: 0.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8999103348986745267, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: m_RootOrder
@@ -5361,11 +5361,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+      value: 0.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 7180215552481173543, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8999103348986745267, guid: 28b9dc5be4e1b984995c25c0eff0eac5, type: 3}
       propertyPath: m_RootOrder

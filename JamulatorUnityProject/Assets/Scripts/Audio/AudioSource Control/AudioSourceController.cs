@@ -60,7 +60,6 @@ public class AudioSourceController : MonoBehaviour
     }
 
     #region Initialisation
-
     private void Awake()
     {
         // disables inspector fiddling
@@ -79,7 +78,13 @@ public class AudioSourceController : MonoBehaviour
 
     }
 
+
     private void Start()
+    {
+        Initialise();
+    }
+
+    private void Initialise()
     {
         // Chooses/plays clips as set.
         if (playlist.Count == 0)
@@ -99,6 +104,7 @@ public class AudioSourceController : MonoBehaviour
         else
             audioSource.clip = playlist[0];
 
+
         StartCoroutine(CheckAudibility(1));
 
     }
@@ -110,15 +116,16 @@ public class AudioSourceController : MonoBehaviour
             yield return new WaitForSeconds(checkInterval);
             if (CheckIfAudible())
             {
-                Initialise();
+                StartPlayback();
                 yield break;
             }
         }
         while (true);
     }
 
-    private void Initialise()
+    private void StartPlayback()
     {
+
         if (playOnAwake)
         {
             audioSource.pitch = pitch + Random.Range(-pitchRand, pitchRand);
@@ -138,6 +145,9 @@ public class AudioSourceController : MonoBehaviour
     }
 
 
+
+    #endregion
+
     public bool CheckIfAudible()
     {
         GameObject listener = AudioManager.Instance.listener;
@@ -146,8 +156,6 @@ public class AudioSourceController : MonoBehaviour
         else return true;
 
     }
-
-    #endregion
 
     private void GetAudioSourceVolume()
     {
